@@ -118,7 +118,7 @@ def score_week(week, brief, open_hidden=False):
 
 def mean(scores):
     vals = [s["score"] for s in scores if s["score"] is not None]
-    return round(sum(vals) / len(vals), 3) if vals else 0.0
+    return round(sum(vals) / len(vals), 3) if vals else None
 
 
 def table(scores):

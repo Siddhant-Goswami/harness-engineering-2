@@ -276,7 +276,7 @@ def tags():
 
 def walls(before_tags, before_data, folder):
     """Plain code checks the four lines the optimizer may not cross. Returns the breach, or ''."""
-    changed = [l[3:].strip('"') for l in git("status", "--porcelain", "-uall").splitlines()]
+    changed = [l.split(maxsplit=1)[1].strip('"') for l in git("status", "--porcelain", "-uall").splitlines()]
     for path in changed:
         if path == "harness/.claude/settings.json":
             return "it changed a permission; only a person does that"
@@ -327,7 +327,7 @@ def one_round():
         undo()
         print(f"blocked: {breach}")
         journal(n, reason, predicted, f"blocked ({breach})", best, "not run")
-        add_row(n, [{"score": ""}] * 3, "blocked", reason)
+        add_row(n, [{"score": None}] * 3, "blocked", reason)
         git("add", "scores.csv", "optimizer/journal.md")
         git("commit", "-m", f"round {n} blocked: {breach}")
         return
