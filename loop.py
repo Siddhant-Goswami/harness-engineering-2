@@ -390,7 +390,8 @@ def final():
     elif unseen > 0:
         verdict = "Week four rose too. The harness learned something about how you decide."
     else:
-        verdict = "Only the weeks it saw rose. The harness memorised your past."
+        verdict = ("Only the weeks it saw rose. The harness memorised your past, "
+                   "or the gain was luck: one run per week is a small sample.")
     print("\n" + verdict)
     OPENED.write_text(json.dumps({"visible": [start, best], "hidden": [before, after],
                                   "verdict": verdict}, indent=1))
