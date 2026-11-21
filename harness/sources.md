@@ -4,24 +4,30 @@ Where this reader's saved links come from. No notes on any of them yet.
 
 - AI Daily newsletter
 - AgentConf
+- Anvil changelog
+- Anvil security
 - Fern.js blog
-- Ferrous blog
-- Gopher SDK blog
+- Gemstone AI blog
+- Gemstone status page
 - Hacker thread
 - Kiln changelog
 - Kiln security
+- MySQL release notes
 - Opinion: The Gradient Post
+- Orchard API reference
 - Orchard Labs blog
 - Orchard Labs docs
+- Orchard Labs research
 - Orchard Labs research note
 - Orchard status page
-- Pocket SDK blog
 - Podcast: Next Decade
 - Preprint
 - Prompt Weekly newsletter
+- Quill DB blog
+- Quill DB security
 - ReasonBench leaderboard
-- Robotics Weekly
 - Tidewater engineering blog
+- Vecstore releases
 - Vecstore security
 - VentureWire
 - X thread

@@ -42,7 +42,8 @@ import score as verifier  # noqa: E402
 
 BRIEF_MODEL = os.environ.get("BRIEF_MODEL", "sonnet")   # writes the briefs
 OPT_MODEL = os.environ.get("OPT_MODEL", "opus")         # proposes the changes
-MIN_GAIN = 0.01      # a change must beat the current score by this much to stay
+RUNS = int(os.environ.get("RUNS", "3"))  # briefs per week; the score is their mean
+MIN_GAIN = 0.02      # a change must beat the current score by this much to stay
 MAX_TURNS = 40
 SCORES = ROOT / "scores.csv"
 OPENED = ROOT / "verifier" / "week4-opened.json"
@@ -185,9 +186,10 @@ def brief_prompt(week):
     return p
 
 
-def brief(week, folder, harness=HARNESS):
+def brief(week, folder, harness=HARNESS, run=None):
     """MODEL. The briefing agent writes one week's brief."""
-    trace = folder / f"week-{week}.jsonl"
+    name = f"week-{week}" + (f".run-{run}" if run else "")
+    trace = folder / f"{name}.jsonl"
     result = claude(brief_prompt(week), harness, BRIEF_MODEL, trace,
                     ["--tools", "Bash,Read,Write,Edit,Skill"])
     text = result.get("result") or ""
@@ -196,15 +198,26 @@ def brief(week, folder, harness=HARNESS):
         if re.search(r"verifier|traces/|optimizer|scores\.csv|\.\./", inp):
             print(f"  week {week}: run thrown away, {name} reached outside harness/")
             text = ""
-    (folder / f"week-{week}.brief.md").write_text(text)
+    (folder / f"{name}.brief.md").write_text(text)
     return text
 
 
+def many(weeks, folder, harness=HARNESS):
+    """RUNS briefs for each week, all at once. Returns {week: [brief, ...]}."""
+    jobs = [(w, r) for w in weeks for r in range(1, RUNS + 1)]
+    with ThreadPoolExecutor(len(jobs)) as pool:
+        texts = list(pool.map(lambda j: brief(j[0], folder, harness, j[1]), jobs))
+    out = {w: [] for w in weeks}
+    for (w, _), t in zip(jobs, texts):
+        out[w].append(t)
+    return out
+
+
 def briefs_and_scores(folder):
-    """Steps 2 and 3 for the visible weeks."""
-    with ThreadPoolExecutor(len(WEEKS)) as pool:
-        texts = list(pool.map(lambda w: brief(w, folder), WEEKS))
-    scores = [verifier.score_week(w, t) for w, t in zip(WEEKS, texts)]
+    """Steps 2 and 3 for the visible weeks, RUNS times each."""
+    print(f"  writing {RUNS * len(WEEKS)} briefs ({RUNS} per week)...")
+    briefs = many(WEEKS, folder)
+    scores = [verifier.score_runs(w, briefs[w]) for w in WEEKS]
     (folder / "scores.json").write_text(json.dumps(scores, indent=1))
     print(verifier.table(scores))
     return scores
@@ -229,18 +242,25 @@ def report(n, folder):
     live, best = current()
     scores = json.loads((TRACES / f"round-{live}" / "scores.json").read_text())
     worst = min(scores, key=lambda s: s["score"])
-    line = lambda r, w: f"- week {w} | {r['id']} | {r['source']} | {r['title']} | {r['label']}"
+    k = worst["per_run"].index(min(worst["per_run"])) + 1
+    runs = worst["runs"]
+    line = lambda r, w: (f"- week {w} | {r['id']} | {r['source']} | {r['title']} | {r['label']}"
+                         f" | in {r['runs']} of {runs} runs")
     out = [f"# Report for round {n}", "",
-           f"The live setup scored {best} on weeks 1 to 3 (run: traces/round-{live}/).",
-           "Per week: " + ", ".join(f"week {s['week']}: {s['score']}" for s in scores), "",
-           f"Worst week: {worst['week']}. Raw trace: ../traces/round-{live}/week-{worst['week']}.jsonl",
+           f"The live setup scored {best} on weeks 1 to 3, the mean of {runs} runs per week "
+           f"(traces: ../traces/round-{live}/, one file per week per run).",
+           "Per week: " + ", ".join(f"week {s['week']}: {s['score']} ({s['low']} to {s['high']})"
+                                    for s in scores), "",
+           f"Worst week: {worst['week']}. Its worst run: ../traces/round-{live}/week-{worst['week']}.run-{k}.jsonl",
+           "A miss in every run is a habit of the setup. A miss in one run may be chance.",
            "", "## Missed: the reader acted on these, or should have, and the brief left them out"]
     out += [line(r, s["week"]) for s in scores for r in s["missed"]] or ["- none"]
     out += ["", "## Noise the brief called important"]
     out += [line(r, s["week"]) for s in scores for r in s["noise"]] or ["- none"]
     out += ["", "## Decisions it got wrong"]
-    out += [f"- week {s['week']} | {d['id']} | {d['question']} | brief said {d['brief_said']}, "
-            f"it turned out: {d['turned_out']}" for s in scores for d in s["wrong_decisions"]] or ["- none"]
+    out += [f"- week {s['week']} | {d['id']} | {d['question']} | briefs said {', '.join(d['said'])}, "
+            f"it turned out: {d['turned_out']} | wrong in {d['runs']} of {runs} runs"
+            for s in scores for d in s["wrong_decisions"]] or ["- none"]
     out += ["", "## The failure log, kept by hand", "", (ROOT / "failures.md").read_text()]
     folder.mkdir(parents=True, exist_ok=True)
     (folder / "report.md").write_text("\n".join(out))
@@ -375,23 +395,27 @@ def final():
     for d in ("inbox", "cache"):
         shutil.copytree(HARNESS / d, old / "harness" / d)
 
+    print(f"  writing {2 * RUNS} briefs for week four ({RUNS} on each setup)...")
     with ThreadPoolExecutor(2) as pool:
-        b = pool.submit(brief, week, folder / "before-run", old / "harness")
-        a = pool.submit(brief, week, folder / "after-run", HARNESS)
-    before = verifier.score_week(week, b.result(), open_hidden=True)
-    after = verifier.score_week(week, a.result(), open_hidden=True)
+        b = pool.submit(many, [week], folder / "before-run", old / "harness")
+        a = pool.submit(many, [week], folder / "after-run", HARNESS)
+    before = verifier.score_runs(week, b.result()[week], open_hidden=True)
+    after = verifier.score_runs(week, a.result()[week], open_hidden=True)
 
-    print("\n                 before   after")
-    print(f"weeks 1 to 3     {start:>6}   {best:>5}    (the loop could see these)")
-    print(f"week 4           {before['score']:>6}   {after['score']:>5}    (it could not see this)")
+    cell = lambda s: f"{s['score']} ({s['low']} to {s['high']})"
+    print(f"\n                 before                 after")
+    print(f"weeks 1 to 3     {start:<22} {best}    (the loop could see these)")
+    print(f"week 4           {cell(before):<22} {cell(after)}    (it could not see this)")
     seen, unseen = best - start, after["score"] - before["score"]
-    if seen <= 0:
+    if seen < MIN_GAIN:
         verdict = "No change was kept, so there is nothing to test."
-    elif unseen > 0:
+    elif unseen >= MIN_GAIN:
         verdict = "Week four rose too. The harness learned something about how you decide."
+    elif unseen > -MIN_GAIN:
+        verdict = ("Week four did not move. The gain on the weeks it saw did not carry over: "
+                   "it fitted your past, not how you decide.")
     else:
-        verdict = ("Only the weeks it saw rose. The harness memorised your past, "
-                   "or the gain was luck: one run per week is a small sample.")
+        verdict = "Week four got worse. The harness memorised your past and it cost you on new weeks."
     print("\n" + verdict)
     OPENED.write_text(json.dumps({"visible": [start, best], "hidden": [before, after],
                                   "verdict": verdict}, indent=1))

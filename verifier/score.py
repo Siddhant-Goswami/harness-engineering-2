@@ -116,16 +116,45 @@ def score_week(week, brief, open_hidden=False):
     }
 
 
+def score_runs(week, briefs, open_hidden=False):
+    """Several briefs for one week, written by the same setup. One run is a small sample."""
+    runs = [score_week(week, b, open_hidden) for b in briefs]
+    n = len(runs)
+
+    def tally(key):
+        seen = {}
+        for r in runs:
+            for item in r[key]:
+                entry = seen.setdefault(item["id"], dict(item, runs=0))
+                entry["runs"] += 1
+                if key == "wrong_decisions":
+                    entry.setdefault("said", []).append(item["brief_said"])
+        return sorted(seen.values(), key=lambda x: (-x["runs"], x["id"]))
+
+    avg = lambda key: round(sum(r[key] for r in runs) / n, 1)
+    vals = [r["score"] for r in runs]
+    return {
+        "week": week, "runs": n,
+        "score": round(sum(vals) / n, 3), "low": min(vals), "high": max(vals), "per_run": vals,
+        "hits": avg("hits"), "signal": runs[0]["signal"], "noise_flagged": avg("noise_flagged"),
+        "decisions_right": avg("decisions_right"), "decisions": runs[0]["decisions"],
+        "missed": tally("missed"), "noise": tally("noise"), "wrong_decisions": tally("wrong_decisions"),
+    }
+
+
 def mean(scores):
     vals = [s["score"] for s in scores if s["score"] is not None]
     return round(sum(vals) / len(vals), 3) if vals else None
 
 
 def table(scores):
-    lines = ["week  score   found   noise called important   decisions right"]
+    n = scores[0].get("runs", 1)
+    lines = [f"week  score  low to high   found      noise called important   decisions right"
+             + (f"   (mean of {n} runs)" if n > 1 else "")]
     for s in scores:
-        lines.append(f"  {s['week']}   {s['score']:>5}   {s['hits']}/{s['signal']}     "
-                     f"{s['noise_flagged']:<22}   {s['decisions_right']}/{s['decisions']}")
+        spread = f"{s.get('low', s['score'])} to {s.get('high', s['score'])}"
+        lines.append(f"  {s['week']}   {s['score']:>5}  {spread:<13} {s['hits']:>4}/{s['signal']:<5} "
+                     f"{s['noise_flagged']:<24} {s['decisions_right']}/{s['decisions']}")
     lines.append(f"mean  {mean(scores):>5}")
     return "\n".join(lines)
 
@@ -136,7 +165,7 @@ if __name__ == "__main__":
     folder = Path(sys.argv[1])
     out = []
     for w in VISIBLE_WEEKS:
-        f = folder / f"week-{w}.brief.md"
-        if f.exists():
-            out.append(score_week(w, f.read_text()))
+        briefs = [f.read_text() for f in sorted(folder.glob(f"week-{w}*.brief.md"))]
+        if briefs:
+            out.append(score_runs(w, briefs))
     print(table(out))

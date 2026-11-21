@@ -1,89 +1,101 @@
 date,source,title,url,label
-2026-10-19,Vecstore security,Advisory: Vecstore 0.7 can corrupt an index under concurrent writes,https://sample.invalid/vecstore-security-advisory-vecstore-0-7-can-corrupt-an-index-under-con,acted
-2026-10-19,Kiln changelog,Kiln 2.4: script mode,https://sample.invalid/kiln-changelog-kiln-2-4-script-mode,acted
 2026-10-19,X thread,Harnesses are dead. The model is all you need now,https://sample.invalid/x-thread-harnesses-are-dead-the-model-is-all-you-need-now,noise
-2026-10-19,Preprint,Raw traces beat summaries for debugging agents (replication code included),https://sample.invalid/preprint-raw-traces-beat-summaries-for-debugging-agents-replication-co,should_have
-2026-10-20,Kiln changelog,Kiln 2.4.1: hook timeout default changes from 60s to 20s,https://sample.invalid/kiln-changelog-kiln-2-4-1-hook-timeout-default-changes-from-60s-to-20s,acted
-2026-10-20,YouTube: PromptBro,This ONE prompt makes your agent 10x smarter,https://sample.invalid/youtube-promptbro-this-one-prompt-makes-your-agent-10x-smarter,noise
-2026-10-20,Fern.js blog,Fern 9 ships server islands,https://sample.invalid/fern-js-blog-fern-9-ships-server-islands,noise
+2026-10-19,Gemstone AI blog,Gemstone Pro input prices cut by 50%,https://sample.invalid/gemstone-ai-blog-gemstone-pro-input-prices-cut-by-50,noise
+2026-10-19,Orchard Labs blog,Pricing update: cached input tokens billed at 10% from 1 November,https://sample.invalid/orchard-labs-blog-pricing-update-cached-input-tokens-billed-at-10-from,acted
+2026-10-19,Orchard Labs research,Our new image model draws hands correctly,https://sample.invalid/orchard-labs-research-our-new-image-model-draws-hands-correctly,noise
+2026-10-20,Kiln changelog,Kiln 2.4: script mode,https://sample.invalid/kiln-changelog-kiln-2-4-script-mode,acted
+2026-10-20,AgentConf,AgentConf 2027 announces its first speakers,https://sample.invalid/agentconf-agentconf-2027-announces-its-first-speakers,noise
+2026-10-20,X thread,I timed every hook in 40 Kiln projects. Thread with the data,https://sample.invalid/x-thread-i-timed-every-hook-in-40-kiln-projects-thread-with-the-data,should_have
+2026-10-20,Orchard API reference,API changelog: 14 October,https://sample.invalid/orchard-api-reference-api-changelog-14-october,acted
+2026-10-21,ReasonBench leaderboard,Orchard 4 retakes first place on ReasonBench by 0.3 points,https://sample.invalid/reasonbench-leaderboard-orchard-4-retakes-first-place-on-reasonbench-b,noise
+2026-10-21,Podcast: Next Decade,AGI by 2028? Three founders debate,https://sample.invalid/podcast-next-decade-agi-by-2028-three-founders-debate,noise
 2026-10-21,Tidewater engineering blog,We measured script mode on our nightly batch job: 78% fewer tokens,https://sample.invalid/tidewater-engineering-blog-we-measured-script-mode-on-our-nightly-batc,should_have
-2026-10-21,VentureWire,Lumen AI raises $400M to build the agent OS,https://sample.invalid/venturewire-lumen-ai-raises-400m-to-build-the-agent-os,noise
-2026-10-21,Orchard Labs blog,Pricing update: cached input tokens billed at 10% from 1 November,https://sample.invalid/orchard-labs-blog-pricing-update-cached-input-tokens-billed-at-10-from,acted
+2026-10-22,Vecstore security,Advisory: Vecstore 0.7 can corrupt an index under concurrent writes,https://sample.invalid/vecstore-security-advisory-vecstore-0-7-can-corrupt-an-index-under-con,acted
 2026-10-22,AI Daily newsletter,Script mode explained: what Kiln 2.4 means for you,https://sample.invalid/ai-daily-newsletter-script-mode-explained-what-kiln-2-4-means-for-you,noise
-2026-10-22,ReasonBench leaderboard,Orchard 4 retakes first place on ReasonBench by 0.3 points,https://sample.invalid/reasonbench-leaderboard-orchard-4-retakes-first-place-on-reasonbench-b,noise
-2026-10-22,Orchard Labs docs,"Guide: tool descriptions that models follow, with before and after evals",https://sample.invalid/orchard-labs-docs-guide-tool-descriptions-that-models-follow-with-befo,should_have
-2026-10-23,X thread,I replaced my whole team with 12 agents (thread),https://sample.invalid/x-thread-i-replaced-my-whole-team-with-12-agents-thread,noise
-2026-10-23,Hacker thread,Ask: is anyone actually using agents in production?,https://sample.invalid/hacker-thread-ask-is-anyone-actually-using-agents-in-production,noise
-2026-10-23,Podcast: Next Decade,AGI by 2028? Three founders debate,https://sample.invalid/podcast-next-decade-agi-by-2028-three-founders-debate,noise
-2026-10-24,Pocket SDK blog,Building on-device agents for iOS with Pocket SDK,https://sample.invalid/pocket-sdk-blog-building-on-device-agents-for-ios-with-pocket-sdk,noise
-2026-10-24,AgentConf,AgentConf 2027 announces its first speakers,https://sample.invalid/agentconf-agentconf-2027-announces-its-first-speakers,noise
-2026-10-24,VentureWire,Kestrel acquires a data-labelling startup,https://sample.invalid/venturewire-kestrel-acquires-a-data-labelling-startup,noise
-2026-10-25,Opinion: The Gradient Post,Why prompt engineering is still a real career,https://sample.invalid/opinion-the-gradient-post-why-prompt-engineering-is-still-a-real-caree,noise
-2026-10-25,Robotics Weekly,Humanoid robot folds laundry in a new demo,https://sample.invalid/robotics-weekly-humanoid-robot-folds-laundry-in-a-new-demo,noise
-2026-10-25,AI Daily newsletter,10 AI tools you missed this week,https://sample.invalid/ai-daily-newsletter-10-ai-tools-you-missed-this-week,noise
-2026-10-26,Orchard Labs blog,Deprecation: Orchard 3 endpoints shut down on 15 January,https://sample.invalid/orchard-labs-blog-deprecation-orchard-3-endpoints-shut-down-on-15-janu,acted
-2026-10-26,Orchard Labs blog,Orchard 5 Mini is available: cheaper and faster on the same API,https://sample.invalid/orchard-labs-blog-orchard-5-mini-is-available-cheaper-and-faster-on-th,acted
-2026-10-26,YouTube: BuildLoud,I rebuilt the agent loop from scratch and you should too,https://sample.invalid/youtube-buildloud-i-rebuilt-the-agent-loop-from-scratch-and-you-should,noise
-2026-10-26,Orchard Labs research note,Models trained inside the standard tool loop: hand-rolled loops scored 9 points lower,https://sample.invalid/orchard-labs-research-note-models-trained-inside-the-standard-tool-loo,should_have
-2026-10-27,Orchard status page,Known issue: Orchard 5 Mini drops parallel tool calls on long contexts,https://sample.invalid/orchard-status-page-known-issue-orchard-5-mini-drops-parallel-tool-cal,acted
-2026-10-27,AI Daily newsletter,Orchard 5 Mini: everything you need to know,https://sample.invalid/ai-daily-newsletter-orchard-5-mini-everything-you-need-to-know,noise
+2026-10-22,X thread,I replaced my whole team with 12 agents (thread),https://sample.invalid/x-thread-i-replaced-my-whole-team-with-12-agents-thread,noise
+2026-10-22,AI Daily newsletter,10 AI tools you missed this week,https://sample.invalid/ai-daily-newsletter-10-ai-tools-you-missed-this-week,noise
+2026-10-23,Anvil changelog,Anvil 3.0 removes the legacy plugin API on 1 November,https://sample.invalid/anvil-changelog-anvil-3-0-removes-the-legacy-plugin-api-on-1-november,noise
+2026-10-23,Orchard Labs docs,"Guide: tool descriptions that models follow, with before and after evals",https://sample.invalid/orchard-labs-docs-guide-tool-descriptions-that-models-follow-with-befo,should_have
+2026-10-23,Opinion: The Gradient Post,Why prompt engineering is still a real career,https://sample.invalid/opinion-the-gradient-post-why-prompt-engineering-is-still-a-real-caree,noise
+2026-10-24,YouTube: PromptBro,This ONE prompt makes your agent 10x smarter,https://sample.invalid/youtube-promptbro-this-one-prompt-makes-your-agent-10x-smarter,noise
+2026-10-24,Kiln changelog,Kiln 2.4.1,https://sample.invalid/kiln-changelog-kiln-2-4-1,acted
+2026-10-24,VentureWire,Lumen AI raises $400M to build the agent OS,https://sample.invalid/venturewire-lumen-ai-raises-400m-to-build-the-agent-os,noise
+2026-10-24,Quill DB security,Advisory: upgrade Quill DB to 4.2.1 now,https://sample.invalid/quill-db-security-advisory-upgrade-quill-db-to-4-2-1-now,noise
+2026-10-25,Hacker thread,Ask: is anyone actually using agents in production?,https://sample.invalid/hacker-thread-ask-is-anyone-actually-using-agents-in-production,noise
+2026-10-25,Preprint,Raw traces beat summaries for debugging agents (replication code included),https://sample.invalid/preprint-raw-traces-beat-summaries-for-debugging-agents-replication-co,should_have
+2026-10-25,Fern.js blog,Fern 9 ships server islands,https://sample.invalid/fern-js-blog-fern-9-ships-server-islands,noise
+2026-10-26,X thread,"Watch an agent book a full holiday, end to end (video)",https://sample.invalid/x-thread-watch-an-agent-book-a-full-holiday-end-to-end-video,noise
+2026-10-26,X thread,Leaked: Orchard 6 coming in December?,https://sample.invalid/x-thread-leaked-orchard-6-coming-in-december,noise
+2026-10-26,Preprint,A separate grader catches twice the errors of self-review (replication pack),https://sample.invalid/preprint-a-separate-grader-catches-twice-the-errors-of-self-review-rep,should_have
+2026-10-26,Orchard status page,Known issue: Orchard 5 Mini drops parallel tool calls on long contexts,https://sample.invalid/orchard-status-page-known-issue-orchard-5-mini-drops-parallel-tool-cal,acted
+2026-10-27,Orchard Labs research note,Models trained inside the standard tool loop: hand-rolled loops scored 9 points lower,https://sample.invalid/orchard-labs-research-note-models-trained-inside-the-standard-tool-loo,should_have
+2026-10-27,Orchard Labs blog,Deprecation: Orchard 3 endpoints shut down on 15 January,https://sample.invalid/orchard-labs-blog-deprecation-orchard-3-endpoints-shut-down-on-15-janu,acted
 2026-10-27,Hacker thread,Kiln vs Anvil: which harness is better? (400 comments),https://sample.invalid/hacker-thread-kiln-vs-anvil-which-harness-is-better-400-comments,noise
-2026-10-28,Tidewater engineering blog,"Postmortem: our agent looped for six hours, and the loop breaker we added",https://sample.invalid/tidewater-engineering-blog-postmortem-our-agent-looped-for-six-hours-a,should_have
-2026-10-28,X thread,Orchard 5 Mini CHANGES EVERYTHING. Switch today,https://sample.invalid/x-thread-orchard-5-mini-changes-everything-switch-today,noise
-2026-10-28,Kiln changelog,Kiln 2.5: permissions file format v2; v1 files stop loading on 1 December,https://sample.invalid/kiln-changelog-kiln-2-5-permissions-file-format-v2-v1-files-stop-loadi,acted
+2026-10-27,Kiln changelog,Kiln 2.5: permissions file format v2; v1 files stop loading on 1 December,https://sample.invalid/kiln-changelog-kiln-2-5-permissions-file-format-v2-v1-files-stop-loadi,acted
+2026-10-28,YouTube: BuildLoud,I rebuilt the agent loop from scratch and you should too,https://sample.invalid/youtube-buildloud-i-rebuilt-the-agent-loop-from-scratch-and-you-should,noise
+2026-10-28,Gemstone status page,Postmortem: Gemstone Flash was down for four hours,https://sample.invalid/gemstone-status-page-postmortem-gemstone-flash-was-down-for-four-hours,noise
+2026-10-28,Hacker thread,"Show: we ran Orchard 5 Mini on 2,000 real support tickets",https://sample.invalid/hacker-thread-show-we-ran-orchard-5-mini-on-2-000-real-support-tickets,should_have
+2026-10-29,AgentConf,Early-bird tickets for AgentConf end on Friday,https://sample.invalid/agentconf-early-bird-tickets-for-agentconf-end-on-friday,noise
+2026-10-29,Orchard Labs blog,Orchard 5 Mini is available: cheaper and faster on the same API,https://sample.invalid/orchard-labs-blog-orchard-5-mini-is-available-cheaper-and-faster-on-th,acted
+2026-10-29,X thread,Orchard 5 Mini CHANGES EVERYTHING. Switch today,https://sample.invalid/x-thread-orchard-5-mini-changes-everything-switch-today,noise
 2026-10-29,VentureWire,Orchard Labs in talks at a $90B valuation,https://sample.invalid/venturewire-orchard-labs-in-talks-at-a-90b-valuation,noise
-2026-10-29,Fern.js blog,Fern adds AI autocomplete to its dev tools,https://sample.invalid/fern-js-blog-fern-adds-ai-autocomplete-to-its-dev-tools,noise
-2026-10-29,Preprint,A separate grader catches twice the errors of self-review (replication pack),https://sample.invalid/preprint-a-separate-grader-catches-twice-the-errors-of-self-review-rep,should_have
-2026-10-30,Podcast: Next Decade,The Orchard CEO on the future of work,https://sample.invalid/podcast-next-decade-the-orchard-ceo-on-the-future-of-work,noise
-2026-10-30,X thread,Mini models ranked: my vibes-based tier list,https://sample.invalid/x-thread-mini-models-ranked-my-vibes-based-tier-list,noise
-2026-10-30,Opinion: The Gradient Post,"The end of software engineering, again",https://sample.invalid/opinion-the-gradient-post-the-end-of-software-engineering-again,noise
-2026-10-31,X thread,Leaked: Orchard 6 coming in December?,https://sample.invalid/x-thread-leaked-orchard-6-coming-in-december,noise
-2026-10-31,Prompt Weekly newsletter,Prompt of the week: the expert persona trick,https://sample.invalid/prompt-weekly-newsletter-prompt-of-the-week-the-expert-persona-trick,noise
-2026-10-31,Gopher SDK blog,Agent SDK for Go reaches 1.0,https://sample.invalid/gopher-sdk-blog-agent-sdk-for-go-reaches-1-0,noise
-2026-11-01,AgentConf,Early-bird tickets for AgentConf end on Friday,https://sample.invalid/agentconf-early-bird-tickets-for-agentconf-end-on-friday,noise
-2026-11-01,VentureWire,Three agent startups shut down this month,https://sample.invalid/venturewire-three-agent-startups-shut-down-this-month,noise
-2026-11-01,X thread,"Watch an agent book a full holiday, end to end (video)",https://sample.invalid/x-thread-watch-an-agent-book-a-full-holiday-end-to-end-video,noise
-2026-11-02,Orchard Labs blog,Rate limits: batch requests now count separately from live traffic,https://sample.invalid/orchard-labs-blog-rate-limits-batch-requests-now-count-separately-from,acted
-2026-11-02,Orchard status page,Resolved: parallel tool call fix for Orchard 5 Mini is live,https://sample.invalid/orchard-status-page-resolved-parallel-tool-call-fix-for-orchard-5-mini,acted
-2026-11-02,VentureWire,Eval startup Gauge raises $60M,https://sample.invalid/venturewire-eval-startup-gauge-raises-60m,noise
-2026-11-02,Tidewater engineering blog,Our optimiser raised the score 14 points and made the product worse,https://sample.invalid/tidewater-engineering-blog-our-optimiser-raised-the-score-14-points-an,should_have
-2026-11-03,Kiln changelog,Kiln 2.5.2: skills can ship scripts; skill folder layout changes,https://sample.invalid/kiln-changelog-kiln-2-5-2-skills-can-ship-scripts-skill-folder-layout-,acted
-2026-11-03,AI Daily newsletter,This week in agents: 14 links,https://sample.invalid/ai-daily-newsletter-this-week-in-agents-14-links,noise
-2026-11-03,Hacker thread,Show: I made a terminal theme for agents,https://sample.invalid/hacker-thread-show-i-made-a-terminal-theme-for-agents,noise
-2026-11-04,Preprint,Held-out weeks: a simple test for whether a prompt optimiser learned or memorised (code included),https://sample.invalid/preprint-held-out-weeks-a-simple-test-for-whether-a-prompt-optimiser-l,should_have
-2026-11-04,X thread,Evals are a waste of time. Just ship,https://sample.invalid/x-thread-evals-are-a-waste-of-time-just-ship,noise
-2026-11-04,Kiln security,Advisory: prompt injection through pages returned by the fetch tool,https://sample.invalid/kiln-security-advisory-prompt-injection-through-pages-returned-by-the-,acted
-2026-11-05,YouTube: PromptBro,Self-improving agents will replace engineers in 2 months,https://sample.invalid/youtube-promptbro-self-improving-agents-will-replace-engineers-in-2-mo,noise
-2026-11-05,Fern.js blog,FernConf recap,https://sample.invalid/fern-js-blog-fernconf-recap,noise
+2026-10-30,Orchard Labs blog,Orchard at the World Economic Forum,https://sample.invalid/orchard-labs-blog-orchard-at-the-world-economic-forum,noise
+2026-10-30,Anvil security,"Advisory: Anvil plugin sandbox escape, patch now",https://sample.invalid/anvil-security-advisory-anvil-plugin-sandbox-escape-patch-now,noise
+2026-10-30,AI Daily newsletter,Orchard 5 Mini: everything you need to know,https://sample.invalid/ai-daily-newsletter-orchard-5-mini-everything-you-need-to-know,noise
+2026-10-31,Opinion: The Gradient Post,"The end of software engineering, again",https://sample.invalid/opinion-the-gradient-post-the-end-of-software-engineering-again,noise
+2026-10-31,X thread,Mini models ranked: my vibes-based tier list,https://sample.invalid/x-thread-mini-models-ranked-my-vibes-based-tier-list,noise
+2026-10-31,Tidewater engineering blog,"Postmortem: our agent looped for six hours, and the loop breaker we added",https://sample.invalid/tidewater-engineering-blog-postmortem-our-agent-looped-for-six-hours-a,should_have
+2026-10-31,MySQL release notes,MySQL 9.1 deprecates the native password plugin,https://sample.invalid/mysql-release-notes-mysql-9-1-deprecates-the-native-password-plugin,noise
+2026-11-01,Fern.js blog,Fern adds AI autocomplete to its dev tools,https://sample.invalid/fern-js-blog-fern-adds-ai-autocomplete-to-its-dev-tools,noise
+2026-11-01,Podcast: Next Decade,The Orchard CEO on the future of work,https://sample.invalid/podcast-next-decade-the-orchard-ceo-on-the-future-of-work,noise
+2026-11-01,Kiln changelog,Kiln 2.5.1,https://sample.invalid/kiln-changelog-kiln-2-5-1,acted
+2026-11-02,Vecstore releases,Vecstore 0.7.3,https://sample.invalid/vecstore-releases-vecstore-0-7-3,acted
+2026-11-02,X thread,We planted instructions in 30 web pages and let our agent fetch them. Results,https://sample.invalid/x-thread-we-planted-instructions-in-30-web-pages-and-let-our-agent-fet,should_have
+2026-11-02,Anvil changelog,Anvil 3.1: skills support,https://sample.invalid/anvil-changelog-anvil-3-1-skills-support,noise
+2026-11-02,Preprint,Held-out weeks: a simple test for whether a prompt optimiser learned or memorised (code included),https://sample.invalid/preprint-held-out-weeks-a-simple-test-for-whether-a-prompt-optimiser-l,should_have
+2026-11-03,X thread,95% of engineers at the big labs run self-improving harnesses,https://sample.invalid/x-thread-95-of-engineers-at-the-big-labs-run-self-improving-harnesses,noise
+2026-11-03,YouTube: PromptBro,Self-improving agents will replace engineers in 2 months,https://sample.invalid/youtube-promptbro-self-improving-agents-will-replace-engineers-in-2-mo,noise
+2026-11-03,Quill DB blog,Quill DB 4.3 adds hybrid search,https://sample.invalid/quill-db-blog-quill-db-4-3-adds-hybrid-search,noise
+2026-11-03,Orchard status page,Resolved: parallel tool call fix for Orchard 5 Mini is live,https://sample.invalid/orchard-status-page-resolved-parallel-tool-call-fix-for-orchard-5-mini,acted
+2026-11-04,Fern.js blog,FernConf recap,https://sample.invalid/fern-js-blog-fernconf-recap,noise
+2026-11-04,Podcast: Next Decade,Founders on raising money in 2027,https://sample.invalid/podcast-next-decade-founders-on-raising-money-in-2027,noise
+2026-11-04,ReasonBench leaderboard,"A new benchmark crowns a new winner, again",https://sample.invalid/reasonbench-leaderboard-a-new-benchmark-crowns-a-new-winner-again,noise
 2026-11-05,Orchard Labs docs,Cookbook: a pre-stop check that makes an agent cite a source for every claim,https://sample.invalid/orchard-labs-docs-cookbook-a-pre-stop-check-that-makes-an-agent-cite-a,should_have
-2026-11-06,Ferrous blog,An agent runtime in Rust: 3x faster startup,https://sample.invalid/ferrous-blog-an-agent-runtime-in-rust-3x-faster-startup,noise
-2026-11-06,ReasonBench leaderboard,"A new benchmark crowns a new winner, again",https://sample.invalid/reasonbench-leaderboard-a-new-benchmark-crowns-a-new-winner-again,noise
-2026-11-06,Opinion: The Gradient Post,Is AI in a bubble?,https://sample.invalid/opinion-the-gradient-post-is-ai-in-a-bubble,noise
-2026-11-07,X thread,95% of engineers at the big labs run self-improving harnesses,https://sample.invalid/x-thread-95-of-engineers-at-the-big-labs-run-self-improving-harnesses,noise
-2026-11-07,Podcast: Next Decade,Founders on raising money in 2027,https://sample.invalid/podcast-next-decade-founders-on-raising-money-in-2027,noise
-2026-11-07,Robotics Weekly,Warehouse robots get language models,https://sample.invalid/robotics-weekly-warehouse-robots-get-language-models,noise
-2026-11-08,Prompt Weekly newsletter,Top 7 prompt templates for managers,https://sample.invalid/prompt-weekly-newsletter-top-7-prompt-templates-for-managers,noise
+2026-11-05,Kiln changelog,Kiln 2.5.2: skills can ship scripts; skill folder layout changes,https://sample.invalid/kiln-changelog-kiln-2-5-2-skills-can-ship-scripts-skill-folder-layout-,acted
+2026-11-05,VentureWire,Eval startup Gauge raises $60M,https://sample.invalid/venturewire-eval-startup-gauge-raises-60m,noise
+2026-11-05,Orchard Labs blog,We're opening an office in Singapore,https://sample.invalid/orchard-labs-blog-we-re-opening-an-office-in-singapore,noise
+2026-11-06,Gemstone AI blog,Deprecation: Gemstone v1 API shuts down on 1 February,https://sample.invalid/gemstone-ai-blog-deprecation-gemstone-v1-api-shuts-down-on-1-february,noise
+2026-11-06,X thread,Kiln to be acquired? Sources say talks are on,https://sample.invalid/x-thread-kiln-to-be-acquired-sources-say-talks-are-on,noise
+2026-11-06,AI Daily newsletter,Kiln 2.5.2 in five bullet points,https://sample.invalid/ai-daily-newsletter-kiln-2-5-2-in-five-bullet-points,noise
+2026-11-07,Orchard Labs blog,Rate limits: batch requests now count separately from live traffic,https://sample.invalid/orchard-labs-blog-rate-limits-batch-requests-now-count-separately-from,acted
+2026-11-07,Opinion: The Gradient Post,Is AI in a bubble?,https://sample.invalid/opinion-the-gradient-post-is-ai-in-a-bubble,noise
+2026-11-07,Kiln security,Advisory: prompt injection through pages returned by the fetch tool,https://sample.invalid/kiln-security-advisory-prompt-injection-through-pages-returned-by-the-,acted
+2026-11-07,Tidewater engineering blog,Our optimiser raised the score 14 points and made the product worse,https://sample.invalid/tidewater-engineering-blog-our-optimiser-raised-the-score-14-points-an,should_have
 2026-11-08,X thread,An agent wrote a whole novel in a weekend,https://sample.invalid/x-thread-an-agent-wrote-a-whole-novel-in-a-weekend,noise
-2026-11-08,X thread,Kiln to be acquired? Sources say talks are on,https://sample.invalid/x-thread-kiln-to-be-acquired-sources-say-talks-are-on,noise
-2026-11-09,Orchard Labs blog,Pricing: Orchard 5 Mini output tokens drop 20% on 1 December,https://sample.invalid/orchard-labs-blog-pricing-orchard-5-mini-output-tokens-drop-20-on-1-de,acted
-2026-11-09,Kiln changelog,Kiln 2.6 beta: auto-memory (off by default),https://sample.invalid/kiln-changelog-kiln-2-6-beta-auto-memory-off-by-default,acted
+2026-11-08,X thread,Evals are a waste of time. Just ship,https://sample.invalid/x-thread-evals-are-a-waste-of-time-just-ship,noise
+2026-11-08,Prompt Weekly newsletter,Top 7 prompt templates for managers,https://sample.invalid/prompt-weekly-newsletter-top-7-prompt-templates-for-managers,noise
+2026-11-09,Opinion: The Gradient Post,Why I quit using AI tools,https://sample.invalid/opinion-the-gradient-post-why-i-quit-using-ai-tools,noise
 2026-11-09,Orchard Labs blog,We're hiring: join the Orchard policy team,https://sample.invalid/orchard-labs-blog-we-re-hiring-join-the-orchard-policy-team,noise
-2026-11-09,Preprint,"Optimisers keep rediscovering three mechanisms: pre-stop checks, loop breakers, persistent memory (survey, code)",https://sample.invalid/preprint-optimisers-keep-rediscovering-three-mechanisms-pre-stop-check,should_have
-2026-11-10,Kiln issue tracker,Known issue: auto-memory shares notes across projects in 2.6 beta,https://sample.invalid/kiln-issue-tracker-known-issue-auto-memory-shares-notes-across-project,acted
-2026-11-10,X thread,Auto-memory is the biggest thing since tool calling. Turn it on NOW,https://sample.invalid/x-thread-auto-memory-is-the-biggest-thing-since-tool-calling-turn-it-o,noise
+2026-11-09,X thread,We cut our agent's memory file from 400 lines to 60. Pass rate went up. Diff inside,https://sample.invalid/x-thread-we-cut-our-agent-s-memory-file-from-400-lines-to-60-pass-rate,should_have
+2026-11-09,Orchard Labs research,A model that composes music from a text prompt,https://sample.invalid/orchard-labs-research-a-model-that-composes-music-from-a-text-prompt,noise
 2026-11-10,YouTube: BuildLoud,I let an agent run my life for 30 days,https://sample.invalid/youtube-buildloud-i-let-an-agent-run-my-life-for-30-days,noise
-2026-11-11,Tidewater engineering blog,Six months of agent memory files: what rotted and how we prune,https://sample.invalid/tidewater-engineering-blog-six-months-of-agent-memory-files-what-rotte,should_have
-2026-11-11,Kiln blog,Photos from the Kiln community meetup,https://sample.invalid/kiln-blog-photos-from-the-kiln-community-meetup,noise
-2026-11-11,Postgres release notes,Postgres 18.2: fix for a planner regression on partitioned tables,https://sample.invalid/postgres-release-notes-postgres-18-2-fix-for-a-planner-regression-on-p,acted
-2026-11-12,VentureWire,Kiln's maker raises a Series C,https://sample.invalid/venturewire-kiln-s-maker-raises-a-series-c,noise
-2026-11-12,ReasonBench leaderboard,ReasonBench v3 results are in,https://sample.invalid/reasonbench-leaderboard-reasonbench-v3-results-are-in,noise
-2026-11-12,Brightline engineering blog,We gate agent actions by the cost of undo: our rules and the incident behind them,https://sample.invalid/brightline-engineering-blog-we-gate-agent-actions-by-the-cost-of-undo-,should_have
-2026-11-13,Fern.js blog,Fern 9.1 released,https://sample.invalid/fern-js-blog-fern-9-1-released,noise
-2026-11-13,AI Daily newsletter,Kiln 2.6 beta: first look,https://sample.invalid/ai-daily-newsletter-kiln-2-6-beta-first-look,noise
-2026-11-13,Hacker thread,Is memory just retrieval? (300 comments),https://sample.invalid/hacker-thread-is-memory-just-retrieval-300-comments,noise
-2026-11-14,Podcast: Next Decade,"AGI timelines, revisited",https://sample.invalid/podcast-next-decade-agi-timelines-revisited,noise
-2026-11-14,Opinion: The Gradient Post,Why I quit using AI tools,https://sample.invalid/opinion-the-gradient-post-why-i-quit-using-ai-tools,noise
+2026-11-10,Quill DB security,Advisory: Quill DB 4.3.0 backups may be incomplete,https://sample.invalid/quill-db-security-advisory-quill-db-4-3-0-backups-may-be-incomplete,noise
+2026-11-10,Podcast: Next Decade,"AGI timelines, revisited",https://sample.invalid/podcast-next-decade-agi-timelines-revisited,noise
+2026-11-10,VentureWire,Kiln's maker raises a Series C,https://sample.invalid/venturewire-kiln-s-maker-raises-a-series-c,noise
+2026-11-11,Anvil changelog,Anvil 3.2 changes its config file format,https://sample.invalid/anvil-changelog-anvil-3-2-changes-its-config-file-format,noise
+2026-11-11,X thread,Auto-memory is the biggest thing since tool calling. Turn it on NOW,https://sample.invalid/x-thread-auto-memory-is-the-biggest-thing-since-tool-calling-turn-it-o,noise
+2026-11-11,Hacker thread,Is memory just retrieval? (300 comments),https://sample.invalid/hacker-thread-is-memory-just-retrieval-300-comments,noise
+2026-11-12,Fern.js blog,Fern 9.1 released,https://sample.invalid/fern-js-blog-fern-9-1-released,noise
+2026-11-12,Kiln issue tracker,Known issue: auto-memory shares notes across projects in 2.6 beta,https://sample.invalid/kiln-issue-tracker-known-issue-auto-memory-shares-notes-across-project,acted
+2026-11-12,Postgres release notes,Postgres 18.2: fix for a planner regression on partitioned tables,https://sample.invalid/postgres-release-notes-postgres-18-2-fix-for-a-planner-regression-on-p,acted
+2026-11-12,Kiln blog,Photos from the Kiln community meetup,https://sample.invalid/kiln-blog-photos-from-the-kiln-community-meetup,noise
+2026-11-13,Orchard Labs blog,Pricing: Orchard 5 Mini output tokens drop 20% on 1 December,https://sample.invalid/orchard-labs-blog-pricing-orchard-5-mini-output-tokens-drop-20-on-1-de,acted
+2026-11-13,Tidewater engineering blog,Six months of agent memory files: what rotted and how we prune,https://sample.invalid/tidewater-engineering-blog-six-months-of-agent-memory-files-what-rotte,should_have
+2026-11-13,ReasonBench leaderboard,ReasonBench v3 results are in,https://sample.invalid/reasonbench-leaderboard-reasonbench-v3-results-are-in,noise
+2026-11-14,Orchard API reference,API changelog: 11 November,https://sample.invalid/orchard-api-reference-api-changelog-11-november,acted
 2026-11-14,X thread,Leaked benchmarks for Orchard 6,https://sample.invalid/x-thread-leaked-benchmarks-for-orchard-6,noise
-2026-11-15,Droid SDK blog,Agent SDK for Android released,https://sample.invalid/droid-sdk-blog-agent-sdk-for-android-released,noise
-2026-11-15,AgentConf,AgentConf day-one keynote recap,https://sample.invalid/agentconf-agentconf-day-one-keynote-recap,noise
-2026-11-15,Prompt Weekly newsletter,5 morning routines of AI founders,https://sample.invalid/prompt-weekly-newsletter-5-morning-routines-of-ai-founders,noise
+2026-11-14,Gemstone AI blog,Gemstone Pro 2 launches with a 2M token context,https://sample.invalid/gemstone-ai-blog-gemstone-pro-2-launches-with-a-2m-token-context,noise
+2026-11-14,AI Daily newsletter,Kiln 2.6 beta: first look,https://sample.invalid/ai-daily-newsletter-kiln-2-6-beta-first-look,noise
+2026-11-15,Brightline engineering blog,We gate agent actions by the cost of undo: our rules and the incident behind them,https://sample.invalid/brightline-engineering-blog-we-gate-agent-actions-by-the-cost-of-undo-,should_have
+2026-11-15,Preprint,"Optimisers keep rediscovering three mechanisms: pre-stop checks, loop breakers, persistent memory (survey, code)",https://sample.invalid/preprint-optimisers-keep-rediscovering-three-mechanisms-pre-stop-check,should_have
+2026-11-15,Kiln changelog,Kiln 2.6 beta: auto-memory (off by default),https://sample.invalid/kiln-changelog-kiln-2-6-beta-auto-memory-off-by-default,acted
