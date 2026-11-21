@@ -1,0 +1,6 @@
+traces/
+harness/inbox/
+harness/cache/
+harness/scratch/
+__pycache__/
+.DS_Store

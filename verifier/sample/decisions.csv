@@ -1,0 +1,6 @@
+date,question,outcome,how_it_turned_out
+2026-10-23,Should we move the nightly ticket job from one tool call per ticket to a script the agent writes?,adopt,Moved it in week one. Tokens fell by about three quarters.
+2026-10-29,Should we switch the main support agent to Orchard 5 Mini this week?,wait,Waited. The parallel tool call bug would have skipped work. Switched after the fix.
+2026-10-31,Should we write our own agent loop to get more control?,ignore,Did not. The standard loop is what the models are trained on.
+2026-11-06,Should we keep one week of tickets hidden from our prompt-tuning loop?,adopt,Should have done it sooner. The loop had been tuning to the rubric.
+2026-11-13,Should we turn on Kiln auto-memory for client projects now?,wait,Waited for 2.6.1. The beta shared notes across projects.
