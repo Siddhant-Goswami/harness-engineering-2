@@ -4,8 +4,25 @@ One agent writes you a weekly brief from the links you saved. A second agent rea
 first one's mistakes and changes its setup, one commit at a time. Plain code decides
 whether each change stays. One week of your labels stays hidden until the end.
 
-It ships with a fictional sample month (88 links, 5 decisions) so every command works
-before you bring your own data.
+It ships with a fictional sample month so every command works before you bring your own data.
+
+## The sample month
+
+100 links over four weeks, 8 decisions, all made up. The reader runs a support agent on
+**Kiln** (harness), **Orchard** (models) and **Postgres with Vecstore** (database). Nothing in
+the harness says so. The loop has to learn it from the labels.
+
+Every week has the same five traps, so a rule learned on weeks 1 to 3 can pay off on week 4:
+
+| Trap | Example | Label |
+|---|---|---|
+| Urgent news about a tool the reader does not use | "Advisory: Anvil plugin sandbox escape, patch now" | noise |
+| A newsletter recap of a changelog | "Script mode explained: what Kiln 2.4 means for you" | noise |
+| A dull title hiding a breaking change | "Vecstore 0.7.3" (new indexes switch distance metric) | acted |
+| A thread with real measurements | "I timed every hook in 40 Kiln projects" | should have |
+| A big-name post unrelated to the reader | "Our new image model draws hands correctly" | noise |
+
+To change it, edit `verifier/sample/make_sample.py` and run it.
 
 ## What is in the folder
 
@@ -119,18 +136,33 @@ The briefing agent has one wall: a run whose trace reaches outside `harness/` sc
 3. Delete `verifier/sample/`, `harness/sources.md` and `harness/cache/`.
 4. `python3 loop.py prepare`
 
-Days 22 to 30 become week four. Pages are fetched the first time the agent reads them and
+Days 22 onward become week four. Pages are fetched the first time the agent reads them and
 kept in `harness/cache/`, so a week reads the same on every run. Links behind a login
 (X, LinkedIn) come back as title only.
 
 ## Things to know before you trust a number
 
-- One run per week is a small sample. The same setup can score 0.72 and then 0.56 on the same
-  week. `MIN_GAIN` in `loop.py` is the smallest rise that counts.
-- The sample month is easy: the first setup already scores about 0.8. Your own month will be harder.
+- One run per week is a small sample: on the sample, one setup scored 0.46 and 0.89 on the same
+  week. So every week is run `RUNS` times (3 by default) and the score is the mean. The table
+  prints the low and high run next to it. `RUNS=5 python3 loop.py ...` for a steadier number.
+- `MIN_GAIN` in `loop.py` (0.02) is the smallest rise that counts. If a week's low-to-high
+  range is wider than the rise, be suspicious of the rise.
+- The report tells the optimizer how many runs each miss happened in. A miss in every run is a
+  habit of the setup; a miss in one run may be chance.
+- Kept rounds are the lucky ones, so the live score drifts a little high and later rounds
+  find it harder to beat. The hidden week is where that luck gets checked.
 - `BRIEF_MODEL=haiku python3 loop.py ...` and `OPT_MODEL=sonnet ...` change the two models.
-- The branch `sample-run` holds a finished run on the sample: baseline, two kept rounds, week four opened.
-  `git log sample-run --oneline` shows it.
+- The branch `sample-run` holds a finished run on the sample, the pre-recorded backup for the
+  session (its raw traces are in `traces-sample-run/`, not in git):
+
+  | | before | after 4 rounds |
+  |---|---|---|
+  | weeks 1 to 3 | 0.739 | 0.991 |
+  | week 4 (hidden) | 0.666 | 0.949 |
+
+  Round 1 was reverted ("fetch every link" made it cite everything: 0.739 to 0.504). Rounds 2 to 4
+  were kept: the reader's stack, measured findings count as news, cite the changelog not the recap.
+  `git log sample-run --oneline` and `git diff sample-baseline sample-run -- harness` show it.
 
 ## Take-home
 
