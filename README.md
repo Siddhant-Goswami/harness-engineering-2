@@ -135,6 +135,21 @@ python3 loop.py trace traces/round-2/optimizer.jsonl     # what the optimizer lo
 python3 loop.py trace traces/round-0/week-1.run-1.jsonl  # what the briefing agent fetched and wrote
 ```
 
+## The explainer video
+
+`explainer/` builds a 3-minute narrated walkthrough of this repo: the loop, the sample month,
+the recorded run, and the three test passes. The narration lives in `explainer/build.py`, the
+visuals in `explainer/src/template.html`; every number on screen comes from the `sample-run` branch.
+
+```
+cd explainer
+python3 build.py                                  # voices changed lines (local Kokoro voice), writes index.html
+npx hyperframes render -o harness-2-explainer.mp4 # about 2 minutes
+```
+
+The voice needs `kokoro-onnx` and `soundfile` in `~/.cache/hyperframes/tts-venv` (see `PY` in build.py).
+The video and audio are not committed; rebuild them.
+
 ## Bring your own month
 
 1. Replace `verifier/links.csv` with your last 30 days (keep the header row).
