@@ -128,6 +128,13 @@ Checked by code after the optimizer finishes. A change that crosses one is throw
 
 The briefing agent has one wall: a run whose trace reaches outside `harness/` scores zero.
 
+## Read a trace
+
+```
+python3 loop.py trace traces/round-2/optimizer.jsonl     # what the optimizer looked at and changed
+python3 loop.py trace traces/round-0/week-1.run-1.jsonl  # what the briefing agent fetched and wrote
+```
+
 ## Bring your own month
 
 1. Replace `verifier/links.csv` with your last 30 days (keep the header row).

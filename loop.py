@@ -22,6 +22,7 @@ Commands:
     python3 loop.py run 5          five rounds
     python3 loop.py final          step 9
     python3 loop.py status         the scores so far
+    python3 loop.py trace FILE     a raw trace, readable: every tool call and what came back
 """
 import csv
 import hashlib
@@ -424,6 +425,29 @@ def final():
                         f"(weeks 1 to 3: {start} to {best})")
 
 
+def show(trace):
+    """Print a raw trace the way a person reads it."""
+    short = lambda x, n: " ".join(str(x).split())[:n]
+    for e in events(Path(trace)):
+        if e.get("type") == "assistant":
+            for c in e["message"].get("content", []):
+                if c.get("type") == "text":
+                    print(f"\n  model:  {short(c['text'], 400)}")
+                elif c.get("type") == "tool_use":
+                    inp = c["input"]
+                    arg = inp.get("command") or inp.get("file_path") or inp.get("pattern") or json.dumps(inp)
+                    print(f"\n  {c['name']}:  {short(arg, 200)}")
+                    if c["name"] in ("Edit", "Write"):
+                        print(f"     + {short(inp.get('new_string') or inp.get('content', ''), 300)}")
+        elif e.get("type") == "user":
+            for c in e["message"].get("content", []):
+                if isinstance(c, dict) and c.get("type") == "tool_result":
+                    print(f"     -> {short(c.get('content'), 160)}")
+        elif e.get("type") == "result":
+            print(f"\n  done: {e.get('num_turns')} model steps, {tokens(e):,} tokens, "
+                  f"${e.get('total_cost_usd', 0):.3f}")
+
+
 def status():
     for r in rows():
         print(f"round {r['round']:>2}  {r['mean']:>6}  {r['verdict']:<9} {r['reason']}")
@@ -452,5 +476,7 @@ if __name__ == "__main__":
         final()
     elif cmd == "status":
         status()
+    elif cmd == "trace":
+        show(sys.argv[2])
     else:
         print(__doc__)
