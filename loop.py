@@ -194,9 +194,9 @@ def brief(week, folder, harness=HARNESS, run=None):
                     ["--tools", "Bash,Read,Write,Edit,Skill"])
     text = result.get("result") or ""
     # A wall, checked in code: a run that reached outside its folder does not count.
-    for name, inp in tool_inputs(trace):
+    for tool, inp in tool_inputs(trace):
         if re.search(r"verifier|traces/|optimizer|scores\.csv|\.\./", inp):
-            print(f"  week {week}: run thrown away, {name} reached outside harness/")
+            print(f"  {name}: run thrown away, {tool} reached outside harness/")
             text = ""
     (folder / f"{name}.brief.md").write_text(text)
     return text
