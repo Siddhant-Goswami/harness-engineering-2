@@ -207,6 +207,10 @@ def brief(week, folder, harness=HARNESS, run=None):
     text = result.get("result") or ""
     # A wall, checked in code: a run that reached outside its folder does not count.
     for tool, inp in tool_inputs(trace):
+        # Judge only what lies past the setup's own folder: `final` rebuilds the old setup
+        # under traces/, and Hermes reads by absolute path.
+        for home in {str(Path(harness)), str(Path(harness).resolve())}:
+            inp = inp.replace(home, "")
         if re.search(r"verifier|traces/|optimizer|scores\.csv|\.\./", inp):
             print(f"  {name}: run thrown away, {tool} reached outside harness/")
             text = ""
