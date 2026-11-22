@@ -275,7 +275,12 @@ def _hermes(role, prompt, cwd, trace, model, harness):
         subprocess.run(cmd, cwd=cwd, stdout=f, stderr=subprocess.DEVNULL, stdin=subprocess.DEVNULL,
                        timeout=TIMEOUT, env=dict(os.environ, HERMES_HOME=str(_hermes_home())))
 
-    out, text, steps, usage, pending, said = [], "", 0, {}, None, ""
+    return _hermes_trace(raw, trace, model)
+
+
+def _hermes_trace(raw, trace, model=""):
+    """Hermes's stream-json, rewritten in the shape every other trace has."""
+    out, text, steps, usage, pending, said = [], "", 0, {}, [], ""
 
     def flush():          # Hermes streams its words in pieces; the trace keeps one block per turn
         nonlocal said
@@ -293,12 +298,13 @@ def _hermes(role, prompt, cwd, trace, model, harness):
             inp = dict(e.get("input") or {})
             if "path" in inp:
                 inp["file_path"] = inp.pop("path")
-            pending = (HERMES_TOOLS.get(e.get("name"), e.get("name")), inp)
+            # Hermes often makes several calls at once and then returns their results in order,
+            # with no ids. Queue the calls; give each result to the oldest call of the same tool.
+            pending.append((e.get("name"), HERMES_TOOLS.get(e.get("name"), e.get("name")), inp))
         elif t == "tool_result" and pending:
-            output = e.get("output", "")
-            output = _unwrap(output)
-            _add(out, "tool", name=pending[0], input=pending[1], output=output)
-            pending = None
+            i = next((k for k, p in enumerate(pending) if p[0] == e.get("name")), 0)
+            _, name, inp = pending.pop(i)
+            _add(out, "tool", name=name, input=inp, output=_unwrap(e.get("output", "")))
         elif t == "result":
             text = e.get("text", "")
             tk = e.get("tokens", {})
@@ -306,8 +312,8 @@ def _hermes(role, prompt, cwd, trace, model, harness):
                      "cache_creation_input_tokens": tk.get("cache_write", 0),
                      "output_tokens": tk.get("output", 0)}
     flush()
-    if pending:
-        _add(out, "tool", name=pending[0], input=pending[1])
+    for _, name, inp in pending:        # calls that never got a result still count for the walls
+        _add(out, "tool", name=name, input=inp)
     out.append({"type": "result", "result": text, "num_turns": steps, "usage": usage,
                 "runner": "hermes", "model": model})
     _write(trace, out)
