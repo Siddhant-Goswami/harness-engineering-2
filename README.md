@@ -214,8 +214,8 @@ Round 1 was reverted ("fetch every link" made it cite everything: 0.739 to 0.504
 were kept: the reader's stack, measured findings count as news, cite the changelog not the recap.
 
 ```
-git log sample-run --oneline
-git diff sample-baseline sample-run -- harness
+git log origin/sample-run --oneline
+git diff sample-baseline origin/sample-run -- harness
 ```
 
 ## Bring your own month
