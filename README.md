@@ -9,7 +9,7 @@ https://100x-curriculum.vercel.app/harness-engineering-2/
 
 ## Start here
 
-Open Claude Code in an empty folder and paste this:
+Open Claude Code, Codex or Hermes in an empty folder and paste this:
 
 ```
 Clone https://github.com/Siddhant-Goswami/harness-engineering-2 and read its README.
@@ -17,12 +17,12 @@ Run `python3 loop.py prepare` and show me the table. Then walk me through Part 1
 one step at a time. Wait for me after each step. Do not label any link for me.
 ```
 
-You need Python 3.10 or newer and git. Part 2 also needs Claude Code installed and logged in.
+You need Python 3.10 or newer and git. Part 2 also needs one of the three harnesses installed and logged in.
 
 | | Works with | Costs |
 |---|---|---|
 | **Part 1**, by hand | Any chat tool: Claude, ChatGPT, Codex, Hermes | Nothing beyond your chat plan |
-| **Part 2**, the loop | Claude Code today (`loop.py` calls `claude -p`). A Codex runner is next. Hermes is untested. | About $1.50 on the sample month |
+| **Part 2**, the loop | Claude Code, Codex or Hermes (see [Pick your harness](#pick-your-harness)) | About $1.50 on the sample month with Claude Code |
 
 The repo ships with a made-up sample month, so every command works before you bring your own links.
 
@@ -117,6 +117,56 @@ python3 loop.py final
 It runs week four on the setup you started with and on the final one, and prints both
 scores. It runs once. A second look is not a hidden week any more.
 
+## Pick your harness
+
+The two model steps run in Claude Code unless you say otherwise. Everything else is plain
+Python and stays the same.
+
+```
+python3 loop.py baseline                      # Claude Code
+RUNNER=codex  python3 loop.py baseline        # Codex
+RUNNER=hermes python3 loop.py baseline        # Hermes
+```
+
+Set `RUNNER` once with `export RUNNER=codex` and every command after it uses Codex.
+
+| | Claude Code | Codex | Hermes |
+|---|---|---|---|
+| Install | `claude` logged in | `codex` logged in | `hermes` set up with a model |
+| Models | `sonnet` writes, `opus` optimizes | your Codex default | your Hermes default |
+| Change them | `BRIEF_MODEL=haiku` | `BRIEF_MODEL=... OPT_MODEL=...` | `HERMES_PROVIDER=anthropic BRIEF_MODEL=claude-sonnet-5-5`, or a local model |
+| Fence while it runs | permissions file: only `python3 tools/*`, edits only in `scratch/` | sandbox: writes only inside its folder | none: it can run any command |
+| Caught afterwards by code | all four walls | all four walls, plus edits a brief made to the setup | the same |
+| Reads your own setup? | no (`--setting-sources project`) | no: its own home in `.runner/`, your login only | no: its own home in `.runner/`, your login and model only |
+
+`loop.py` never asks Codex or Hermes to find `CLAUDE.md` themselves. It puts the folder's
+`CLAUDE.md`, with `sources.md` and `memory.md` filled in, at the top of the prompt. So one file
+is the setup for all three, and the optimizer's changes reach whichever harness you run next.
+
+Every run's trace is written in one shape, so `loop.py trace` and the optimizer read a Codex or
+Hermes run the same way. The tool's own log is kept next to it as `*.raw.jsonl`.
+
+Hermes runs with no fence, so run it on this repo and nothing else you care about. Its
+optimizer gets file tools only, no shell. Hermes normally asks a person before anyone edits a
+`CLAUDE.md`; the optimizer's job is exactly that edit, so the home in `.runner/hermes-home`
+turns that one question off. Your `~/.hermes` is not changed. The first Hermes run sets that
+home up and takes a few minutes.
+
+A small local model may not keep to the brief's format. The scorer will show you: every link
+it leaves out costs a point.
+
+One round on the sample, 22 November (three briefs per week, so treat these as rough):
+
+| | Baseline | After round 1 | Verdict |
+|---|---|---|---|
+| Codex (its default model) | 0.688 | 0.864 | kept |
+| Hermes (Claude Sonnet through Anthropic) | 0.671 | 0.893 | kept |
+
+Both optimizers found the same habit: the briefing agent picked what to read from titles.
+
+Do not compare scores across harnesses after one run. Each harness starts from its own
+baseline; compare its before and after.
+
 ## The loop
 
 | # | Step | Who acts |
@@ -141,7 +191,7 @@ scores. It runs once. A second look is not a hidden week any more.
 | The learning after each run | `failures.md`, written by you |
 | Traces | `traces/`: the raw log of every run (each tool call and what came back) |
 | The optimizer | `optimizer/CLAUDE.md`, the second agent |
-| `CLAUDE.md` | Rename to `AGENTS.md` for Codex or Hermes |
+| `CLAUDE.md` | The instructions. `loop.py` hands the same file to Codex and Hermes. By hand, copy it to `AGENTS.md` |
 
 ## How a brief is scored
 
@@ -180,6 +230,7 @@ The briefing agent has one wall: a run whose trace reaches outside `harness/` sc
 | `optimizer/` | The second agent's instructions, its journal, its permission requests | You (the journal is written by code) |
 | `failures.md` | Failures you saw yourself, tagged F1, F2... | You |
 | `loop.py` | The outer loop. Nine steps, two of them a model | You |
+| `agents.py` | Runs one agent in Claude Code, Codex or Hermes | You |
 | `codemode.py` | The same job run two ways: one tool call per item, or one script | You |
 | `traces/` | The raw trace of every run | Written by code |
 
@@ -247,7 +298,7 @@ python3 loop.py trace traces/round-0/week-1.run-1.jsonl  # what the briefing age
   habit of the setup; a miss in one run may be chance.
 - Kept rounds are the lucky ones, so the live score drifts a little high and later rounds
   find it harder to beat. The hidden week is where that luck gets checked.
-- `BRIEF_MODEL=haiku python3 loop.py ...` and `OPT_MODEL=sonnet ...` change the two models.
+- `BRIEF_MODEL=haiku python3 loop.py ...` and `OPT_MODEL=sonnet ...` change the two models (see [Pick your harness](#pick-your-harness)).
 
 ## Take-home
 

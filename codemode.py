@@ -13,7 +13,8 @@ from concurrent.futures import ThreadPoolExecutor
 
 import json
 
-from loop import BRIEF_MODEL, HARNESS, TRACES, claude, events, tokens
+from agents import BRIEF_MODEL, RUNNER, events, run as agent, tokens
+from loop import HARNESS, TRACES
 
 week = int(sys.argv[1]) if len(sys.argv) > 1 else 1
 WORD = "Kiln"
@@ -25,7 +26,7 @@ WAYS = {
                                "call. Do not write a script.",
     "one script": JOB + " Write ONE script that reads every link and prints only the matching "
                         "ids. The docstring of tools/fetch.py shows how to import it. Create the "
-                        "file with the Write tool as scratch/find.py, then run exactly "
+                        "file scratch/find.py, then run exactly "
                         "`python3 scratch/find.py`. Do not fetch links any other way.",
 }
 
@@ -45,7 +46,7 @@ def run(item):
     name, prompt = item
     t0 = time.time()
     trace = TRACES / "codemode" / f"{name.replace(' ', '-')}.jsonl"
-    r = claude(prompt, HARNESS, BRIEF_MODEL, trace, ["--tools", "Bash,Read,Write,Edit"])
+    r = agent("brief", prompt, HARNESS, trace, BRIEF_MODEL)
     return name, r, time.time() - t0, returned(trace)
 
 
@@ -61,4 +62,4 @@ sys.path.insert(0, str(HARNESS / "tools"))
 from fetch import get, ids  # noqa: E402
 truth = [i for i in ids(week) if WORD.lower() in get(i).lower()]
 print(f"{'plain code':<20}{0:>12}{0:>13,} chars{0:>9}{0:>9}   {', '.join(truth)}")
-print("\nRaw traces: traces/codemode/")
+print(f"\nRaw traces: traces/codemode/ ({RUNNER})")

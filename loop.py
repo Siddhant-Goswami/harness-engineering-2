@@ -25,6 +25,11 @@ Commands:
     python3 loop.py final          step 9
     python3 loop.py status         the scores so far
     python3 loop.py trace FILE     a raw trace, readable: every tool call and what came back
+
+The two MODEL steps run in Claude Code unless you pick another harness:
+
+    RUNNER=codex  python3 loop.py ...     OpenAI Codex CLI
+    RUNNER=hermes python3 loop.py ...     Hermes Agent, with whatever model it is set up for
 """
 import csv
 import hashlib
@@ -43,11 +48,10 @@ HARNESS, TRACES, OPTIMIZER = ROOT / "harness", ROOT / "traces", ROOT / "optimize
 sys.path.insert(0, str(ROOT / "verifier"))
 import score as verifier  # noqa: E402
 
-BRIEF_MODEL = os.environ.get("BRIEF_MODEL", "sonnet")   # writes the briefs
-OPT_MODEL = os.environ.get("OPT_MODEL", "opus")         # proposes the changes
+from agents import BRIEF_MODEL, OPT_MODEL, RUNNER, events, tokens, tool_inputs  # noqa: E402
+from agents import run as run_agent  # noqa: E402
 RUNS = int(os.environ.get("RUNS", "3"))  # briefs per week; the score is their mean
 MIN_GAIN = 0.02      # a change must beat the current score by this much to stay
-MAX_TURNS = 40
 SCORES = ROOT / "scores.csv"
 OPENED = ROOT / "verifier" / "week4-opened.json"
 WEEKS = verifier.VISIBLE_WEEKS
@@ -58,48 +62,6 @@ WEEKS = verifier.VISIBLE_WEEKS
 def git(*args, check=True):
     return subprocess.run(["git", *args], cwd=ROOT, check=check,
                           capture_output=True, text=True).stdout.strip()
-
-
-def claude(prompt, cwd, model, trace, extra=()):
-    """One headless Claude Code run. The raw trace goes to a file; the result comes back."""
-    trace.parent.mkdir(parents=True, exist_ok=True)
-    cmd = ["claude", "-p", prompt, "--model", model,
-           "--output-format", "stream-json", "--verbose",
-           "--setting-sources", "project",      # this folder's rules only, not your own
-           "--settings", str(HARNESS / ".claude" / "settings.json"),
-           "--strict-mcp-config",               # no connectors
-           "--permission-mode", "dontAsk",      # anything not allowed is refused
-           "--no-session-persistence", "--max-turns", str(MAX_TURNS), *extra]
-    with open(trace, "w") as out:
-        subprocess.run(cmd, cwd=cwd, stdout=out, stderr=subprocess.DEVNULL,
-                       stdin=subprocess.DEVNULL, timeout=1200)
-    result = {}
-    for e in events(trace):
-        if e.get("type") == "result":
-            result = e
-    return result
-
-
-def events(trace):
-    for line in open(trace):
-        try:
-            yield json.loads(line)
-        except json.JSONDecodeError:
-            pass
-
-
-def tool_inputs(trace):
-    for e in events(trace):
-        if e.get("type") == "assistant":
-            for c in e["message"].get("content", []):
-                if c.get("type") == "tool_use":
-                    yield c["name"], json.dumps(c.get("input", {}))
-
-
-def tokens(result):
-    u = result.get("usage", {})
-    return (u.get("input_tokens", 0) + u.get("cache_read_input_tokens", 0)
-            + u.get("cache_creation_input_tokens", 0) + u.get("output_tokens", 0))
 
 
 def folder_hash(*folders):
@@ -241,8 +203,7 @@ def brief(week, folder, harness=HARNESS, run=None):
     """MODEL. The briefing agent writes one week's brief."""
     name = f"week-{week}" + (f".run-{run}" if run else "")
     trace = folder / f"{name}.jsonl"
-    result = claude(brief_prompt(week), harness, BRIEF_MODEL, trace,
-                    ["--tools", "Bash,Read,Write,Edit,Skill"])
+    result = run_agent("brief", brief_prompt(week), harness, trace, BRIEF_MODEL, harness)
     text = result.get("result") or ""
     # A wall, checked in code: a run that reached outside its folder does not count.
     for tool, inp in tool_inputs(trace):
@@ -264,10 +225,22 @@ def many(weeks, folder, harness=HARNESS):
     return out
 
 
+def put_back():
+    """A briefing run may write in scratch/ only. Codex and Hermes are not fenced the way
+    Claude Code is, so after each batch plain code puts back anything else they changed."""
+    changed = [l[3:] for l in git("status", "--porcelain", "-uall", "--", "harness").splitlines()
+               if not l[3:].startswith("harness/scratch/")]
+    if changed:
+        print(f"  a briefing run changed {', '.join(changed)}: put back")
+        git("checkout", "--", "harness", check=False)
+        git("clean", "-fdq", "--", *changed, check=False)
+
+
 def briefs_and_scores(folder):
     """Steps 2 and 3 for the visible weeks, RUNS times each."""
-    print(f"  writing {RUNS * len(WEEKS)} briefs ({RUNS} per week)...")
+    print(f"  writing {RUNS * len(WEEKS)} briefs ({RUNS} per week, {RUNNER})...")
     briefs = many(WEEKS, folder)
+    put_back()
     scores = [verifier.score_runs(w, briefs[w]) for w in WEEKS]
     (folder / "scores.json").write_text(json.dumps(scores, indent=1))
     print(verifier.table(scores))
@@ -321,15 +294,8 @@ def report(n, folder):
 
 def optimize(n, folder):
     """MODEL. In its own context: reads traces, changes one thing, says why."""
-    h = HARNESS.as_posix()
-    result = claude(
-        f"Round {n}. Start from ../traces/round-{n}/report.md.",
-        OPTIMIZER, OPT_MODEL, folder / "optimizer.jsonl",
-        ["--tools", "Read,Grep,Glob,Edit,Write",
-         "--add-dir", str(HARNESS), str(TRACES),
-         "--allowedTools", f"Read(/{h}/**)", f"Read(/{TRACES.as_posix()}/**)",
-         f"Edit(/{h}/**)", f"Edit(/{OPTIMIZER.as_posix()}/proposals.md)",
-         "--disallowedTools", f"Edit(/{h}/.claude/settings.json)"])
+    result = run_agent("optimizer", f"Round {n}. Start from ../traces/round-{n}/report.md.",
+                       OPTIMIZER, folder / "optimizer.jsonl", OPT_MODEL)
     text = result.get("result") or ""
     find = lambda key: (re.findall(rf"(?m)^{key}:\s*(.+)$", text) or ["(none given)"])[-1].strip()
     return find("REASON"), find("PREDICT")
@@ -485,17 +451,21 @@ def show(trace):
                     print(f"\n  model:  {short(c['text'], 400)}")
                 elif c.get("type") == "tool_use":
                     inp = c["input"]
-                    arg = inp.get("command") or inp.get("file_path") or inp.get("pattern") or json.dumps(inp)
+                    arg = (inp.get("command") or inp.get("file_path") or inp.get("pattern")
+                           or json.dumps(inp))
                     print(f"\n  {c['name']}:  {short(arg, 200)}")
                     if c["name"] in ("Edit", "Write"):
-                        print(f"     + {short(inp.get('new_string') or inp.get('content', ''), 300)}")
+                        new = inp.get("new_string") or inp.get("content") or inp.get("patch")
+                        print(f"     + {short(new, 300)}" if new else
+                              f"     ({inp.get('kind', 'changed')}; Codex logs no text: run git diff)")
         elif e.get("type") == "user":
             for c in e["message"].get("content", []):
                 if isinstance(c, dict) and c.get("type") == "tool_result":
                     print(f"     -> {short(c.get('content'), 160)}")
         elif e.get("type") == "result":
-            print(f"\n  done: {e.get('num_turns')} model steps, {tokens(e):,} tokens, "
-                  f"${e.get('total_cost_usd', 0):.3f}")
+            cost = f", ${e['total_cost_usd']:.3f}" if "total_cost_usd" in e else ""
+            print(f"\n  done: {e.get('num_turns')} model steps, {tokens(e):,} tokens{cost}"
+                  + (f" ({e['runner']})" if e.get("runner") else ""))
 
 
 def status():
