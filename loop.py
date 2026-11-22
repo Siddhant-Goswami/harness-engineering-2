@@ -16,6 +16,8 @@ Nine steps. Two of them call a model (marked MODEL). The rest is plain code.
 Commands:
 
     python3 loop.py prepare        step 1
+    python3 loop.py blank          by hand: your weeks 1-3 links with the labels removed
+    python3 loop.py compare FILE   by hand: where a model's labels differ from yours
     python3 loop.py brief 1        one brief, printed (no scoring)
     python3 loop.py baseline       steps 2-3 on the setup as it is now; tags it `baseline`
     python3 loop.py round          steps 4-8, once
@@ -174,6 +176,54 @@ def prepare():
         print(f"  {w}    {len(wk):>4}   {n('acted'):>4}   {n('should_have'):>10}   "
               f"{n('noise'):>4}   {n(''):>11}   {sum(d['week'] == w for d in decisions):>8}"
               + ("   (hidden)" if w == verifier.HIDDEN_WEEK else ""))
+
+
+# ---------------------------------------------------------------- by hand
+
+BLANK = ROOT / "manual" / "links-blank.csv"
+
+
+def blank():
+    """Your links for weeks 1 to 3 with the label column empty, to hand to any model."""
+    BLANK.parent.mkdir(exist_ok=True)
+    cols = ["id", "date", "source", "title", "url", "label"]
+    links = [r for r in verifier.load_links() if r["week"] in WEEKS]
+    with open(BLANK, "w", newline="") as f:
+        out = csv.DictWriter(f, cols, extrasaction="ignore")
+        out.writeheader()
+        out.writerows(dict(r, label="") for r in links)
+    print(f"{len(links)} links, no labels: {BLANK.relative_to(ROOT)}")
+    print("Week four is left out so it stays hidden.")
+    print("Give the file to a model, ask it to fill the label column with signal or noise,")
+    print("save its answer as manual/links-model.csv, then:")
+    print("    python3 loop.py compare manual/links-model.csv")
+
+
+def compare(path):
+    """Where a model's signal/noise labels differ from yours. You write the lesson."""
+    mine = {r["id"]: r for r in verifier.load_links() if r["week"] in WEEKS and r["label"]}
+    with open(path, newline="") as f:
+        theirs = {(r.get("id") or "").strip(): verifier._label(r.get("label"))
+                  for r in csv.DictReader(f)}
+    side = lambda label: "noise" if label == "noise" else "signal"
+    judged = {i: r for i, r in mine.items() if theirs.get(i)}
+    if not judged:
+        raise SystemExit("No row in that file has an id (L001...) and a label of signal or noise.")
+    missed = [r for i, r in judged.items() if side(r["label"]) == "signal" and theirs[i] == "noise"]
+    extra = [r for i, r in judged.items() if side(r["label"]) == "noise" and theirs[i] != "noise"]
+    agree = len(judged) - len(missed) - len(extra)
+    print(f"agreed on {agree} of {len(judged)} links ({agree / len(judged):.0%})")
+    if len(judged) < len(mine):
+        print(f"{len(mine) - len(judged)} of your labelled links had no label in that file")
+    for title, group in (("You acted on these. The model called them noise:", missed),
+                         ("Noise to you. The model called them signal:", extra)):
+        if group:
+            print(f"\n{title}")
+            for r in group:
+                print(f"  {r['id']}  {r['source']}: {r['title']}")
+    if missed or extra:
+        print("\nPick the mistake that repeats. Write it in failures.md (what you saw, what you")
+        print("expected), then add one rule about that kind of link to harness/CLAUDE.md.")
 
 
 # ---------------------------------------------------------------- step 2
@@ -457,6 +507,10 @@ if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
     if cmd == "prepare":
         prepare()
+    elif cmd == "blank":
+        blank()
+    elif cmd == "compare":
+        compare(sys.argv[2])
     elif cmd == "brief":
         w = int(sys.argv[2])
         if w not in WEEKS:

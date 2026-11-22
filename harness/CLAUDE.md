@@ -21,5 +21,9 @@ D3: ignore
 
 Your reply is the brief. Write nothing before or after it.
 
+Work only in this folder. Do not list or read anything above it: a run that does is thrown
+away. A tag in brackets after a rule, like (F1) or (R2), is a note for the person who wrote
+the rule. It needs no lookup.
+
 @sources.md
 @memory.md

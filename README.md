@@ -4,38 +4,118 @@ One agent writes you a weekly brief from the links you saved. A second agent rea
 first one's mistakes and changes its setup, one commit at a time. Plain code decides
 whether each change stays. One week of your labels stays hidden until the end.
 
-It ships with a fictional sample month so every command works before you bring your own data.
+This is the repo from the masterclass. The session notes are at
+https://100x-curriculum.vercel.app/harness-engineering-2/
 
-## The sample month
+## Start here
 
-100 links over four weeks, 8 decisions, all made up. The reader runs a support agent on
-**Kiln** (harness), **Orchard** (models) and **Postgres with Vecstore** (database). Nothing in
-the harness says so. The loop has to learn it from the labels.
+Open Claude Code in an empty folder and paste this:
 
-Every week has the same five traps, so a rule learned on weeks 1 to 3 can pay off on week 4:
+```
+Clone https://github.com/Siddhant-Goswami/harness-engineering-2 and read its README.
+Run `python3 loop.py prepare` and show me the table. Then walk me through Part 1,
+one step at a time. Wait for me after each step. Do not label any link for me.
+```
 
-| Trap | Example | Label |
+You need Python 3.10 or newer and git. Part 2 also needs Claude Code installed and logged in.
+
+| | Works with | Costs |
 |---|---|---|
-| Urgent news about a tool the reader does not use | "Advisory: Anvil plugin sandbox escape, patch now" | noise |
-| A newsletter recap of a changelog | "Script mode explained: what Kiln 2.4 means for you" | noise |
-| A dull title hiding a breaking change | "Vecstore 0.7.3" (new indexes switch distance metric) | acted |
-| A thread with real measurements | "I timed every hook in 40 Kiln projects" | should have |
-| A big-name post unrelated to the reader | "Our new image model draws hands correctly" | noise |
+| **Part 1**, by hand | Any chat tool: Claude, ChatGPT, Codex, Hermes | Nothing beyond your chat plan |
+| **Part 2**, the loop | Claude Code today (`loop.py` calls `claude -p`). A Codex runner is next. Hermes is untested. | About $1.50 on the sample month |
 
-To change it, edit `verifier/sample/make_sample.py` and run it.
+The repo ships with a made-up sample month, so every command works before you bring your own links.
 
-## What is in the folder
+## Part 1: by hand
 
-| Path | What it is | Who may change it |
-|---|---|---|
-| `harness/` | The briefing agent's setup: `CLAUDE.md`, `sources.md`, `memory.md`, `tools/`, skills | You and the optimizer |
-| `harness/.claude/settings.json` | What the briefing agent is allowed to run | You only |
-| `verifier/` | Your labels, your decisions, the scoring code | You only, before any agent runs |
-| `optimizer/` | The second agent's instructions, its journal, its permission requests | You (the journal is written by code) |
-| `failures.md` | Failures you saw yourself, tagged F1, F2... | You |
-| `loop.py` | The outer loop. Nine steps, two of them a model | You |
-| `codemode.py` | The same job run two ways | You |
-| `traces/` | The raw trace of every run | Written by code |
+This is the part no agent can do for you. It is also what the session spent its time on.
+
+**1. Get your saved links from 30 to 60 days ago.** Not yesterday's: you cannot yet tell
+whether those helped. Give a tool that can use your browser this prompt:
+
+```
+Open my bookmarks on X. For every post I saved in the last 60 days, write one row:
+date saved, who posted it, the topic in one line, and the link.
+Give me a CSV with the columns: date, source, title, url, label.
+Leave the label column empty. Do not judge the posts.
+```
+
+Use the same prompt for Instagram, YouTube or Reddit saves, or your browser history.
+
+**2. Label every row yourself.** Put the CSV at `verifier/links.csv` and fill the last column.
+
+| Label | Meaning |
+|---|---|
+| `signal` | You acted on it and it helped. (`acted` means the same.) |
+| `should have` | You did not act and now wish you had. Optional. |
+| `noise` | You never used it. |
+
+An empty label is fine: the agent sees the link and it is never scored.
+
+**3. Optional: write your decisions** in `verifier/decisions.csv`:
+`date, question, outcome, how_it_turned_out`. The outcome is `adopt`, `wait` or `ignore`.
+
+**4. Let a model label the same links, blind.**
+
+```
+python3 loop.py prepare
+python3 loop.py blank
+```
+
+`blank` writes `manual/links-blank.csv`: your first three weeks with the labels removed.
+Give that file to any model with one line: "Fill the label column with signal or noise."
+Save its answer as `manual/links-model.csv`.
+
+**5. Compare.**
+
+```
+python3 loop.py compare manual/links-model.csv
+```
+
+It prints how many links you agreed on and lists each disagreement.
+
+**6. Write down the mistake that repeats.** In `failures.md`: what you saw, what you
+expected. Then add one rule about that kind of link to `harness/CLAUDE.md`, with the
+tag, like `(F1)`. Go back to step 4. Stop when the disagreements stop teaching you anything.
+
+In the session this was "the learning after run 1, run 2...". Those notes are the
+record of how you judge. Part 2 hands the same job to a second agent.
+
+## Part 2: the loop
+
+**The first agent.** Read `harness/CLAUDE.md`. Then run it on week one and score the brief.
+
+```
+python3 loop.py brief 1
+python3 verifier/score.py traces/try
+```
+
+**Record where you start.** Commit your hand-written rules, then:
+
+```
+git commit -am "F1: ..."
+python3 loop.py baseline
+```
+
+**The second agent.** Read `optimizer/CLAUDE.md`. Then let it work. One round takes about 90 seconds.
+
+```
+python3 loop.py round      # one round: steps 4 to 8 below
+python3 loop.py run 3      # three rounds
+python3 loop.py status
+git log --oneline
+```
+
+Do not edit files while `run` is going. The check in step 6 will blame the optimizer and revert them.
+
+**The hidden week.**
+
+```
+python3 loop.py final
+```
+
+It runs week four on the setup you started with and on the final one, and prints both
+scores. It runs once. A second look is not a hidden week any more.
 
 ## The loop
 
@@ -51,58 +131,17 @@ To change it, edit `verifier/sample/make_sample.py` and run it.
 | 8 | Keep the change if the score rose, else revert | code |
 | 9 | After the last round, open week four once | code |
 
-## Run it, in session order
+## Words from the session
 
-You need Claude Code installed and logged in, Python 3.10 or newer, and git.
-
-**Label (minutes 10 to 20).** Open `verifier/links.csv`. One row per saved link:
-`date, source, title, url, label`. The label is `acted`, `should have` or `noise`.
-A row with no label is shown to the agent and never scored. Then:
-
-```
-python3 loop.py prepare
-```
-
-**First agent (20 to 35).** Read `harness/CLAUDE.md`, then run it on week one and read the brief.
-
-```
-python3 loop.py brief 1
-python3 verifier/score.py traces/try
-```
-
-Write what went wrong in `failures.md`.
-
-**Code mode (35 to 45).**
-
-```
-python3 codemode.py
-```
-
-**Fix one by hand (45 to 60).** Add one rule to `harness/CLAUDE.md`, tagged `(F1)`. Commit. Then
-record where you started:
-
-```
-git commit -am "F1: ..."
-python3 loop.py baseline
-```
-
-**The optimizer and the gate (60 to 75).**
-
-```
-python3 loop.py round      # one round: steps 4 to 8
-python3 loop.py run 3      # three rounds
-python3 loop.py status
-git log --oneline
-```
-
-**The hidden week (75 to 85).**
-
-```
-python3 loop.py final
-```
-
-It runs week four on the baseline setup and on the final one, and prints both scores next to
-the visible weeks. It runs once. A second look is not a hidden week any more.
+| Said in the session | In this repo |
+|---|---|
+| Verifier | `verifier/`: your labels, your decisions, `score.py` |
+| Signal / noise | The `label` column in `verifier/links.csv` |
+| The brief | What `python3 loop.py brief 1` prints |
+| The learning after each run | `failures.md`, written by you |
+| Traces | `traces/`: the raw log of every run (each tool call and what came back) |
+| The optimizer | `optimizer/CLAUDE.md`, the second agent |
+| `CLAUDE.md` | Rename to `AGENTS.md` for Codex or Hermes |
 
 ## How a brief is scored
 
@@ -112,6 +151,9 @@ Open `verifier/score.py`. Three numbers at the top are yours to tune.
 score = (links found + 2 x decisions right - 0.5 x noise called important)
         / (links that mattered + 2 x decisions)
 ```
+
+The week from the session: 7 of 9 links found, 2 of 2 decisions right, 3 noise items
+called important. (7 + 4 - 1.5) / (9 + 4) = 0.73.
 
 - A link is "found" when its id, like `[L014]`, appears under **What changed** or **What to do**.
 - Links under **Who disagrees** are not scored either way.
@@ -128,39 +170,71 @@ Checked by code after the optimizer finishes. A change that crosses one is throw
 
 The briefing agent has one wall: a run whose trace reaches outside `harness/` scores zero.
 
-## Read a trace
+## What is in the folder
+
+| Path | What it is | Who may change it |
+|---|---|---|
+| `harness/` | The briefing agent's setup: `CLAUDE.md`, `sources.md`, `memory.md`, `tools/`, skills | You and the optimizer |
+| `harness/.claude/settings.json` | What the briefing agent is allowed to run | You only |
+| `verifier/` | Your labels, your decisions, the scoring code | You only, before any agent runs |
+| `optimizer/` | The second agent's instructions, its journal, its permission requests | You (the journal is written by code) |
+| `failures.md` | Failures you saw yourself, tagged F1, F2... | You |
+| `loop.py` | The outer loop. Nine steps, two of them a model | You |
+| `codemode.py` | The same job run two ways: one tool call per item, or one script | You |
+| `traces/` | The raw trace of every run | Written by code |
+
+## The sample month
+
+100 links over four weeks, 8 decisions, all made up, including the product names. The reader
+runs a support agent on **Kiln** (harness), **Orchard** (models) and **Postgres with Vecstore**
+(database). Nothing in the harness says so. The loop has to learn it from the labels.
+
+Every week has the same five traps, so a rule learned on weeks 1 to 3 can pay off on week 4:
+
+| Trap | Example | Label |
+|---|---|---|
+| Urgent news about a tool the reader does not use | "Advisory: Anvil plugin sandbox escape, patch now" | noise |
+| A newsletter recap of a changelog | "Script mode explained: what Kiln 2.4 means for you" | noise |
+| A dull title hiding a breaking change | "Vecstore 0.7.3" (new indexes switch distance metric) | acted |
+| A thread with real measurements | "I timed every hook in 40 Kiln projects" | should have |
+| A big-name post unrelated to the reader | "Our new image model draws hands correctly" | noise |
+
+To change it, edit `verifier/sample/make_sample.py` and run it.
+
+### A finished run on the sample
+
+The branch `sample-run` holds a finished run, so you can read one without paying for it.
+
+| | before | after 4 rounds |
+|---|---|---|
+| weeks 1 to 3 | 0.739 | 0.991 |
+| week 4 (hidden) | 0.666 | 0.949 |
+
+Round 1 was reverted ("fetch every link" made it cite everything: 0.739 to 0.504). Rounds 2 to 4
+were kept: the reader's stack, measured findings count as news, cite the changelog not the recap.
 
 ```
-python3 loop.py trace traces/round-2/optimizer.jsonl     # what the optimizer looked at and changed
-python3 loop.py trace traces/round-0/week-1.run-1.jsonl  # what the briefing agent fetched and wrote
+git log sample-run --oneline
+git diff sample-baseline sample-run -- harness
 ```
-
-## The explainer video
-
-`explainer/` builds a 3-minute narrated walkthrough of this repo: the loop, the sample month,
-the recorded run, and the three test passes. The narration lives in `explainer/build.py`, the
-visuals in `explainer/src/template.html`; every number on screen comes from the `sample-run` branch.
-
-```
-cd explainer
-python3 build.py                                  # voices changed lines (local Kokoro voice), writes index.html
-npx hyperframes render -o harness-2-explainer.mp4 # about 2 minutes
-```
-
-The voice needs `kokoro-onnx` and `soundfile` in `~/.cache/hyperframes/tts-venv` (see `PY` in build.py).
-The video and audio are not committed; rebuild them.
 
 ## Bring your own month
 
-1. Replace `verifier/links.csv` with your last 30 days (keep the header row).
-2. Replace `verifier/decisions.csv` with five decisions: `date, question, outcome, how_it_turned_out`.
-   The outcome is `adopt`, `wait` or `ignore`.
+1. Replace `verifier/links.csv` with your labelled links (keep the header row).
+2. Replace `verifier/decisions.csv` with your decisions, or leave only its header row.
 3. Delete `verifier/sample/`, `harness/sources.md` and `harness/cache/`.
 4. `python3 loop.py prepare`
 
 Days 22 onward become week four. Pages are fetched the first time the agent reads them and
 kept in `harness/cache/`, so a week reads the same on every run. Links behind a login
 (X, LinkedIn) come back as title only.
+
+## Read a trace
+
+```
+python3 loop.py trace traces/round-2/optimizer.jsonl     # what the optimizer looked at and changed
+python3 loop.py trace traces/round-0/week-1.run-1.jsonl  # what the briefing agent fetched and wrote
+```
 
 ## Things to know before you trust a number
 
@@ -174,22 +248,11 @@ kept in `harness/cache/`, so a week reads the same on every run. Links behind a 
 - Kept rounds are the lucky ones, so the live score drifts a little high and later rounds
   find it harder to beat. The hidden week is where that luck gets checked.
 - `BRIEF_MODEL=haiku python3 loop.py ...` and `OPT_MODEL=sonnet ...` change the two models.
-- The branch `sample-run` holds a finished run on the sample, the pre-recorded backup for the
-  session (its raw traces are in `traces-sample-run/`, not in git):
-
-  | | before | after 4 rounds |
-  |---|---|---|
-  | weeks 1 to 3 | 0.739 | 0.991 |
-  | week 4 (hidden) | 0.666 | 0.949 |
-
-  Round 1 was reverted ("fetch every link" made it cite everything: 0.739 to 0.504). Rounds 2 to 4
-  were kept: the reader's stack, measured findings count as news, cite the changelog not the recap.
-  `git log sample-run --oneline` and `git diff sample-baseline sample-run -- harness` show it.
 
 ## Take-home
 
-1. Label all 30 days and write your five decisions.
+1. Label 30 days of your own links. Do Part 1 at least three times round.
 2. `python3 loop.py run 5`, then `python3 loop.py final`.
-3. Submit `git log --oneline` and both scores, before and after.
+3. Keep `git log --oneline` and both scores, before and after.
 4. One paragraph for a non-engineer: why did a change help the weeks the loop saw and not the hidden one?
 5. Name one change you would never have written yourself, and one you rejected on review even though the score rose.

@@ -5,3 +5,7 @@ harness/scratch/
 __pycache__/
 .DS_Store
 traces-sample-run/
+manual/
+facilitator/
+explainer/
+deck/

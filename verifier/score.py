@@ -25,8 +25,8 @@ SIGNAL = {"acted", "should_have"}
 
 def _label(raw):
     s = (raw or "").strip().lower()
-    if s.startswith("act"):
-        return "acted"
+    if s.startswith("act") or s.startswith("signal"):
+        return "acted"  # "signal" is the word used in the session; it means the same
     if s.startswith("should"):
         return "should_have"
     if s.startswith("noise"):
