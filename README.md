@@ -9,13 +9,26 @@ https://100x-curriculum.vercel.app/harness-engineering-2/
 
 ## Start here
 
-Open Claude Code, Codex or Hermes in an empty folder and paste this:
+Clone the repo in your own terminal:
 
 ```
-Clone https://github.com/Siddhant-Goswami/harness-engineering-2 and read its README.
-Run `python3 loop.py prepare` and show me the table. Then walk me through Part 1,
-one step at a time. Wait for me after each step. Do not label any link for me.
+git clone https://github.com/Siddhant-Goswami/harness-engineering-2
+cd harness-engineering-2
 ```
+
+Then open Claude Code, Codex or Hermes in that folder and paste this:
+
+```
+Read the README. Run `python3 loop.py prepare` and show me the table.
+Then walk me through Part 1, one step at a time. Wait for me after each step.
+Do not label any link for me.
+```
+
+Clone it yourself rather than asking the agent to: Codex's sandbox has no network by default,
+so a clone from inside Codex fails.
+
+A step-by-step tutorial with screenshots for all three harnesses:
+https://100x-curriculum.vercel.app/harness-engineering-2/tutorial/
 
 You need Python 3.10 or newer and git. Part 2 also needs one of the three harnesses installed and logged in.
 
@@ -34,7 +47,7 @@ This is the part no agent can do for you. It is also what the session spent its 
 whether those helped. Give a tool that can use your browser this prompt:
 
 ```
-Open my bookmarks on X. For every post I saved in the last 60 days, write one row:
+Open my bookmarks on X. For every post I saved 30 to 60 days ago, write one row:
 date saved, who posted it, the topic in one line, and the link.
 Give me a CSV with the columns: date, source, title, url, label.
 Leave the label column empty. Do not judge the posts.
