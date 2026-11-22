@@ -1,0 +1,36 @@
+<section id="codemode" data-transition="fade">
+<p class="kicker">35 to 45 min · The same job, two ways</p>
+<h2>Which links mention the word Kiln?</h2>
+<div class="row">
+<div class="card grow model" style="--i:0">
+<p class="label tm">Way one · one call per link</p>
+<p class="big">24</p><p class="cb-ink">model steps</p>
+<p class="ct" style="margin-top:8px">10,767 characters</p><p class="cb-ink">of pages read by the model</p>
+</div>
+<div class="card grow code" style="--i:1">
+<p class="label tc">Way two · one script</p>
+<p class="big">4</p><p class="cb-ink">model steps</p>
+<p class="ct" style="margin-top:8px">2,989 characters</p><p class="cb-ink">read by the model. The script read the rest.</p>
+</div>
+<div class="col" style="width:440px">
+<div class="card" style="--i:2"><p class="label">Same answer both ways</p><p class="cb-ink mono">L002, L005, L008, L011</p></div>
+<p class="cmd">python3 codemode.py</p>
+<p class="chip named fragment">Named: code mode</p>
+</div>
+</div>
+<aside>TIME: minute 35 to 45.
+
+Run python3 codemode.py live. It takes about 15 seconds and prints a three-row table: one call per link, one script, and plain code as the ground truth. The numbers on the slide are from my run on week one of the sample; yours will differ a little. Read YOUR numbers, not the slide’s.
+
+Before running, ASK: “The agent has to look at 25 pages to answer this. How many times does the model need to think?” Take guesses.
+
+Way one: the agent calls the fetch tool for each link. Every page passes back through the model. Way two: the agent writes one short script. The script reads every page; only the matching ids come back. The model decided what program to write, and nothing else.
+
+CLICK: the name is code mode. Anthropic and Cloudflare both published it as a way to cut context use.
+
+Two reasons it matters today, beyond saving tokens:
+1. It is “move purple to orange” from the C7 lecture, done by the agent itself. The loop and the filter become ordinary code.
+2. A script that worked can be saved as a skill. That is the smallest form of a harness improving itself, and the optimizer is allowed to do it.
+
+HONEST NOTE: the token column in the terminal moves much less than the characters column, because the sample pages are tiny and the fixed system prompt dominates. On real pages of several thousand characters the gap is large. Do not quote Cloudflare’s 81% figure unless you have re-checked the source.</aside>
+</section>

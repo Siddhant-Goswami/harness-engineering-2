@@ -1,0 +1,31 @@
+<section id="byhand" data-transition="fade">
+<p class="kicker">45 to 60 min · Fix one, the 101 way</p>
+<h2>One failure, one rule, one commit</h2>
+<div class="row">
+<div class="card grow" style="--i:0">
+<p class="label">harness/CLAUDE.md · add one line</p>
+<p class="cb-ink mono"><span class="ty">+ The reader does not use Anvil. News about tools</span></p>
+<p class="cb-ink mono"><span class="ty">+ they do not use is not an action item. (F1)</span></p>
+<p class="cb" style="margin-top:12px">The tag ties the rule to the failure that caused it. A tagged rule can be reworded later, never deleted.</p>
+</div>
+<div class="col" style="width:640px">
+<p class="cmd">git commit -am "F1: ..."<br>python3 loop.py baseline</p>
+<div class="card you" style="--i:1"><p class="label ty">That was you</p><p class="cb-ink">You read the brief, found the cause, wrote the rule and checked it.</p></div>
+</div>
+</div>
+<div class="spacer"></div>
+<p class="statement fragment">Who fixes the next twenty?</p>
+<aside>TIME: minute 45 to 52.
+
+Take one failure from the room’s failure log and fix it by hand, exactly the way 101 taught. Add ONE rule to harness/CLAUDE.md and end it with the tag from the log, (F1). Commit it.
+
+Then run python3 loop.py baseline. This runs every visible week three times (nine briefs, about 20 seconds), prints a score table, and tags this commit as “baseline”. Everything after this is measured against it. On the sample, the untouched first setup scores about 0.74; with a hand fix yours will be a little higher.
+
+Read the table with the room. Point at the low-to-high column: the same setup gives different scores on different runs. Park that; we come back to it at minute 65.
+
+Narrate what you just did as four jobs: you read the output, you found the cause, you wrote the rule, you checked it worked. Each one took your attention.
+
+CLICK: “Who fixes the next twenty?” Pause here. This is the turn of the session. Their failure log already has more entries than anyone wants to fix by hand.
+
+ASK: “Which of those four jobs could a second agent do? Which would you never hand over?” Steer to: reading, finding the cause and proposing the rule can be handed over. Deciding whether it worked cannot be left to the same agent, and neither can loosening its own permissions.</aside>
+</section>

@@ -1,0 +1,26 @@
+<section id="run" data-transition="fade">
+<p class="kicker">The recorded run</p>
+<h2>Weeks 1 to 3, average of three runs each</h2>
+<div class="bars">
+<div class="barrow"><div class="barname"><p class="bn">Start</p><p class="bs">the setup as written</p></div><div class="bartrack"><div class="bar" style="width:73.9%; --i:0"></div></div><p class="barval">0.739</p></div>
+<div class="barrow"><div class="barname"><p class="bn">Round 1</p><p class="bs">fetch every link</p></div><div class="bartrack"><div class="bar bar-rev" style="width:50.4%; --i:1"></div></div><p class="barval">0.504</p><p class="chip noise">reverted</p></div>
+<div class="barrow"><div class="barname"><p class="bn">Round 2</p><p class="bs">learn the reader’s tools</p></div><div class="bartrack"><div class="bar bar-kept" style="width:93.2%; --i:2"></div></div><p class="barval">0.932</p><p class="chip kept">kept</p></div>
+<div class="barrow"><div class="barname"><p class="bn">Round 3</p><p class="bs">measured findings are news</p></div><div class="bartrack"><div class="bar bar-kept" style="width:96.6%; --i:3"></div></div><p class="barval">0.966</p><p class="chip kept">kept</p></div>
+<div class="barrow"><div class="barname"><p class="bn">Round 4</p><p class="bs">cite the changelog, not the recap</p></div><div class="bartrack"><div class="bar bar-kept" style="width:99.1%; --i:4"></div></div><p class="barval">0.991</p><p class="chip kept">kept</p></div>
+</div>
+<p class="lead">Round 1 is the lesson: “read everything” made it cite everything, and the noise penalty caught it.</p>
+<aside>TIME: minute 70 to 75. Use this whether or not the live run went well: it is the same loop on the same sample, run earlier.
+
+Walk the rounds top to bottom.
+
+Round 1: the optimizer saw that every miss was a link the agent never opened. Its fix: fetch every link before choosing. Reasonable! But once it had read everything, it cited everything, and the score fell to 0.504. The gate reverted it. This is why the noise penalty exists, and it is the best moment of the session: a sensible-sounding change that a human might have kept.
+
+Round 2: it grepped the traces and noticed the agent kept listing advisories for Anvil and Quill DB as action items. It wrote a “reader’s stack” section into sources.md: uses Kiln, Orchard, Vecstore on Postgres; does not use Anvil, Quill DB, Gemstone, MySQL, Fern.js. Score 0.932. Nobody told it the reader’s stack. It worked that out from the labels.
+
+Round 3: a measured study that compares two ways of working is news, even when no product changed. Round 4: cite the changelog, never the newsletter recap of it.
+
+Show the real diff if there is time:
+git diff sample-baseline sample-run -- harness
+
+ASK: “Which of these would you have written yourself? Which would you reject on review even though the score went up?” This is a take-home question; plant it now.</aside>
+</section>

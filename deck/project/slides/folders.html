@@ -1,0 +1,34 @@
+<section id="folders" data-transition="fade">
+<p class="kicker">The project</p>
+<h2>Three folders</h2>
+<div class="row">
+<div class="card grow" style="--i:0">
+<h3 class="ct mono">harness/</h3><p class="label">The first agent’s setup</p>
+<p class="cb-ink mono">CLAUDE.md</p><p class="cb-ink mono">sources.md</p><p class="cb-ink mono">memory.md</p><p class="cb-ink mono">tools/fetch.py</p>
+<p class="cb" style="margin-top:8px">Its instructions, its notes on your sources, its tools.</p>
+</div>
+<div class="card-dark grow" style="--i:1">
+<h3 class="ct mono">verifier/</h3><p class="label-light">Your labels and the scoring</p>
+<p class="cb-light mono">links.csv</p><p class="cb-light mono">decisions.csv</p><p class="cb-light mono">score.py</p>
+<p class="cb-light" style="margin-top:8px">No agent may read this folder.</p>
+</div>
+<div class="card grow model" style="--i:2">
+<h3 class="ct mono">optimizer/</h3><p class="label tm">The second agent</p>
+<p class="cb-ink mono">CLAUDE.md</p><p class="cb-ink mono">journal.md</p><p class="cb-ink mono">proposals.md</p>
+<p class="cb" style="margin-top:8px">Reads the first agent’s mistakes and edits the harness.</p>
+</div>
+</div>
+<aside>TIME: minute 22 to 24.
+
+Open the repo in the editor and show the three folders for real; the slide is only the map.
+
+harness/ is everything the briefing agent is made of. It is a native Claude Code setup: an instructions file, a list of sources, a memory file, one tool. Nothing custom. We never touch the loop inside Claude Code itself.
+
+verifier/ is the dark box because it is locked. Your labels and the scoring code live there. Neither agent may read it. The briefing agent gets a copy of each week’s links with the label column removed.
+
+optimizer/ is the second agent. We will not open it until minute 50. Just say: it exists, it has its own instructions file, and it is the only thing that will be allowed to edit harness/.
+
+“Memory is a file” from 101 holds here: every improvement today lands in a file you can open and read.
+
+If someone asks where the model is: both agents are plain headless Claude Code runs. There is no framework.</aside>
+</section>

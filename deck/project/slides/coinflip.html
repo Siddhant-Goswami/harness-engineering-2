@@ -1,0 +1,31 @@
+<section id="coinflip" data-transition="fade">
+<p class="kicker">Why three runs</p>
+<h2>One run is a coin flip</h2>
+<p class="lead">Same setup. Same week. Three runs.</p>
+<div class="axis">
+<div class="axis-line"></div>
+<div class="axis-spread"></div>
+<div class="tick" style="left:-50px">0</div>
+<div class="tick" style="left:700px">0.5</div>
+<div class="tick" style="left:1450px">1.0</div>
+<div class="dot" style="left:667px; border-radius:26px"></div>
+<div class="dotlab" style="left:613px">0.462</div>
+<div class="dot" style="left:1243px; border-radius:26px"></div>
+<div class="dot" style="left:1301px; border-radius:26px"></div>
+<div class="dotlab" style="left:1247px">0.885</div>
+<div class="mean" style="height:224px"></div>
+<p class="meanlab" style="top:262px">The score: 0.731, the average of three</p>
+</div>
+<p class="cb">Week 2 of the sample, first setup. The third run scored 0.846.</p>
+<aside>TIME: minute 65 to 67, while round 2 of the live run is going.
+
+This is the number we parked at the baseline. On the sample, the first setup scored 0.462 on one run of week 2 and 0.885 on another. Nothing changed between them. The model simply wrote a different brief.
+
+ASK: “If we kept or reverted a change based on one run, what would happen?” Answer: we would keep lucky changes and throw out good ones. The gate would be flipping a coin.
+
+So every week runs three times and the score is the average. The table the loop prints shows the low and high run next to the average. Rule of thumb for the room: if a week’s low-to-high range is wider than the rise, be suspicious of the rise.
+
+Two settings, both in loop.py: RUNS (3 by default; RUNS=5 for a steadier number, at more cost) and MIN_GAIN (0.02, the smallest rise that counts).
+
+A subtler point, for the sharp people in the room: the rounds we keep are partly the lucky ones, so the live score drifts a little high and later rounds find it harder to beat. The hidden week is where that luck gets checked.</aside>
+</section>

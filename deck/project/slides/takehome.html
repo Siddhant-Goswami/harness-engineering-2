@@ -1,0 +1,30 @@
+<section id="takehome" data-transition="fade">
+<p class="kicker">85 to 90 min · Take-home</p>
+<h2>Run it on your own month</h2>
+<div class="row">
+<div class="col grow">
+<div class="linkrow"><p class="lt">1 · Label all 30 days, and write five decisions you made and how each turned out</p></div>
+<div class="linkrow"><p class="lt">2 · Run five rounds on weeks 1 to 3, then open week four once</p></div>
+<div class="linkrow"><p class="lt">3 · Submit your commit history and both scores, before and after</p></div>
+<div class="linkrow"><p class="lt">4 · One paragraph for a non-engineer: why did a change help the weeks it saw and not the hidden one?</p></div>
+<div class="linkrow"><p class="lt">5 · One change you would never have written, and one you rejected even though the score rose</p></div>
+</div>
+<div class="col" style="width:560px">
+<p class="cmd">python3 loop.py prepare<br>python3 loop.py baseline<br>python3 loop.py run 5<br>python3 loop.py final<br>git log --oneline</p>
+<div class="card" style="--i:1"><p class="label">Everything is in</p><p class="ct mono">README.md</p><p class="cb">Including how to load your own links and a 3-minute explainer video.</p></div>
+</div>
+</div>
+<aside>TIME: minute 85 to 88.
+
+Read the five items. Spend a moment on item 4: explaining the hidden week to a non-engineer is the best test of whether they understood the session. If they can say why a score rose without the agent getting better, they have the Goodhart lesson for life.
+
+Item 5 is the review muscle from the last two slides. One change the optimizer found that they would never have written. One they reverted by hand, even though the gate kept it.
+
+Practical tips for the room:
+- Bringing your own month: replace verifier/links.csv and verifier/decisions.csv, delete verifier/sample/, harness/sources.md and harness/cache/, then run prepare. The README has the exact steps.
+- Days 22 onward become week four.
+- Links behind a login (X, LinkedIn) come back as title only. Prefer saved articles and changelogs.
+- Cost: five rounds plus the baseline and final is roughly four to five dollars on the default models.
+
+[DUE DATE] and [WHERE TO SUBMIT]: fill these in before the session.</aside>
+</section>

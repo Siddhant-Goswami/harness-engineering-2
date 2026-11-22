@@ -1,0 +1,42 @@
+<section id="hidden" class="dark" data-transition="fade">
+<p class="kicker-dark">75 to 85 min · The week nobody saw</p>
+<h2>Did it learn, or did it memorise?</h2>
+<div style="position:relative; width:1664px; height:300px; margin-top:48px">
+<svg width="1664" height="300" viewBox="0 0 1664 300" style="position:absolute; left:0; top:0" aria-label="Four week blocks. Weeks one to three are open and lit. Week four is dark, with a padlock on it.">
+<rect x="0" y="40" width="380" height="220" rx="22" fill="#3A3833" stroke="#5F5C56" stroke-width="3"/>
+<rect x="428" y="40" width="380" height="220" rx="22" fill="#3A3833" stroke="#5F5C56" stroke-width="3"/>
+<rect x="856" y="40" width="380" height="220" rx="22" fill="#3A3833" stroke="#5F5C56" stroke-width="3"/>
+<rect x="1284" y="40" width="380" height="220" rx="22" fill="#14130F" stroke="#E2552F" stroke-width="4" stroke-dasharray="14 10"/>
+<rect x="1500" y="140" width="100" height="80" rx="12" fill="#E2552F"/>
+<path d="M1520 140 v-26 a30 30 0 0 1 60 0 v26" fill="none" stroke="#E2552F" stroke-width="12"/>
+<circle cx="1550" cy="176" r="10" fill="#14130F"/>
+<rect x="40" y="200" width="300" height="12" rx="6" fill="#23885A"/>
+<rect x="468" y="200" width="300" height="12" rx="6" fill="#23885A"/>
+<rect x="896" y="200" width="300" height="12" rx="6" fill="#23885A"/>
+</svg>
+<p class="ct" style="position:absolute; left:40px; top:80px; width:300px">Week 1</p>
+<p class="ct" style="position:absolute; left:468px; top:80px; width:300px">Week 2</p>
+<p class="ct" style="position:absolute; left:896px; top:80px; width:300px">Week 3</p>
+<p class="ct" style="position:absolute; left:1324px; top:80px; width:300px; color:#F49A80">Week 4</p>
+</div>
+<div class="spacer"></div>
+<div class="row">
+<div class="col grow fragment"><p class="label-light">Week 4 rises too</p><p class="lead-dark" style="margin-top:0">It learned how you decide.</p></div>
+<div class="col grow fragment"><p class="label-light">Only weeks 1 to 3 rise</p><p class="lead-dark" style="margin-top:0">It memorised your past.</p></div>
+</div>
+<aside>TIME: minute 75 to 78.
+
+The drawing: three weeks the loop could see, each with a green bar for the score it was pushed up on. The fourth week has been locked the whole session. Neither agent has seen its links or its labels. prepare deleted it from the agent’s inbox, and the fence blocks any run that reaches for it.
+
+ASK: “The score went up on weeks one to three. What are the two reasons that could happen?” Wait for both.
+
+CLICK 1: it learned something about how you decide, which carries over to a week it has never seen.
+CLICK 2: it memorised your past. It learned rules that fit these 75 links and nothing else.
+
+This is the Goodhart lesson from the C7 lecture, shown on your own data: a loop can only see its metric. When the score is the target, the score stops telling you the truth. The hidden week is the one place the loop could not aim at.
+
+Then run it:
+python3 loop.py final
+
+It writes week four three times on the setup you started with and three times on the final one, scores both, and prints the verdict. It runs ONCE. Run it a second time and it refuses: a second look is not a hidden week any more.</aside>
+</section>
