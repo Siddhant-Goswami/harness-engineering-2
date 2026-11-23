@@ -2,34 +2,75 @@
 
 Where this reader's saved links come from. No notes on any of them yet.
 
-- AI Daily newsletter
-- AgentConf
-- Anvil changelog
-- Anvil security
-- Fern.js blog
-- Gemstone AI blog
-- Gemstone status page
-- Hacker thread
-- Kiln changelog
-- Kiln security
-- MySQL release notes
-- Opinion: The Gradient Post
-- Orchard API reference
-- Orchard Labs blog
-- Orchard Labs docs
-- Orchard Labs research
-- Orchard Labs research note
-- Orchard status page
-- Podcast: Next Decade
-- Preprint
-- Prompt Weekly newsletter
-- Quill DB blog
-- Quill DB security
-- ReasonBench leaderboard
-- Tidewater engineering blog
-- Vecstore releases
-- Vecstore security
-- VentureWire
-- X thread
-- YouTube: BuildLoud
-- YouTube: PromptBro
+- X @AlexFinn
+- X @ApolloResearch
+- X @ArchiveExplorer
+- X @BHolmesDev
+- X @Bencera
+- X @LexnLin
+- X @MartinGTobias
+- X @MengTo
+- X @NeelNanda5
+- X @PrajwalTomar_
+- X @RMladek
+- X @RisingSayak
+- X @SeijinJung
+- X @SullyOmarr
+- X @TheHolyKau
+- X @Zai_org
+- X @_chenglou
+- X @a16z
+- X @aidenybai
+- X @akothari
+- X @amasad
+- X @analogalok
+- X @atmoio
+- X @badlogicgames
+- X @ben_cerchio
+- X @cgtwts
+- X @ch3nweiii
+- X @chamath
+- X @chrispisarski
+- X @christophersaum
+- X @copyconstruct
+- X @deedydas
+- X @dhh
+- X @dominikmartn
+- X @everestchris6
+- X @felixrieseberg
+- X @garrytan
+- X @gregisenberg
+- X @hanakoxbt
+- X @hassaanraza
+- X @hraness
+- X @iamlukethedev
+- X @irabukht
+- X @jamesm
+- X @jordan_ross_8F
+- X @kevinakwok
+- X @kunchenguid
+- X @levelsio
+- X @levie
+- X @lucasmarkes__
+- X @lukasgruber__
+- X @mathurahravi
+- X @mattpocockuk
+- X @mercor
+- X @michael_chomsky
+- X @nateparrott
+- X @natfriedman
+- X @nikogrupen
+- X @rileybrown
+- X @spencermateega
+- X @sriramk
+- X @startupideaspod
+- X @svpino
+- X @swill1ams
+- X @tareqistyping
+- X @termsheetinator
+- X @thdxr
+- X @thedelost
+- X @thisiskp_
+- X @tobi
+- X @troyaitken_
+- X @vijayshekhar

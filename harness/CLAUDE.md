@@ -35,8 +35,17 @@ It needs no lookup.
 
 ## What matters to this reader
 
-(Your rules from Part 1 go here, one short paragraph each, ending with the tag of the
-failure it comes from in failures.md.)
+The reader builds and teaches agent harnesses. Demos of what a model can make (videos,
+designs, landing pages, new answer interfaces) are noise to them, however impressive. What
+changes how an agent is built, run or checked is what they act on. (F1)
+
+A post that repackages someone else's work with hype ("pure f*cking treasure", "thank me
+later", "nobody noticed") is noise, even when its topic is harnesses or Claude Code. If it
+points to an original by the people who did the work, the original is what matters. (F2)
+
+A post that hands the reader something for their own agent setup (a new agent-tool feature,
+a prompt or subagent recipe, a skill or repo) is signal, whatever it is shown working on: a
+website, a gadget, a design. F1 is about what a model makes, not what an agent is used for. (F3)
 
 @sources.md
 @memory.md
