@@ -1,0 +1,9 @@
+Topic: AI agents and automation
+
+Posted by Kun Chen (@kunchenguid) on 2026-10-08
+
+some people confused the conclusion as “don’t write any tests” - no that’s not what this post is saying
+
+1. the point is - tests written autonomously by agents do not prove to have value. but i explicitly called out human guidance can change that
+
+2. also explicitly stated e2e

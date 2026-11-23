@@ -1,0 +1,16 @@
+Topic: Harness engineering
+
+Posted by Amjad Masad (@amasad) on 2026-09-29
+
+How to design and build a harness to reach frontier performance at a fraction of the cost!
+
+Attached content and quote previews:
+Michele Catasta
+@pirroh
+·
+Sep 29
+ Article
+Free the models: harness design at the frontier
+Model routers are everywhere right now, but they have a fundamental limitation. No matter if based on advanced heuristics or a small model that reads each turn and picks which LLM to use, a router...
+
+Attached: Image, X article

@@ -1,0 +1,19 @@
+Topic: Startups, products and business
+
+Posted by Chris Saum (@christophersaum) on 2026-10-12
+
+Who’s building this? I want to back founders helping companies build specialized models on their own data. $500k checks. We move fast.
+
+Attached content and quote previews:
+Brian Armstrong
+@brian_armstrong
+·
+Oct 12
+We were able to fine tune an open weight model (Qwen3.5-9B) on proprietary internal data at @coinbase, and it out performed frontier models, at much lower cost and speed, for a specialized task (fraud prevention in this case).
+
+I think we'll see more of this pattern inside
+
+Attached: Image
+
+Quoted post URL:
+https://x.com/brian_armstrong/status/2109412046244913643

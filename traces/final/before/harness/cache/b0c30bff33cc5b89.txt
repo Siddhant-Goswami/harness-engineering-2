@@ -1,0 +1,22 @@
+Topic: AI design and interfaces
+
+Posted by Santiago (@svpino) on 2026-10-15
+
+This is an open-source framework that lets you add AI-generated interfaces to your apps.
+
+For example, you can have a travel assistant agent respond with a hotel card, a map, and an interactive UI that compares plane tickets instead of a wall of text.
+
+• You decide which
+
+Attached content and quote previews:
+Rabi Shanker Guha
+@rabi_guha
+·
+Oct 15
+For 30 years, technology has moved in one direction: turning information into intuitive interfaces
+
+Somehow, the smartest software we’ve ever built took us back to a textbox
+
+We’ve spent the last 2 years at @openuidev trying to fix that. 6 months ago we open-sourced it: 10K+
+
+Attached: Image, Video

@@ -1,0 +1,11 @@
+Topic: Harness engineering
+
+Posted by Sydney Runkle (@sydneyrunkle) on 2026-10-19
+
+harness² from 
+@GoogleResearch
+ offers techniques for RSI on the harness, with a fixed model
+
+they call it "harnessing", but you might already be familiar w/ this process! it's also called "hill climbing" or "continual learning"
+
+more in 🧵 !

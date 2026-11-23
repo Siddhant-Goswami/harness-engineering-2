@@ -1,0 +1,20 @@
+Topic: AI evaluation and benchmarks
+
+Posted by Z.ai (@Zai_org) on 2026-10-12
+
+Introducing GLM-Legal
+
+Built on GLM-5.3-Flash, GLM-Legal matches frontier models on mainstream legal benchmarks.
+
+Designed for real legal workflows: contract review, evidence analysis, compliance, and more.
+
+Tech Blog: 
+https://
+z.ai/blog/glm-legal
+Apply for API Access:
+
+Attached content and quote previews:
+Attached: Image
+
+Resource URLs:
+https://t.co/hx2I77MaiK

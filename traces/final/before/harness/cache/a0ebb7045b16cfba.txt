@@ -1,0 +1,24 @@
+Topic: AI design and interfaces
+
+Posted by KP (@thisiskp_) on 2026-10-15
+
+I use Instinct every day, and its interactive answers have spoiled me. 
+
+Going back to a wall of text in every other AI app feels painful..
+
+OpenUI lets any agent answer with real interfaces, and it isn't tied to a specific model or component library. 
+
+Your components, any model
+
+Attached content and quote previews:
+Rabi Shanker Guha
+@rabi_guha
+·
+Oct 15
+For 30 years, technology has moved in one direction: turning information into intuitive interfaces
+
+Somehow, the smartest software we’ve ever built took us back to a textbox
+
+We’ve spent the last 2 years at @openuidev trying to fix that. 6 months ago we open-sourced it: 10K+
+
+Attached: Image, Video

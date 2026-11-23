@@ -1,0 +1,21 @@
+Topic: AI models and research
+
+Posted by delost (@thedelost) on 2026-10-08
+
+this is pure f*cking treasure
+
+a Stanford AI research group figured out how to run Claude Opus 5.5 and GPT-6.1 Sol together, and it breaks straight through the search scaffolding wall
+
+most developers combine frontier models by chaining prompts in one context window or hardcoding
+
+Attached content and quote previews:
+Hanako
+@hanakoxbt
+·
+Sep 20
+ Article
+Jev Engineering: How to Stop Paying a Frontier Model to Make Yes-or-No Decisions (full course)
+Open the trace of any agent you have shipped and count the calls.
+A model picks the next tool. A model judges whether the result is good. A model decides if the task is done. A model checks whether...
+
+Attached: Image, Video, X article

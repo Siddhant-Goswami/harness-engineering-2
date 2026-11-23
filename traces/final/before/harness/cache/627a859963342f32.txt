@@ -1,0 +1,14 @@
+Topic: AI agents and automation
+
+Posted by Niko (@nikogrupen) on 2026-10-15
+
+An overview of how we think about context graphs at 
+@harvey
+. 
+
+Context graphs are a promising direction for improving agent quality and efficiency. We ran a series of experiments on Legal Agent Bench to evaluate how structured context improves online agent performance.
+
+For each
+
+Attached content and quote previews:
+Attached: Image, Video

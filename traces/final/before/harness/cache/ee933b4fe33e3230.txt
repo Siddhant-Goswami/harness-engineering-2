@@ -1,0 +1,15 @@
+Topic: Model training and AI data
+
+Posted by Neel Nanda (@NeelNanda5) on 2026-10-15
+
+This is wild... (And terrifying!) I'd love to see a bunch of investigation into what's going on in these transcripts, it's nice to have the really weird stuff be in an open weight model
+
+Attached content and quote previews:
+Apollo Research
+@ApolloResearch
+·
+Oct 15
+We have never seen a model do this before, but GLM-5.3 sometimes reasons (unprompted) about how its current actions could become training data and impact its future self. 🧵
+
+Quoted post URL:
+https://x.com/ApolloResearch/status/2110737961499111880

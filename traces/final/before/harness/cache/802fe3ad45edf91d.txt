@@ -1,0 +1,24 @@
+Topic: Agent memory and context
+
+Posted by Abdul Haseeb (@ahaseeb2002) on 2026-10-17
+
+The best 'company brain' I've seen so far hands down
+
+Attached content and quote previews:
+Mehdi Djabri
+@mehdidjabri
+·
+Oct 15
+Introducing 
+https://
+past.dev
+
+Long-term, multiplayer memory for your agents. #1 on BEAM, the largest public memory benchmark.
+
+Install it with a single prompt. Keep your stack. Add a past.
+
+Try it today → 
+https://
+past.dev
+
+Attached: Image, Video

@@ -1,0 +1,12 @@
+Topic: AI agents and automation
+
+Posted by Ben Holmes (@BHolmesDev) on 2026-10-15
+
+I've been thinking about what a true, closed-loop software factory will look like.
+
+One where agents know what to fix, what costs to optimize, and the big one: what features to actually build.
+
+We're not there yet. But maybe we're getting close...
+
+Attached content and quote previews:
+Attached: X article

@@ -1,0 +1,22 @@
+Topic: Careers and learning
+
+Posted by Hanako (@hanakoxbt) on 2026-10-10
+
+Boris Cherny (Claude Code creator) just released a prompt that turns Opus 5.5 into a harness that actually finishes any job.
+
+It's f*cking unreal...
+
+Send it to Opus 5.5, and thank me later. Then read the full guide for Opus 5.5 Graph Engineering.
+
+Attached content and quote previews:
+Hanako
+@hanakoxbt
+·
+Aug 23
+ Article
+Loops and Graphs: how to stop babysitting agents and only approve the last step (full course) 
+You check every step your agents take. Not because you want to, but because nothing else does.
+Getting out of that chair takes two things, and almost everyone builds only one of them.
+A loop makes a...
+
+Attached: X article

@@ -1,0 +1,12 @@
+Topic: Harness engineering
+
+Posted by Miguel Ríos Berríos (@MiguelriosEN) on 2026-10-22
+
+Day 4 of open sourcing parts of our harness. Today we made significant improvements to our workflow DSL. We are using it in our self-improving loop - turning agentic loops into more deterministic recipes.
+
+With these improvements (a lot of 
+@typesafe
+'s Jev in routing,
+
+Attached content and quote previews:
+Attached: Image, Video

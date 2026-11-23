@@ -1,0 +1,35 @@
+Topic: AI design and interfaces
+
+Posted by Meng To (@MengTo) on 2026-10-10
+
+This is a must-have collection of shaders for making landing pages.
+
+Use this prompt in codex/claude:
+
+
+https://
+github.com/shader-effects
+-inc/shaders
+… Give me the list of the shaders and their screenshots so I can use for my website.
+
+Attached content and quote previews:
+shaders
+@npm_i_shaders
+·
+Oct 6
+Big news.
+
+Shaders is now open source 🔥
+
+Use any of our 200+ WebGPU components in your work. Ship magic in a client site, a template, a product, a library, anything. Plus, you can export code for any framework, for free.
+
+Give it a star: 
+https://
+github.com/shader-effects
+-inc/shaders
+…
+
+Attached: Image, Video
+
+Resource URLs:
+https://t.co/7hbHpwV8Rf

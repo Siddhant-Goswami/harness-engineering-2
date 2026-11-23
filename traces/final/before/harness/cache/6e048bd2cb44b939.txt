@@ -1,0 +1,22 @@
+Topic: Reinforcement learning startups
+
+Posted by Scott Williams (@swill1ams) on 2026-10-13
+
+Small RL companies are the AI industry's equivalent of quant shops. Let me explain.
+
+Both are small, secretive, full of brilliant people, profitable, and always one step from their edge disappearing.
+
+The parallels:
+
+- Secretive. Nobody publishes their signals. Labs won't say
+
+Attached content and quote previews:
+Ivan Burazin
+@ivanburazin
+·
+Oct 13
+There’s an RL company I know doing $100M run rate with five people.
+
+They are finally raising one small round at a $500M+ valuation with very little dilution (I wrote a check)
+
+You’ve never heard of them.

@@ -1,0 +1,26 @@
+Topic: Enterprise AI and FDE
+
+Posted by Kaushik Subramanian (@TheHolyKau) on 2026-09-29
+
+If AI is so great, why isn't AI running every company already?
+If AI is so powerful, why isn't every company AI native?
+Why are there so many FDE's? Why aren't they solving the problem?
+
+These are questions I've been struggling with for the last few months. Highly recommend
+
+Attached content and quote previews:
+Eugen
+@EugenAlpeza
+·
+Sep 29
+Yannis and I led forward deployed AI engineering at Palantir.
+
+Much of today’s boom is not true FDE work. 
+
+Companies are filling a product gap with engineering headcount. What comes after that?
+ Article
+The FDE boom is a product gap 
+The industry is hiring its way around a missing product.
+Every enterprise trying to put agents to work runs into the same problem: agents don’t know how the company operates, and the operators who do,...
+
+Attached: X article

@@ -1,0 +1,17 @@
+Topic: Startups, products and business
+
+Posted by bryan hong (@zixihong_) on 2026-10-18
+
+this is probably the best take on rl data ive read on x. 
+
+one other interesting trend that i’m seeing more of today is that many of these smaller data shops are not venture-backed and have instead adopted very generous profit-sharing arrangements for their employees
+
+Attached content and quote previews:
+Daniel Rupawalla
+@danielrupawalla
+·
+Oct 19
+i get asked VERY frequently to chat about data / RL envs / new companies coming into the space. all of the questions tend to be exactly the same so i want to summarize my thoughts: 
+
+Q: "Should I start a data company?" 
+A: probably not, unless you have some sort of alpha or have

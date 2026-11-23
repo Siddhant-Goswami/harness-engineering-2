@@ -1,0 +1,15 @@
+Topic: Software engineering and coding tools
+
+Posted by Martin Tobias (Pre-Seed VC) (@MartinGTobias) on 2026-10-14
+
+This prompt significantly improved one of my sites performance.  And is further proof that the raw tools are not enough to get good software. You still need people who know how to get the most out of the tools.  You still want a killer CTO or senior dev.
+
+Attached content and quote previews:
+Vox
+@Voxyz_ai
+·
+Oct 14
+Claude Code tip: before you ship a vibe-coded site, have Opus 5.5 send out 𝟰 𝘀𝘂𝗯𝗮𝗴𝗲𝗻𝘁𝘀 to check 𝘁𝗵𝗲𝘀𝗲 𝟮𝟬 𝘁𝗵𝗶𝗻𝗴𝘀 𝘁𝗵𝗮𝘁 𝘀𝗹𝗼𝘄 𝗶𝘁 𝗱𝗼𝘄𝗻, then fix them all in one pass:
+
+Images and fonts
+→ Convert every image to WebP or AVIF, sized to how big it x.com/Voxyz_ai/statu…

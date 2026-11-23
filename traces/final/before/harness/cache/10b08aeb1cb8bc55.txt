@@ -1,0 +1,19 @@
+Topic: AI evaluation and benchmarks
+
+Posted by Cameron R. Wolfe, Ph.D. (@cwolferesearch) on 2026-10-21
+
+I just published my roadmap for building evals on highly subjective tasks. Here are the key steps involved and practical tricks for reducing noise / increasing confidence…
+
+Blog is here: 
+https://
+cameronrwolfe.substack.com/p/subjective-e
+vals
+…
+
+Why is this difficult? Evaluating agents is already hard due to
+
+Attached content and quote previews:
+Attached: Image
+
+Resource URLs:
+https://t.co/sv1ZLkpq3V

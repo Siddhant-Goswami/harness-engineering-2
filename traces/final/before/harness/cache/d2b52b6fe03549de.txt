@@ -1,0 +1,17 @@
+Topic: Harness engineering
+
+Posted by Aaron Levie (@levie) on 2026-10-12
+
+Ok this is quite cool research and ultimately must be the eventual architecture of agents. In the limit, AI will obviously be better at determining its own harness once it sees the task at hand, than us being able to do this in advance:
+
+Attached content and quote previews:
+Pedro Domingos
+@pmddomingos
+·
+Oct 12
+That didn’t take long: the model swallows the harness.
+
+https://
+arxiv.org/abs/2609.35738
+
+Attached: Image

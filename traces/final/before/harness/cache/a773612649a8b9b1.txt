@@ -1,0 +1,28 @@
+Topic: Software engineering and coding tools
+
+Posted by Chen (@ch3nweiii) on 2026-10-15
+
+It is becoming f*cking dangerous: Anthropic documented every piece of this separately, and nobody noticed what they add up to
+
+1. Create a folder on your PC - this is the only world your agent will ever see
+
+2. Launch Claude Code inside it and drop a CLAUDE.md in the root with
+
+Attached content and quote previews:
+Hanako
+@hanakoxbt
+·
+Oct 13
+ Article
+How to Turn Opus 5.5 Into a Reverse Engineering Machine with 8 Steps (full course)
+On October 8, 2026 a repository nobody had heard of three months earlier hit number one on GitHub trending.
+It is called REA, Reverse Engineer Anything, and it gives your agent a real disassembler....
+REA is the most dangerous repo on GitHub right now
+
+It gives your AI agent a real disassembler, so it reads any app down to the binary
+
+Every claim comes back with the address behind it
+
+I broke down the exact 8 steps:
+
+Attached: Image, Video, X article

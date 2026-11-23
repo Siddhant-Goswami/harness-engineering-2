@@ -1,0 +1,10 @@
+Topic: DeepSeek token usage
+
+Posted by 0xSero (@0xSero) on 2026-10-17
+
+New Deepseek made me break my record, 1.82 billion tokens a day in deepseek, I'm running about 24 concurrent sessions pentesting, quantising, and creating endless art slop for me. 
+
+Deepseek #1
+
+Attached content and quote previews:
+Attached: Image

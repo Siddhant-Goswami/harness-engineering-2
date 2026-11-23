@@ -1,0 +1,19 @@
+Topic: Harness engineering
+
+Posted by Chamath Palihapitiya (@chamath) on 2026-10-10
+
+These are some very important observations from Satya. 
+
+As models and harnesses commoditize, intent, verification and evidence will gate how quickly SI permeates enterprises and businesses. 
+
+Importantly, you need to implement systems that separate who does the work from those
+
+Attached content and quote previews:
+Satya Nadella
+@satyanadella
+·
+Oct 10
+ Article
+Models as Insider Risks in the Super Intelligence Era 
+As traditional software systems were being deployed across the economy over the last few decades, we had the tools and capability to trace behaviors to a specific code path.
+That same kind of...

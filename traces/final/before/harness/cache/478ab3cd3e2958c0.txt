@@ -1,0 +1,34 @@
+Topic: AI video, audio and creative tools
+
+Posted by Hassaan Raza (@hassaanraza) on 2026-10-01
+
+The whole point of building Tavus has been simple: talking to a machine should feel as natural as talking to a friend or coworker.
+
+It’s hard to describe all the tiny nuances that make a conversation feel human. The little expressions. Moving around in your chair. Knowing when to
+
+Attached content and quote previews:
+Tavus
+@tavus
+·
+Oct 1
+1:48
+Introducing Griffin, the first model to pass the video Turing test.
+
+48% of people who talked to it live thought it was a real human. Previous systems have had a pass rate <3%. It is #1 on NVIDIA's benchmark for full-duplex AI video.
+
+It’s the first Human Interaction Model (HIM).
+Readers added context
+The 48% figure and "video Turing test" claim are from Tavus's own study of 54 one-minute calls, not independently verified or using a standard protocol. Griffin-Lite leads NVIDIA's VideoFDB benchmark on their public leaderboard.
+
+cellcog.ai/blog/tavus-gri…
+research.nvidia.com/labs/amri/proj…
+tech-ish.com/2026/10/02/tav…
+Do you find this helpful?
+Rate it
+
+Attached: Image, Video, previewInterstitial
+
+Resource URLs:
+https://t.co/FRJIzwUwYs
+https://t.co/qyHzk2H2bW
+https://t.co/qCTRneBYi2

@@ -1,0 +1,5 @@
+Topic: Model training and AI data
+
+Posted by Apollo Research (@ApolloResearch) on 2026-10-15
+
+We have never seen a model do this before, but GLM-5.3 sometimes reasons (unprompted) about how its current actions could become training data and impact its future self. 🧵

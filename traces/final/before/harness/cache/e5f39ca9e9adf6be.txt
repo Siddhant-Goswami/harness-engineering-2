@@ -1,0 +1,28 @@
+Topic: Software engineering and coding tools
+
+Posted by Meng To (@MengTo) on 2026-10-15
+
+You can pretty much reverse engineer any device in your home and build a mac app around it. Applied to lights, doors, ac and even the future robot helper.
+
+Here's the skill: 
+https://
+github.com/morluto/rea
+
+It's crazy what you can build nowadays with a skill and a few prompts.
+
+Attached content and quote previews:
+GIF
+
+Ilter Canberk
+@icanberk
+·
+Oct 11
+GIF
+Reverse engineered my AC, and vibe coded a lil status bar app so I don't have to find the remote every time. 
+
+No first world problem will remain unsolved in 2026.
+
+Attached: Image, Video, previewInterstitial
+
+Resource URLs:
+https://t.co/X8T6md6FNI

@@ -1,0 +1,16 @@
+Topic: AI agents and automation
+
+Posted by Richard (@RMladek) on 2026-09-29
+
+this is how instinct works under the hood
+
+- agent loop outside of the sandbox (running on the backend server)
+
+- executing commands and controls file system on a sandbox
+
+- backs up git memory folder to S3 bucket
+
+available skills:
+- agent-mail
+- authenticator-codes
+-

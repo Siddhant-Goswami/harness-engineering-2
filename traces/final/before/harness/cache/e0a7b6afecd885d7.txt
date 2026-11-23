@@ -1,0 +1,24 @@
+Topic: Startups, products and business
+
+Posted by Chris Pisarski (@chrispisarski) on 2026-09-29
+
+every YC founder I'm chatting with is trying to figure out AEO
+
+and the amount of DMs I got from unicorn founders just off the last tweet is insane
+
+this is how I would do it:
+
+1) figure out a) the exact prompts your ICP types into ChatGPT and Claude and b) the sources the AI
+
+Attached content and quote previews:
+Chris Pisarski
+@chrispisarski
+·
+Sep 24
++$2M ARR since this tweet
+
+people are keen to build their own workflows via Claude/Muse/Grokbot instead of buying more tools
+
+here are some learnings:
+
+1) be part of the workflow - expansion into existing accounts has been a really big driver. some companies were using our x.com/chrispisarski/…

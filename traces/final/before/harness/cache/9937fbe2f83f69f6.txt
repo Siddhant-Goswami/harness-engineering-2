@@ -1,0 +1,19 @@
+Topic: Software engineering and coding tools
+
+Posted by Elaya (@elayadesigns) on 2026-10-24
+
+I designed all of these landing pages in the last two months, using 
+@higgsfield
+ , Claude, and Cursor with my custom AI designer skill.
+
+The skill is open source: 
+https://
+github.com/elayadesign/ai
+-design-skills
+…
+
+Attached content and quote previews:
+Attached: Image, Video
+
+Resource URLs:
+https://t.co/Gs1RT1BZxi

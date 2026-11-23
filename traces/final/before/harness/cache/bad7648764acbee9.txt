@@ -1,0 +1,18 @@
+Topic: Security through obscurity
+
+Posted by Aaron Levie (@levie) on 2026-10-23
+
+Any form of security through obscurity is fully over. This barely worked as a method with humans, but just simply is over in a world of autonomous systems that will look through every crevice and try every permutation of attack possible.
+
+As a result, years and years of legacy
+
+Attached content and quote previews:
+Dabs
+@DabsMalone
+·
+Oct 22
+a lot of old software was protected by “exploiting this would be an unreasonable amount of work”
+
+we have invented a machine that does unreasonable amounts of work
+
+anyway how’s the patch backlog

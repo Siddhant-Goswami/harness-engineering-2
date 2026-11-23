@@ -1,0 +1,16 @@
+$ python3 loop.py compare manual/links-model.csv
+agreed on 72 of 76 links (95%)
+  your signal links: it found 10 of 13
+  your noise links:  it called 1 of 63 signal
+  (a model that said noise to everything would agree on 83%: watch the two lines above, not the percentage)
+
+You acted on these. The model called them noise:
+  L022  X @badlogicgames: i think i'm gonna frame this one :)
+  L059  X @MartinGTobias: This prompt significantly improved one of my sites performance. And is further proof that the raw tools are not enough to get good software.
+  L070  X @MengTo: You can pretty much reverse engineer any device in your home and build a mac app around it. Applied to lights, doors, ac and even the future
+
+Noise to you. The model called them signal:
+  L063  X @ApolloResearch: We have never seen a model do this before, but GLM-5.3 sometimes reasons (unprompted) about how its current actions could become training da
+
+Pick the mistake that repeats. Write it in failures.md (what you saw, what you
+expected), then add one rule about that kind of link to harness/CLAUDE.md.

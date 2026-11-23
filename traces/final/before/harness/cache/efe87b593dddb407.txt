@@ -1,0 +1,21 @@
+Topic: AI models and research
+
+Posted by Deedy (@deedydas) on 2026-10-17
+
+LLMs are either not capable or not affordable for visual reasoning tasks at scale.
+
+The Elorian team - one of Jeff Dean’s best reports who led Gemini, an Apple LLM lead, xAI lead, and a Harvard professor - just launched an Astra-level visual reasoning model, Glimpse, for 17x
+
+Attached content and quote previews:
+Andrew M. Dai
+@AndrewDai
+·
+Oct 16
+1:29
+Spent years watching models ace a single image and completely whiff on anything that moves or changes angle. Today we’re fixing that.
+
+Try Glimpse now, our first visual thinking model with competitive frontier performance compared to Astra on key public visual reasoning
+
+Attached: Image, Video, previewInterstitial
+
+Embedded video

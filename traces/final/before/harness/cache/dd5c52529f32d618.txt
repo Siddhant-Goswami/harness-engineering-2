@@ -1,0 +1,22 @@
+Topic: Enterprise AI and FDE
+
+Posted by Spencer Mateega (@spencermateega) on 2026-10-15
+
+Every serious enterprise will soon own and control its own intelligence.
+
+Huge congratulations to the 
+@datadoghq
+ team on Scout.
+
+Attached content and quote previews:
+Datadog, Inc.
+@datadoghq
+·
+Oct 15
+Meet Scout 1.0, our first AI model built for investigating production incidents. 
+
+Scout matches frontier-model investigation quality at a fraction of the cost, which makes it practical to investigate more issues, earlier.
+
+We trained Scout on realistic simulations built from
+
+Attached: Image, Video

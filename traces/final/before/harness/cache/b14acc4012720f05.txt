@@ -1,0 +1,12 @@
+Topic: AI video, audio and creative tools
+
+Posted by Leon Lin (@LexnLin) on 2026-09-27
+
+I asked Claude Code (Opus 5.5) to make a launch video for a fake calendar app and HOLY fuck, everything you see AND hear is code
+ONE prompt, it cooked for about 8h
+name, logo, UI, animations, soundtrack, sound effects
+
+opensource, repo in replies :)
+
+Attached content and quote previews:
+Attached: Image, Video

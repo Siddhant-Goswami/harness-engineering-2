@@ -1,0 +1,22 @@
+Topic: AI agents and automation
+
+Posted by Matt Pocock (@mattpocockuk) on 2026-09-25
+
+This is an extremely good watch.
+
+The things that felt novel/interesting to me:
+
+1. Lock down your agents
+
+Humans tend to like 'sharp knife' abstractions - that are powerful, but you can cut yourself if your use them wrong. Lauren says agents perform much better in extremely
+
+Attached content and quote previews:
+lauren
+@poteto
+·
+Sep 21
+here's how i shipped 2,500 PRs last month to production
+
+this was originally supposed to be for Cursor Compile in London. i couldn't make it since i was livestreaming for Grok @Bot Galaxy so i'm making it available for free here on X! watch it on 2x speed, i talk slowly
+
+Attached: Image, Video

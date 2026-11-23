@@ -1,0 +1,17 @@
+Topic: Software engineering and coding tools
+
+Posted by Nat Friedman (@natfriedman) on 2026-10-02
+
+🚨 side project alert 🚨
+
+Announcing Muse Gadgets, an open source ESP32 firmware and Linux sdk so that you can make hardware devices that work with Muse.
+
+Grab an API token from 
+https://
+gadgets.muse.ai and point your favorite coding agent at the github repo to build your own
+
+Attached content and quote previews:
+Attached: Image
+
+Resource URLs:
+https://t.co/g2yJeQRJH7

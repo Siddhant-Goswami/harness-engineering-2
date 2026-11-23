@@ -1,0 +1,17 @@
+Topic: AI evaluation and benchmarks
+
+Posted by Ben Cerchio (@ben_cerchio) on 2026-10-14
+
+if you sell AI training data, see how you compare: we found 159 companies selling data, RL envs and evals, every fact sourced
+
+plus 38 programs that pay companies for their data: 
+https://
+whosellsdata.com
+
+8 of the 14 that pay companies directly publish a dollar range. most of the
+
+Attached content and quote previews:
+Attached: Image
+
+Resource URLs:
+https://t.co/wK5vLYlZPc

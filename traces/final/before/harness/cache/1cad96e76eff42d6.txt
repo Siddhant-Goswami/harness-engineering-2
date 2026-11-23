@@ -1,0 +1,13 @@
+Topic: AI agents and automation
+
+Posted by Tak 🦞 (@cherry_mx_reds) on 2026-10-24
+
+Anthropic is now recommending that companies REMOVE unnecessary subagents from their AI systems.
+
+This is a pretty significant shift in agent architecture, with their team finding that a single agent equipped with skills can frequently outperform complex multi-agent systems, and
+
+Attached content and quote previews:
+Building agents: When to fold subagents into your main agent loop
+
+Resource URLs:
+https://t.co/DNq60Skkmc

@@ -1,0 +1,22 @@
+Topic: Harness engineering
+
+Posted by virgilxbt (@virgilxbt) on 2026-10-18
+
+This is f*cking gold..
+
+Chinese researchers just dropped a paper called "The End of Harness Engineering" and it reads like an obituary for LangChain.
+
+The claim: the file that organizes the model should be written by the loop that runs it, not by the person who built it.
+
+A
+
+Attached content and quote previews:
+slash1s
+@slash1sol
+·
+Aug 27
+ Article
+Flat-Rate AI Is a Trap. I Run 5 Workers for $3/Million Tokens: The Exact Setup
+Grok Bot will hand you an office in one evening: five named workers, one shared cloud computer, logins that stay signed in. The one thing it does not hand you is the brain behind the desks. That part...
+
+Attached: Image, Video, X article

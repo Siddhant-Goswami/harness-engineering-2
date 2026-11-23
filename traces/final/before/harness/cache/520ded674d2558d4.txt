@@ -1,0 +1,21 @@
+Topic: AI video, audio and creative tools
+
+Posted by Chris (@everestchris6) on 2026-09-29
+
+this is the only prompt you need to make high-end motion videos with claude opus 5.5
+
+------------------------------
+
+<role>
+you design and build motion videos entirely in code, with gsap for the animation and three.js for any 3d. every decision is judged against the best work in
+
+Attached content and quote previews:
+Chris
+@everestchris6
+·
+Sep 27
+ Article
+how to run an ai video agency (FULL GUIDE)
+claude opus 5.5 and gpt-6 astra can now build studio-level videos in code, editing and all. businesses already pay every month for videos like that, and this guide shows you how to run a video agency...
+
+Attached: Image, Video, X article

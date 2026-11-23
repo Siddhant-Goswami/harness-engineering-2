@@ -1,0 +1,17 @@
+Topic: AI infrastructure and inference
+
+Posted by Sayak Paul (@RisingSayak) on 2026-10-07
+
+Was meant to be a Valentine's gift, but I'm releasing it early ❤️
+
+Wrote a long piece on KV caching in flow models for image generation.
+
+Includes intuition, commentary, implementation details, benchmarks, & some quirky experiments.
+
+Attached content and quote previews:
+sayak.dev
+KV Caching in Flow Models – Sayak Paul
+KV caching in flow models for image generation.
+
+Resource URLs:
+https://t.co/Ufrp5jZIf1

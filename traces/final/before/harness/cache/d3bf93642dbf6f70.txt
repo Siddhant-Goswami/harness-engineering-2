@@ -1,0 +1,28 @@
+Topic: AI evaluation and benchmarks
+
+Posted by elvis (@omarsar0) on 2026-10-20
+
+Learn to build evals, folks.
+
+Highly recommended reading on using decision models for evals. 
+
+From our internal evals, System One models like Jev are a great fit for LLM Judges.
+
+If you want to go beyond Hamel's great write-up, I've also put together a few resources on applying
+
+Attached content and quote previews:
+Hamel Husain
+@HamelHusain
+·
+Oct 20
+New blog post 🎉: How To Use Decision Models For Evals
+
+In this post, we show you how to choose a decision model for your task, tune its threshold (don't assume the 0.5 default is good!), and interpret its scores.
+
+Lots of cool interactive charts here.
+ Article
+How To Use Decision Models for Evals
+Co-authored with Antaripa Saha.
+Decision models have exploded onto the scene recently, starting with TypeSafe’s Jev, followed by Perplexity’s Decider, Liquid’s d1, Cloudflare’s Clef, and OpenAI’s...
+
+Attached: X article

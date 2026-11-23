@@ -1,0 +1,24 @@
+Topic: Enterprise AI and FDE
+
+Posted by Kun Chen (@kunchenguid) on 2026-10-23
+
+totally agree minimizing human attention is the key unlock now and moving forward
+
+this view from calvin on workflow changes correlating with productivity gain is also quite interesting - i think mine was similar
+
+my step function gains came from:
+- overnight loops (gnhf)
+-
+
+Attached content and quote previews:
+Calvin Grunewald
+@CalvinGrunewald
+·
+Oct 24
+Sharing an update on my agentic workflow! 
+
+Today, there are only two REAL bottlenecks left in software development. Compute and Human Attention. Not PRs, Planning, CI/CD. Those aren't real bottlenecks. You only think they are because they consume your Human Attention.
+
+You can
+
+Attached: Image

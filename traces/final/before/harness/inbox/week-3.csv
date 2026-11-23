@@ -1,0 +1,45 @@
+id,date,source,title,url
+L034,2026-10-09,X @kevinakwok,TSMC doesn’t just make chips. It manufactures its customers.,https://x.com/kevinakwok/status/2108375015939068034
+L035,2026-10-09,X @irabukht,"The most insane paid ads program in Silicon Valley, behind Wispr Flow's $0 to $2B run",https://x.com/irabukht/status/2108585781581217906
+L036,2026-10-10,X @hanakoxbt,Boris Cherny (Claude Code creator) just released a prompt that turns Opus 5.5 into a harness that actually finishes any job.,https://x.com/hanakoxbt/status/2109035317684834669
+L037,2026-10-10,X @copyconstruct,How to effectively debug with agents when you no longer read or understand the code,https://x.com/copyconstruct/status/2108967806666715591
+L038,2026-10-10,X @tobi,Good read,https://x.com/tobi/status/2108736851918155949
+L039,2026-10-10,X @chamath,These are some very important observations from Satya.,https://x.com/chamath/status/2108939308350775596
+L040,2026-10-10,X @MengTo,This is a must-have collection of shaders for making landing pages.,https://x.com/MengTo/status/2108924473265275003
+L041,2026-10-10,X @vijayshekhar,Did you download Google Foresight yet?,https://x.com/vijayshekhar/status/2108950810558386616
+L042,2026-10-10,X @tobi,"Great read from Patrick, as always.",https://x.com/tobi/status/2109048992026009863
+L043,2026-10-11,X @analogalok,Yesterday I trained my own Jev style decision model by finetuning Qwen3.5-4B on the LocalLLaMA/typed-decisions dataset with,https://x.com/analogalok/status/2109244293135339916
+L044,2026-10-11,X @levie,"If you want to know where all the tokens will get consumed in the future, here it is. Agent swarms will have massive implications in a numbe",https://x.com/levie/status/2109079686286565378
+L045,2026-10-12,X @Zai_org,Introducing GLM-Legal,https://x.com/Zai_org/status/2109678174468534511
+L046,2026-10-12,X @SeijinJung,"Ok, this was a goldmine of insights re: the future of commerce with agents, straight from",https://x.com/SeijinJung/status/2109749325475844415
+L047,2026-10-12,X @levelsio,This is true,https://x.com/levelsio/status/2109723310762123704
+L048,2026-10-12,X @christophersaum,Who’s building this? I want to back founders helping companies build specialized models on their own data. $500k checks. We move fast.,https://x.com/christophersaum/status/2109635292185379099
+L049,2026-10-12,X @iamlukethedev,Everyone is talking about Claude + Treg,https://x.com/iamlukethedev/status/2109617175791341830
+L050,2026-10-12,X @dhh,One of the best part of the agent revolution is that the price of obsessive performance tuning has dropped to near zero. So now we can just,https://x.com/dhh/status/2109625068167024785
+L051,2026-10-12,X @levie,"Ok this is quite cool research and ultimately must be the eventual architecture of agents. In the limit, AI will obviously be better at dete",https://x.com/levie/status/2109788979952558255
+L052,2026-10-13,X @felixrieseberg,"Hi, I'm Felix. I'm an eng lead working on Claude. I love watching people take flight and do things they never thought possible.",https://x.com/felixrieseberg/status/2110023283169247623
+L053,2026-10-13,X @termsheetinator,"Micro1 is paying $75,000 for data from companies that are NO LONGER opperational:",https://x.com/termsheetinator/status/2110008544707916189
+L054,2026-10-13,X @swill1ams,Small RL companies are the AI industry's equivalent of quant shops. Let me explain.,https://x.com/swill1ams/status/2109858744087564288
+L055,2026-10-13,X @michael_chomsky,"if you’re a consumer app builder and have production traces, dm me",https://x.com/michael_chomsky/status/2109894037176295478
+L056,2026-10-14,X @jordan_ross_8F,Interviewed the founder of Micro1 competitor today (Grepped) to see who is making 7 figures selling their company data right now:,https://x.com/jordan_ross_8F/status/2110441375418450368
+L057,2026-10-14,X @ben_cerchio,"if you sell AI training data, see how you compare: we found 159 companies selling data, RL envs and evals, every fact sourced",https://x.com/ben_cerchio/status/2110430274240885062
+L058,2026-10-14,X @gregisenberg,"I spent 48 hours in SF hanging out with billionaires, data labs and AI founders and execs running $1B to $100B companies.",https://x.com/gregisenberg/status/2110414696037716372
+L059,2026-10-14,X @MartinGTobias,This prompt significantly improved one of my sites performance. And is further proof that the raw tools are not enough to get good software.,https://x.com/MartinGTobias/status/2110288027721609268
+L060,2026-10-15,X @AlexFinn,America is SO back,https://x.com/AlexFinn/status/2110782474720887192
+L061,2026-10-15,X @BHolmesDev,"I've been thinking about what a true, closed-loop software factory will look like.",https://x.com/BHolmesDev/status/2110793920930107817
+L062,2026-10-15,X @NeelNanda5,"This is wild... (And terrifying!) I'd love to see a bunch of investigation into what's going on in these transcripts, it's nice to have the",https://x.com/NeelNanda5/status/2110880589901668674
+L063,2026-10-15,X @ApolloResearch,"We have never seen a model do this before, but GLM-5.3 sometimes reasons (unprompted) about how its current actions could become training da",https://x.com/ApolloResearch/status/2110737961499111880
+L064,2026-10-15,X @nikogrupen,An overview of how we think about context graphs at,https://x.com/nikogrupen/status/2110773803592937733
+L065,2026-10-15,X @jordan_ross_8F,"If I wanted to buy a business right now with FREE money, here is exactly how I would do it to grow a 9 figure hold co.",https://x.com/jordan_ross_8F/status/2110798257576398941
+L066,2026-10-15,X @aidenybai,gabriel is one of the few people who,https://x.com/aidenybai/status/2110839868041650547
+L067,2026-10-15,X @ch3nweiii,"It is becoming f*cking dangerous: Anthropic documented every piece of this separately, and nobody noticed what they add up to",https://x.com/ch3nweiii/status/2110840700073816073
+L068,2026-10-15,X @svpino,This is an open-source framework that lets you add AI-generated interfaces to your apps.,https://x.com/svpino/status/2110743040323379705
+L069,2026-10-15,X @mercor,Mercor Research mapped AI benchmarks to actual US jobs.,https://x.com/mercor/status/2110557079027265653
+L070,2026-10-15,X @MengTo,"You can pretty much reverse engineer any device in your home and build a mac app around it. Applied to lights, doors, ac and even the future",https://x.com/MengTo/status/2110747334888083690
+L071,2026-10-15,X @thisiskp_,"I use Instinct every day, and its interactive answers have spoiled me.",https://x.com/thisiskp_/status/2110837486251360549
+L072,2026-10-15,X @spencermateega,Every serious enterprise will soon own and control its own intelligence.,https://x.com/spencermateega/status/2110830524340338942
+L073,2026-10-15,X @lukasgruber__,"A friend of mine is making $10M / month right now going to restaurants, hotels & construction companies in New York and brokering their data",https://x.com/lukasgruber__/status/2110815001535828027
+L074,2026-10-15,X @gregisenberg,More SF observations:,https://x.com/gregisenberg/status/2110777852589191378
+L075,2026-10-15,X @troyaitken_,Best write up I’ve seen on this market yet.,https://x.com/troyaitken_/status/2110561533595996638
+L076,2026-10-15,X @_chenglou,"My dear friends, I’d like to show you my latest toy project",https://x.com/_chenglou/status/2110557373651931267
+L077,2026-10-15,X @cgtwts,anthropic’s lead engineer btw.,https://x.com/cgtwts/status/2110571916973207906

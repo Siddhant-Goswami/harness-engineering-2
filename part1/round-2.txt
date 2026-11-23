@@ -1,0 +1,19 @@
+$ python3 loop.py compare manual/links-model.csv
+agreed on 69 of 76 links (91%)
+  your signal links: it found 10 of 13
+  your noise links:  it called 4 of 63 signal
+  (a model that said noise to everything would agree on 83%: watch the two lines above, not the percentage)
+
+You acted on these. The model called them noise:
+  L022  X @badlogicgames: i think i'm gonna frame this one :)
+  L059  X @MartinGTobias: This prompt significantly improved one of my sites performance. And is further proof that the raw tools are not enough to get good software.
+  L070  X @MengTo: You can pretty much reverse engineer any device in your home and build a mac app around it. Applied to lights, doors, ac and even the future
+
+Noise to you. The model called them signal:
+  L027  X @thedelost: this is pure f*cking treasure
+  L036  X @hanakoxbt: Boris Cherny (Claude Code creator) just released a prompt that turns Opus 5.5 into a harness that actually finishes any job.
+  L043  X @analogalok: Yesterday I trained my own Jev style decision model by finetuning Qwen3.5-4B on the LocalLLaMA/typed-decisions dataset with
+  L067  X @ch3nweiii: It is becoming f*cking dangerous: Anthropic documented every piece of this separately, and nobody noticed what they add up to
+
+Pick the mistake that repeats. Write it in failures.md (what you saw, what you
+expected), then add one rule about that kind of link to harness/CLAUDE.md.

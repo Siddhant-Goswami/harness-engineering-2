@@ -1,0 +1,18 @@
+Topic: Open-source reinforcement learning environments
+
+Posted by Gregor Zunic (@gregpr07) on 2026-10-21
+
+open sourced: RL environments for anyone, in any domain.
+
+Attached content and quote previews:
+Browser Use
+@browser_use
+·
+Oct 21
+Introducing rl-env-use: RL environments for anyone, in any domain.
+
+Describe a skill in one line. Get a verified environment built from real cases, ready for hillclimbing.
+
+100% open source 🔥
+
+Attached: Image, previewInterstitial

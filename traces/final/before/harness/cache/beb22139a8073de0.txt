@@ -1,0 +1,14 @@
+Topic: AI video, audio and creative tools
+
+Posted by Kin (@KinGao476942) on 2026-10-21
+
+Holy shit! Brothers and sisters, if you want to make videos with Opus 5.5, you absolutely have to bookmark these 8 GitHub repos.
+
+1. awesome-opus5-5-videos (about 7100 stars)
+The largest collection of hit videos right now, with the prompt behind each one included.
+
+Attached content and quote previews:
+GitHub - yihui-dev/awesome-opus5-5-videos: A growing collection of viral videos made with Claude...
+
+Resource URLs:
+https://t.co/7EJX8L0ndN

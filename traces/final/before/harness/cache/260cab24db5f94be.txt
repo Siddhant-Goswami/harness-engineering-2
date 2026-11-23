@@ -1,0 +1,25 @@
+Topic: Software engineering and coding tools
+
+Posted by hraness (@hraness) on 2026-09-25
+
+how i scaled my software output to 1,000 PRs/day and 260B tokens/month:
+-i was doing 50 PRs/day at the end of august. just a handful of Codex subscriptions, one laptop running 24/7
+-took me 2 weeks to build reusable infra and autonomous verification systems. i decided upfront
+
+Attached content and quote previews:
+hraness
+@hraness
+·
+Sep 23
+0:09
+my software factory uses 5-10B tokens a day
+
+24x @DevinAI SWE-2 Max
+6x Codex Astra Ultra
+2x Claude Code Fable Max
+
+running in @zeddotdev
+
+Attached: Image, previewInterstitial, Video
+
+Embedded video

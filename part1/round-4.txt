@@ -1,0 +1,14 @@
+$ python3 loop.py compare manual/links-model.csv
+agreed on 72 of 76 links (95%)
+  your signal links: it found 13 of 13
+  your noise links:  it called 4 of 63 signal
+  (a model that said noise to everything would agree on 83%: watch the two lines above, not the percentage)
+
+Noise to you. The model called them signal:
+  L015  X @everestchris6: this is the only prompt you need to make high-end motion videos with claude opus 5.5
+  L021  X @natfriedman: 🚨 side project alert 🚨
+  L023  X @lucasmarkes__: hairlines v0.2 is now available!
+  L043  X @analogalok: Yesterday I trained my own Jev style decision model by finetuning Qwen3.5-4B on the LocalLLaMA/typed-decisions dataset with
+
+Pick the mistake that repeats. Write it in failures.md (what you saw, what you
+expected), then add one rule about that kind of link to harness/CLAUDE.md.

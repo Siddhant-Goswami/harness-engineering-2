@@ -1,0 +1,18 @@
+Topic: AI design and interfaces
+
+Posted by nate parrott (@nateparrott) on 2026-10-08
+
+introducing claude motion!
+
+people have noticed how well Opus 5.5 makes animated explainers, dataviz and product demos — so we've built some lightweight ui on top. let claude animate, then point at part to edit. then export! super fun
+
+Attached content and quote previews:
+Claude
+@claudeai
+·
+Oct 9
+Claude Dashboards and Claude Motion are in beta today.
+
+Ask Claude to turn your data into live dashboards and your ideas into animated explainers.
+
+Attached: Image, Video

@@ -1,0 +1,28 @@
+Topic: AI agents and automation
+
+Posted by Cindy Sridharan (@copyconstruct) on 2026-10-10
+
+How to effectively debug with agents when you no longer read or understand the code
+
+In this post, I propose a debugging framework for agents that doesn’t rely on human knowledge of code to get to the right “root cause”
+
+The TL;DR are the screenshots. 
+
+Link to post in the reply.
+
+Attached content and quote previews:
+Cindy Sridharan
+@copyconstruct
+·
+Sep 14
++1
+Writing a post about “how to effectively debug code when you no longer fully understand it”.
+
+This is real bug I had to fix in ~9K LOC (100% AI generated).
+
+None of the tactics I started with here helped “root cause” the issue, lol. Had to take a different approach to isolate it.
+
+Attached: Image
+
+Quoted post URL:
+https://x.com/copyconstruct/status/2099336089211416908

@@ -1,0 +1,7 @@
+Topic: AI agents and automation
+
+Posted by Letta (@Letta_AI) on 2026-10-21
+
+Introducing FrontierMemory: a new way to evaluate agent memory through downstream task performance.
+
+While existing memory benchmarks focus on recall (saturated via agentic search), FrontierMemory focuses on how agents learn from experience.

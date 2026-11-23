@@ -1,0 +1,23 @@
+Topic: AI video, audio and creative tools
+
+Posted by Archive (@ArchiveExplorer) on 2026-09-29
+
+jev + opus 5.5 for design is insane...
+
+a launch video used to mean an agency, weeks of back and forth and a fat invoice.
+
+now Opus 5.5 makes the video, the ad cuts and the landing page from one brief.
+
+the video below: made in 3 minutes. at 0:09 it drops into edit mode - dot
+
+Attached content and quote previews:
+Archive
+@ArchiveExplorer
+·
+Sep 26
+ Article
+Jev + Harness Engineering: Build an Agent You Can Inspect and Control
+Three builds on Jev: a requirements report, diagnostic selection, a bounded repair loop. Working code, real runs, 28 correct decisions out of 28 across two labelled sets.
+20 September 2026 · Python ·...
+
+Attached: Image, Video, X article

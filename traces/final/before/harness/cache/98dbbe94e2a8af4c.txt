@@ -1,0 +1,36 @@
+Topic: Enterprise AI and FDE
+
+Posted by Luke The Dev (@iamlukethedev) on 2026-10-12
+
+Everyone is talking about Claude + Treg
+
+But I’m thinking about Hermes + Treg
+
+Imagine telling Hermes:
+
+“Find 50 potential clients in my industry, research their companies, find their work emails, and prepare personalized outreach for my approval.”
+
+Hermes handles the workflow
+
+Attached content and quote previews:
+Treg
+@treg_ai
+·
+Oct 12
+Introducing OpenSource people-search for Claude
+
+- Juts $0.0089/lead, no more $600 subscriptions
+- #1 on People Search Bench
+- 0% markup, Fully open source
+
+Try it at 
+https://
+treg.to/people-search
+
+Repo link below 👇
+0:49
+
+Attached: Image, Video
+
+Resource URLs:
+https://help.x.com/rules-and-policies/paid-partnerships-policy

@@ -1,0 +1,25 @@
+$ python3 loop.py compare manual/links-model.csv
+agreed on 61 of 76 links (80%)
+  your signal links: it found 13 of 13
+  your noise links:  it called 15 of 63 signal
+  (a model that said noise to everything would agree on 83%: watch the two lines above, not the percentage)
+
+Noise to you. The model called them signal:
+  L007  X @LexnLin: I asked Claude Code (Opus 5.5) to make a launch video for a fake calendar app and HOLY fuck, everything you see AND hear is code
+  L009  X @tareqistyping: Introducing... Interfaces that think
+  L011  X @ArchiveExplorer: jev + opus 5.5 for design is insane...
+  L015  X @everestchris6: this is the only prompt you need to make high-end motion videos with claude opus 5.5
+  L023  X @lucasmarkes__: hairlines v0.2 is now available!
+  L025  X @PrajwalTomar_: I used to struggle with design.
+  L026  X @RisingSayak: Was meant to be a Valentine's gift, but I'm releasing it early ❤️
+  L028  X @jamesm: If you read this thread and don’t immediately feel excited about the future of design... You're not gonna make it.
+  L032  X @dominikmartn: drag to make ai answers shorter
+  L040  X @MengTo: This is a must-have collection of shaders for making landing pages.
+  L043  X @analogalok: Yesterday I trained my own Jev style decision model by finetuning Qwen3.5-4B on the LocalLLaMA/typed-decisions dataset with
+  L052  X @felixrieseberg: Hi, I'm Felix. I'm an eng lead working on Claude. I love watching people take flight and do things they never thought possible.
+  L068  X @svpino: This is an open-source framework that lets you add AI-generated interfaces to your apps.
+  L071  X @thisiskp_: I use Instinct every day, and its interactive answers have spoiled me.
+  L076  X @_chenglou: My dear friends, I’d like to show you my latest toy project
+
+Pick the mistake that repeats. Write it in failures.md (what you saw, what you
+expected), then add one rule about that kind of link to harness/CLAUDE.md.

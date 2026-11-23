@@ -1,0 +1,9 @@
+Topic: Agent memory and context
+
+Posted by 0xSero (@0xSero) on 2026-10-17
+
+The DGX Sparks are very nice for ML work, tons of memory, good enough compute, and relatively cheap to rent/buy
+
+Currently using 4x to create exl3 quants for 4x RTX Pro 6000 / 3x DGX Sparks about 80 hours to complete.
+
+Most of my compute is locked up in research, even inference.

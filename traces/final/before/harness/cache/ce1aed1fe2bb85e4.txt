@@ -1,0 +1,23 @@
+Topic: AI agents and automation
+
+Posted by Alex Finn (@AlexFinn) on 2026-10-15
+
+America is SO back
+
+Zuck just announced Muse Spark Open is dropping later today, built with Mac Studios in mind
+
+This is bigger than you think
+
+The Meta Muse model was trained specifically for agent tasks. Now we can run it locally, plugged into agents like Hermes
+
+This is the
+
+Attached content and quote previews:
+Mark Zuckerberg
+@finkd
+·
+Oct 15
+Muse Spark Open -- weights releasing today -- runs great on new Mac Studios thanks to work with @johnternus and Apple.
+
+Quoted post URL:
+https://x.com/finkd/status/2110778025629347999

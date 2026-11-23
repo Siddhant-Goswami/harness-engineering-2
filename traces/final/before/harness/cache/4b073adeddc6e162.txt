@@ -1,0 +1,28 @@
+Topic: Model training and AI data
+
+Posted by Alok (@analogalok) on 2026-10-11
+
+Yesterday I trained my own Jev style decision model by finetuning Qwen3.5-4B on the LocalLLaMA/typed-decisions dataset with 
+@UnslothAI
+ 
+
+added a decision head + trained with 4-bit QLoRA on a single A100 within 15 mins, 4 epochs -> 80% accuracy (2 Epochs are enough though)
+
+Merged
+
+Attached content and quote previews:
+Alok
+@analogalok
+·
+Oct 10
+Finetuned Qwen3.5-4B into a decision model like Jev using @UnslothAI. 
+
+- 4-bit QLoRA, bf16, single A100, 15 min. 
+- Train/val loss flatten after 2 epochs so most of the learning happens fast.
+- Trained just 64.5M params (2.1%)
+- accuracy jumps 30% -> 80% after 4 epochs on  x.com/UnslothAI/stat…
+
+Attached: Image, Video
+
+Quoted post URL:
+https://x.com/analogalok/status/2108921475780722776

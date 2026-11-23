@@ -1,0 +1,70 @@
+[
+ {
+  "week": 1,
+  "runs": 3,
+  "score": 0.958,
+  "low": 0.875,
+  "high": 1.0,
+  "per_run": [
+   1.0,
+   0.875,
+   1.0
+  ],
+  "hits": 4.0,
+  "signal": 4,
+  "noise_flagged": 0.3,
+  "decisions_right": 0.0,
+  "decisions": 0,
+  "missed": [],
+  "noise": [
+   {
+    "id": "L001",
+    "source": "X @SullyOmarr",
+    "title": "btw ive gone back on vibe coding",
+    "label": "noise",
+    "runs": 1
+   }
+  ],
+  "wrong_decisions": []
+ },
+ {
+  "week": 2,
+  "runs": 3,
+  "score": 1.0,
+  "low": 1.0,
+  "high": 1.0,
+  "per_run": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "hits": 2.0,
+  "signal": 2,
+  "noise_flagged": 0.0,
+  "decisions_right": 0.0,
+  "decisions": 0,
+  "missed": [],
+  "noise": [],
+  "wrong_decisions": []
+ },
+ {
+  "week": 3,
+  "runs": 3,
+  "score": 1.0,
+  "low": 1.0,
+  "high": 1.0,
+  "per_run": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "hits": 7.0,
+  "signal": 7,
+  "noise_flagged": 0.0,
+  "decisions_right": 0.0,
+  "decisions": 0,
+  "missed": [],
+  "noise": [],
+  "wrong_decisions": []
+ }
+]

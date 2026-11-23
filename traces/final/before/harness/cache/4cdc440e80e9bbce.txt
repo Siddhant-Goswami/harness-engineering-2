@@ -1,0 +1,18 @@
+Topic: Design coherence and taste
+
+Posted by Mario Zechner (@badlogicgames) on 2026-10-16
+
+recommended reading. i like the term "coherence" over "taste".
+
+historically, simplified, a human would approach a software writing human, asking them to build a thing. that's an iterative process, until software writing human truely understands what the other human needs and
+
+Attached content and quote previews:
+Ben Davis
+@davis7
+·
+Oct 15
+Replying to @davis7
+https://
+davis7.substack.com/p/the-labs-hav
+e-the-best-models-with?r=8c4eti&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true
+…
