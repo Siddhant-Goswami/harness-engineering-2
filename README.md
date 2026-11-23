@@ -9,6 +9,9 @@ https://100x-curriculum.vercel.app/harness-engineering-2/
 
 ## Start here
 
+You need Python 3.10 or newer and git. Part 2 also needs one of three harnesses installed and
+logged in: Claude Code, Codex or Hermes.
+
 Clone the repo in your own terminal:
 
 ```
@@ -19,25 +22,27 @@ cd harness-engineering-2
 Then open Claude Code, Codex or Hermes in that folder and paste this:
 
 ```
-Read the README. Run `python3 loop.py prepare` and show me the table.
-Then walk me through Part 1, one step at a time. Wait for me after each step.
-Do not label any link for me.
+Read the README. Run `python3 loop.py next` and do what it says, one step at a time.
+Wait for me after each step. Do not label any link for me.
 ```
 
 Clone it yourself rather than asking the agent to: Codex's sandbox has no network by default,
 so a clone from inside Codex fails.
 
+**Lost at any point? Run `python3 loop.py next`.** It looks at the folder, tells you which step
+you are on, and prints the one command to run next.
+
 A step-by-step tutorial with screenshots for all three harnesses:
 https://100x-curriculum.vercel.app/harness-engineering-2/tutorial/
-
-You need Python 3.10 or newer and git. Part 2 also needs one of the three harnesses installed and logged in.
 
 | | Works with | Costs |
 |---|---|---|
 | **Part 1**, by hand | Any chat tool: Claude, ChatGPT, Codex, Hermes | Nothing beyond your chat plan |
-| **Part 2**, the loop | Claude Code, Codex or Hermes (see [Pick your harness](#pick-your-harness)) | About $1.50 on the sample month with Claude Code |
+| **Part 2**, the loop, on the sample month | Claude Code, Codex or Hermes (see [Pick your harness](#pick-your-harness)) | About $1.50 with Claude Code |
+| **Part 2** on your own month | the same | About $6.50 with Claude Code (baseline, 5 rounds and the hidden week, on 109 X posts with their text) |
 
-The repo ships with a made-up sample month, so every command works before you bring your own links.
+The repo ships with a made-up sample month, already labelled, so every command works before you
+bring your own links. To try the whole thing on the sample first, skip Part 1 steps 1 to 3.
 
 ## Part 1: by hand
 
@@ -48,48 +53,87 @@ whether those helped. Give a tool that can use your browser this prompt:
 
 ```
 Open my bookmarks on X. For every post I saved 30 to 60 days ago, write one row:
-date saved, who posted it, the topic in one line, and the link.
-Give me a CSV with the columns: date, source, title, url, label.
-Leave the label column empty. Do not judge the posts.
+the date, who posted it, the post's first line, the link, and the full text of the post
+(with any post it quotes). Give me a CSV with the columns: date, source, title, url, text.
+Do not judge the posts.
 ```
 
-Use the same prompt for Instagram, YouTube or Reddit saves, or your browser history.
+Use the same prompt for Instagram, YouTube or Reddit saves, or your browser history. X does not
+show when you saved a post, so the post's own date is fine. The column names do not have to
+match: step 2 reads most exports as they are.
 
-**2. Label every row yourself.** Put the CSV at `verifier/links.csv` and fill the last column.
+**2. Bring them in.**
 
-| Label | Meaning |
-|---|---|
-| `signal` | You acted on it and it helped. (`acted` means the same.) |
-| `should have` | You did not act and now wish you had. Optional. |
-| `noise` | You never used it. |
+```
+python3 loop.py import ~/Downloads/your-bookmarks.csv
+```
 
-An empty label is fine: the agent sees the link and it is never scored.
+It finds the link, date and text columns whatever they are called, keeps the links from 30 to
+60 days ago, writes `verifier/links.csv`, and splits them into four weeks. It prints what it
+kept and why. To pick the window yourself: `--from 2026-09-24 --to 2026-10-24`, or `--all`.
 
-**3. Optional: write your decisions** in `verifier/decisions.csv`:
+It also replaces the sample month: its decisions, its list of sources and its saved pages go.
+`git checkout -- verifier harness` brings the sample back.
+
+Read the table it prints. Lines that start with `!` are worth a second look: a week with
+almost no links you acted on gives a jumpy score, and an old outlier date can push most of
+your links into the hidden week.
+
+**3. Label every link yourself.** In your own terminal (not through the agent):
+
+```
+python3 loop.py label
+```
+
+It shows each link with its text and asks for one key. Every answer is saved at once; `q`
+stops, and running it again carries on where you stopped.
+
+| Key | Label | Meaning |
+|---|---|---|
+| `s` | `signal` | You acted on it and it helped. (`acted` means the same.) |
+| `h` | `should have` | You did not act and now wish you had. Optional. |
+| `n` | `noise` | You never used it. |
+| Enter | (empty) | Not sure. The agent still sees the link; it is never scored. |
+
+You can fill the `label` column of `verifier/links.csv` in a spreadsheet instead. Label all
+four weeks: week four's labels stay hidden from both agents until the end.
+
+**4. Optional: write your decisions** in `verifier/decisions.csv`:
 `date, question, outcome, how_it_turned_out`. The outcome is `adopt`, `wait` or `ignore`.
 
-**4. Let a model label the same links, blind.**
+**5. Let a model label the same links, blind.**
 
 ```
-python3 loop.py prepare
 python3 loop.py blank
+claude -p < manual/prompt.txt > manual/links-model.csv
 ```
 
-`blank` writes `manual/links-blank.csv`: your first three weeks with the labels removed.
-Give that file to any model with one line: "Fill the label column with signal or noise."
-Save its answer as `manual/links-model.csv`.
+`blank` writes your first three weeks with the labels removed, and `manual/prompt.txt`: the
+same links as a ready prompt. In Codex: `codex exec -o manual/links-model.csv < manual/prompt.txt`.
+In any chat tool: paste `manual/prompt.txt` and save the reply as `manual/links-model.csv`.
 
-**5. Compare.**
+By default the model sees what you saw in your list: the source and the title. If your titles
+are only each post's first line ("This is an extremely good watch."), use `blank --text` so the
+model sees the start of each post too.
+
+**6. Compare.**
 
 ```
 python3 loop.py compare manual/links-model.csv
 ```
 
-It prints how many links you agreed on and lists each disagreement.
+It prints how many links you agreed on and lists each disagreement. Watch the two lines under
+the percentage, not the percentage: most saved links are noise, so a model that says "noise" to
+everything already agrees with you most of the time.
 
-**6. Write down the mistake that repeats.** In `failures.md`: what you saw, what you
-expected. Then add one rule about that kind of link to `harness/CLAUDE.md`, with the
-tag, like `(F1)`. Go back to step 4. Stop when the disagreements stop teaching you anything.
+**7. Write down the mistake that repeats.** In `failures.md`: what you saw, what you expected,
+tagged `F1`. Then add one rule about that kind of link to `harness/CLAUDE.md`, under
+**What matters to this reader**, ending with the tag, like `(F1)`.
+
+Go back to step 5. `blank` puts your tagged rules into the prompt by itself, so the model now
+judges with them. Expect each rule to move the model's line everywhere, not only on the links
+you wrote it for: a rule that fixes three misses can create two new ones. Stop when the
+disagreements stop teaching you anything. Three times round is a good minimum.
 
 In the session this was "the learning after run 1, run 2...". Those notes are the
 record of how you judge. Part 2 hands the same job to a second agent.
@@ -103,12 +147,18 @@ python3 loop.py brief 1
 python3 verifier/score.py traces/try
 ```
 
+A score can go below zero: that means the brief cited more noise than it found signal (see
+[How a brief is scored](#how-a-brief-is-scored)).
+
 **Record where you start.** Commit your hand-written rules, then:
 
 ```
-git commit -am "F1: ..."
+git add -A && git commit -m "F1: ..."
 python3 loop.py baseline
 ```
+
+Use `git add -A`, not `git commit -am`: `-a` leaves out files you created, and the baseline
+refuses to start until everything is committed.
 
 **The second agent.** Read `optimizer/CLAUDE.md`. Then let it work. One round takes about 90 seconds.
 
@@ -119,7 +169,9 @@ python3 loop.py status
 git log --oneline
 ```
 
-Do not edit files while `run` is going. The check in step 6 will blame the optimizer and revert them.
+Do not edit files in the repo while `run` is going: the check in step 6 blames the optimizer for
+any change and reverts the round, and the revert also throws away uncommitted edits. Keep notes
+in `notes/`: git ignores that folder, so it is safe.
 
 **The hidden week.**
 
@@ -129,6 +181,11 @@ python3 loop.py final
 
 It runs week four on the setup you started with and on the final one, and prints both
 scores. It runs once. A second look is not a hidden week any more.
+
+Read the `of which` line under the scores before you believe the verdict. If "found" did not
+rise and only "noise cited" fell, the new setup learned what to leave out of a brief, not more
+about what you value. And if one run of the old setup already scored as high as the new one,
+the rise is inside its own spread.
 
 ## Pick your harness
 
@@ -198,7 +255,10 @@ The week from the session: 7 of 9 links found, 2 of 2 decisions right, 3 noise i
 called important. (7 + 4 - 1.5) / (9 + 4) = 0.73.
 
 - A link is "found" when its id, like `[L014]`, appears under **What changed** or **What to do**.
-- Links under **Who disagrees** are not scored either way.
+- Any id there counts as "this matters", even in a line like "skip these: [L007] [L009]". So a
+  brief that finds every link and lists the rest as skips can score below zero.
+- Links under **Who disagrees** are not scored either way. A link you acted on that only appears
+  there counts as missed.
 - The noise penalty exists because the cheapest way to raise the score is to cite everything.
 
 ## The walls (step 6)
@@ -222,8 +282,12 @@ The briefing agent has one wall: a run whose trace reaches outside `harness/` sc
 | `optimizer/` | The second agent's instructions, its journal, its permission requests | You (the journal is written by code) |
 | `failures.md` | Failures you saw yourself, tagged F1, F2... | You |
 | `loop.py` | The outer loop. Nine steps, two of them a model | You |
+| `bookmarks.py` | `import` and `label`: your export in, your labels on | You |
 | `agents.py` | Runs one agent in Claude Code, Codex or Hermes | You |
 | `traces/` | The raw trace of every run | Written by code |
+| `manual/` | Part 1's files: the blank copy, the prompt, the model's labels | Written by code and you |
+| `notes/` | Yours. Ignored by git, so safe to edit while the loop runs | You |
+| `facilitator/`, `deck/`, `explainer/`, `traces-sample-run/` | Session materials. You do not need them | |
 
 ## The sample month
 
@@ -254,22 +318,32 @@ The branch `sample-run` holds a finished run, so you can read one without paying
 
 Round 1 was reverted ("fetch every link" made it cite everything: 0.739 to 0.504). Rounds 2 to 4
 were kept: the reader's stack, measured findings count as news, cite the changelog not the recap.
+(It was recorded before `harness/CLAUDE.md` told the agent to leave skipped links out, so your
+baseline may start higher.)
 
 ```
 git log origin/sample-run --oneline
 git diff sample-baseline origin/sample-run -- harness
 ```
 
-## Bring your own month
+### A finished run on a real month
 
-1. Replace `verifier/links.csv` with your labelled links. It needs no `text` column.
-2. Replace `verifier/decisions.csv` with your decisions, or leave only its header row.
-3. Delete `harness/sources.md` and `harness/cache/`.
-4. `python3 loop.py prepare`
+The branch `student-run-real-bookmarks` holds a run on 109 real X bookmarks, with a journal of
+every step and where it got confusing (`student-journey/JOURNAL.md`).
 
-Days 22 onward become week four. Pages are fetched the first time the agent reads them and
-kept in `harness/cache/`, so a week reads the same on every run. Links behind a login
-(X, LinkedIn) come back as title only.
+## What `import` does with your own month
+
+1. Writes `verifier/links.csv` with the columns `date, source, title, url, label, text`. Labels
+   you already gave are kept when you import again, matched by link.
+2. Puts each post's text in `text` when the export has it, so the agent reads the post. Without
+   it, pages are fetched the first time the agent reads them and kept in `harness/cache/`, so a
+   week reads the same on every run. Links behind a login (X, LinkedIn) come back as title only.
+3. When it replaces the sample: empties `verifier/decisions.csv` to its header, and deletes
+   `harness/sources.md` and `harness/cache/`.
+4. Runs `prepare`. Days 22 onward become week four.
+
+Your labelled links live in `verifier/links.csv`, which is committed in your clone. If you push
+your fork to a public repo, your bookmarks and labels go with it.
 
 ## Read a trace
 
@@ -289,6 +363,21 @@ python3 loop.py trace traces/round-0/week-1.run-1.jsonl  # what the briefing age
   habit of the setup; a miss in one run may be chance.
 - Kept rounds are the lucky ones, so the live score drifts a little high and later rounds
   find it harder to beat. The hidden week is where that luck gets checked.
+- A week with only one or two links you acted on scores in big steps, and once the brief finds
+  both it sits at 1.0 and teaches the loop nothing. `prepare` warns you about such weeks.
+
+## When something goes wrong
+
+| What you see | What it means |
+|---|---|
+| `Could not find the url and date column` | `import` could not guess your columns. Rename the link column to `url` and the date column to `date`. |
+| `None of your links fall between ...` | Your export is not from 30 to 60 days ago. Use the `--from`/`--to` it suggests, or `--all`. |
+| `No keyboard here` from `label` | It was run by an agent. Run `python3 loop.py label` in your own terminal. |
+| `compare`: `No row ... has an id` | The model replied with something other than a CSV. Open the file; run step 5 again. |
+| A score below zero | The brief cited more noise than signal it found. See [How a brief is scored](#how-a-brief-is-scored). |
+| `Commit your work first` | `git add -A && git commit -m "..."`, then run the command again. |
+| A round says `blocked: it changed notes.md, outside the harness` | You edited a file while the loop ran. Keep notes in `notes/`. |
+| `this sign-in can end at any time` from Claude Code | Run `claude auth login` before a long `run`, so it does not stop halfway. |
 
 ## Take-home
 

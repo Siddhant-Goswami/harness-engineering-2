@@ -69,8 +69,10 @@ def load_decisions():
 def scored_part(brief):
     """Only 'What changed' and 'What to do' are scored.
 
-    A link cited under 'Who disagrees' is neither a hit nor a penalty: the
-    brief is allowed to quote the weak side of an argument.
+    Any id in those two parts counts as "this matters", even in a line like
+    "skip these: [L007] [L009]". A link cited under 'Who disagrees' is neither
+    a hit nor a penalty: the brief is allowed to quote the weak side of an
+    argument. (So a link you acted on that only appears there counts as missed.)
     """
     parts = re.split(r"(?m)^#+\s*(.+)$", brief)
     if len(parts) < 3:
@@ -133,9 +135,13 @@ def score_runs(week, briefs, open_hidden=False):
 
     avg = lambda key: round(sum(r[key] for r in runs) / n, 1)
     vals = [r["score"] for r in runs]
+    if None in vals:  # nothing to score this week: no labelled signal and no decisions
+        mean_, low, high = None, None, None
+    else:
+        mean_, low, high = round(sum(vals) / n, 3), min(vals), max(vals)
     return {
         "week": week, "runs": n,
-        "score": round(sum(vals) / n, 3), "low": min(vals), "high": max(vals), "per_run": vals,
+        "score": mean_, "low": low, "high": high, "per_run": vals,
         "hits": avg("hits"), "signal": runs[0]["signal"], "noise_flagged": avg("noise_flagged"),
         "decisions_right": avg("decisions_right"), "decisions": runs[0]["decisions"],
         "missed": tally("missed"), "noise": tally("noise"), "wrong_decisions": tally("wrong_decisions"),
@@ -152,10 +158,16 @@ def table(scores):
     lines = ["week  score  low to high   found      noise called important   decisions right"
              + (f"   (mean of {n} runs)" if n > 1 else "")]
     for s in scores:
+        if s["score"] is None:
+            lines.append(f"  {s['week']}   no labelled signal or decisions this week: nothing to score")
+            continue
         spread = f"{s['low']} to {s['high']}"
         lines.append(f"  {s['week']}   {s['score']:>5}  {spread:<13} {s['hits']:>4}/{s['signal']:<5} "
                      f"{s['noise_flagged']:<24} {s['decisions_right']}/{s['decisions']}")
-    lines.append(f"mean  {mean(scores):>5}")
+    lines.append(f"mean  {str(mean(scores)):>5}")
+    if any(s["score"] is not None and s["score"] < 0 for s in scores):
+        lines.append("\nBelow zero means the briefs cited more noise than they found signal. Every id under"
+                     "\n'What changed' or 'What to do' counts as 'this matters', even in a 'skip these' line.")
     return "\n".join(lines)
 
 

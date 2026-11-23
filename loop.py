@@ -15,6 +15,9 @@ Nine steps. Two of them call a model (marked MODEL). The rest is plain code.
 
 Commands:
 
+    python3 loop.py next           where you are, and the one command to run next
+    python3 loop.py import FILE    your bookmarks export -> verifier/links.csv (any columns)
+    python3 loop.py label          label your links one at a time (in your own terminal)
     python3 loop.py prepare        step 1
     python3 loop.py blank          by hand: your weeks 1-3 links with the labels removed
     python3 loop.py compare FILE   by hand: where a model's labels differ from yours
@@ -50,6 +53,7 @@ import score as verifier  # noqa: E402
 
 from agents import BRIEF_MODEL, OPT_MODEL, RUNNER, events, tokens, tool_inputs  # noqa: E402
 from agents import run as run_agent  # noqa: E402
+import bookmarks  # noqa: E402
 RUNS = int(os.environ.get("RUNS", "3"))  # briefs per week; the score is their mean
 MIN_GAIN = 0.02      # a change must beat the current score by this much to stay
 SCORES = ROOT / "scores.csv"
@@ -128,14 +132,43 @@ def prepare():
                            "No notes on any of them yet.\n\n"
                            + "\n".join(f"- {n}" for n in names) + "\n")
 
-    print("week  links  acted  should have  noise  not labelled  decisions")
+    print("week  dates                     links  acted  should have  noise  not labelled  decisions")
     decisions = verifier.load_decisions()
     for w in [*WEEKS, verifier.HIDDEN_WEEK]:
         wk = [r for r in links if r["week"] == w]
         n = lambda label: sum(r["label"] == label for r in wk)
-        print(f"  {w}    {len(wk):>4}   {n('acted'):>4}   {n('should_have'):>10}   "
+        dates = f"{wk[0]['date']} to {wk[-1]['date']}" if wk else "(no links)"
+        print(f"  {w}   {dates:<24}  {len(wk):>4}   {n('acted'):>4}   {n('should_have'):>10}   "
               f"{n('noise'):>4}   {n(''):>11}   {sum(d['week'] == w for d in decisions):>8}"
               + ("   (hidden)" if w == verifier.HIDDEN_WEEK else ""))
+    warnings(links)
+
+
+def warnings(links):
+    """What will make the scores hard to trust, said before any money is spent."""
+    from datetime import date
+    out = []
+    span = (date.fromisoformat(links[-1]["date"]) - date.fromisoformat(links[0]["date"])).days
+    if span > 35:
+        late = sum(r["week"] == verifier.HIDDEN_WEEK for r in links)
+        out.append(f"Your links span {span} days. Day 22 onward is all week four, so {late} of "
+                   f"{len(links)} links are hidden. Import a 30-day window instead "
+                   f"(python3 loop.py import FILE --from ... --to ...).")
+    labelled = any(r["label"] for r in links)
+    for w in WEEKS:
+        wk = [r for r in links if r["week"] == w]
+        sig = sum(r["label"] in verifier.SIGNAL for r in wk)
+        if not wk:
+            out.append(f"Week {w} has no links. Its score will be empty.")
+        elif labelled and sig == 0:
+            out.append(f"Week {w} has no link labelled signal or should have, so it cannot be scored.")
+        elif labelled and sig < 3:
+            out.append(f"Week {w} has only {sig} signal link{'s' if sig > 1 else ''}: one miss moves "
+                       f"its score by {1 / sig:.2f}. Fine, but expect big jumps.")
+    if not labelled:
+        out.append("No labels yet. Next: python3 loop.py label   (in your own terminal)")
+    for line in out:
+        print("\n! " + line)
 
 
 # ---------------------------------------------------------------- by hand
@@ -143,36 +176,80 @@ def prepare():
 BLANK = ROOT / "manual" / "links-blank.csv"
 
 
-def blank():
-    """Your links for weeks 1 to 3 with the label column empty, to hand to any model."""
+PROMPT = ROOT / "manual" / "prompt.txt"
+
+
+def reader_rules():
+    """The rules you wrote about this reader: every paragraph of harness/CLAUDE.md with a tag."""
+    text = (HARNESS / "CLAUDE.md").read_text()
+    return [p.strip() for p in re.split(r"\n\s*\n", text) if re.search(r"\((?:F|R)\d+\)", p)
+            and not p.lstrip().startswith(("Work only", "A tag in brackets"))]
+
+
+def blank(with_text=False):
+    """Your links for weeks 1 to 3 with the label column empty, and a prompt for any model.
+
+    By default the model sees what you saw in your list: source and title. With --text it also
+    sees the start of each post, which you want when titles are only a tweet's first line.
+    """
     BLANK.parent.mkdir(exist_ok=True)
-    cols = ["id", "date", "source", "title", "url", "label"]
     links = [r for r in verifier.load_links() if r["week"] in WEEKS]
+    has_text = with_text and any(r.get("text") for r in links)
+    cols = ["id", "date", "source", "title", "url", "label"] + (["text"] if has_text else [])
+    short = lambda s: " ".join((s or "").split())[:500]
     with open(BLANK, "w", newline="") as f:
         out = csv.DictWriter(f, cols, extrasaction="ignore")
         out.writeheader()
-        out.writerows(dict(r, label="") for r in links)
+        out.writerows(dict(r, label="", text=short(r.get("text"))) for r in links)
+
+    rules = reader_rules()
+    PROMPT.write_text(
+        "Below is a CSV of links one reader saved. Fill the label column with signal or noise.\n"
+        "signal: the reader acted on it, or should have. noise: the reader never used it.\n"
+        + ("\nWhat this reader has told you about how they judge links:\n\n"
+           + "\n\n".join(rules) + "\n" if rules else "")
+        + "\nReply with a CSV of two columns, id and label: the header row `id,label`, then one row"
+          " per link. No code fences, nothing before or after.\n\n"
+        + BLANK.read_text())
     print(f"{len(links)} links, no labels: {BLANK.relative_to(ROOT)}")
+    print(f"The same, as a prompt for a model: {PROMPT.relative_to(ROOT)}"
+          + (f" (with your {len(rules)} rule{'s' if len(rules) > 1 else ''} from harness/CLAUDE.md)"
+             if rules else ""))
     print("Week four is left out so it stays hidden.")
-    print("Give the file to a model, ask it to fill the label column with signal or noise,")
-    print("save its answer as manual/links-model.csv, then:")
+    if not with_text and any(r.get("text") for r in links) and not any(
+            "sample.invalid" in r["url"] for r in links):
+        print("Your titles are only each post's first line? Give the model the posts too:\n"
+              "    python3 loop.py blank --text")
+    print()
+    print("Have a model label them, blind. Pick one:")
+    print("    claude -p < manual/prompt.txt > manual/links-model.csv")
+    print("    codex exec -o manual/links-model.csv < manual/prompt.txt")
+    print("    or paste manual/prompt.txt into any chat and save the reply as manual/links-model.csv")
+    print("Then:")
     print("    python3 loop.py compare manual/links-model.csv")
 
 
 def compare(path):
     """Where a model's signal/noise labels differ from yours. You write the lesson."""
     mine = {r["id"]: r for r in verifier.load_links() if r["week"] in WEEKS and r["label"]}
-    with open(path, newline="") as f:
-        theirs = {(r.get("id") or "").strip(): verifier._label(r.get("label"))
-                  for r in csv.DictReader(f)}
+    theirs = read_model_labels(path)
     side = lambda label: "noise" if label == "noise" else "signal"
     judged = {i: r for i, r in mine.items() if theirs.get(i)}
     if not judged:
-        raise SystemExit("No row in that file has an id (L001...) and a label of signal or noise.")
+        raise SystemExit(f"No row in {path} has an id (L001...) and a label of signal or noise.\n"
+                         f"Open it and check the model replied with the CSV, not a summary.")
     missed = [r for i, r in judged.items() if side(r["label"]) == "signal" and theirs[i] == "noise"]
     extra = [r for i, r in judged.items() if side(r["label"]) == "noise" and theirs[i] != "noise"]
     agree = len(judged) - len(missed) - len(extra)
+    sig = sum(side(r["label"]) == "signal" for r in judged.values())
+    noise = len(judged) - sig
     print(f"agreed on {agree} of {len(judged)} links ({agree / len(judged):.0%})")
+    if sig:
+        print(f"  your signal links: it found {sig - len(missed)} of {sig}")
+    if noise:
+        print(f"  your noise links:  it called {len(extra)} of {noise} signal")
+    print(f"  (a model that said noise to everything would agree on {noise / len(judged):.0%}: "
+          f"watch the two lines above, not the percentage)")
     if len(judged) < len(mine):
         print(f"{len(mine) - len(judged)} of your labelled links had no label in that file")
     for title, group in (("You acted on these. The model called them noise:", missed),
@@ -184,6 +261,21 @@ def compare(path):
     if missed or extra:
         print("\nPick the mistake that repeats. Write it in failures.md (what you saw, what you")
         print("expected), then add one rule about that kind of link to harness/CLAUDE.md.")
+
+
+def read_model_labels(path):
+    """{id: label} from a model's reply. Forgives code fences, chatter and a missing header."""
+    lines = [l for l in Path(path).read_text(encoding="utf-8-sig").splitlines()
+             if l.strip() and not l.strip().startswith("```")]
+    words = ("signal", "noise", "acted", "should")
+    out = {}
+    for cells in csv.reader(lines):
+        lid = next((c.strip() for c in cells if re.fullmatch(r"L\d{3}", c.strip())), None)
+        lab = next((verifier._label(c) for c in reversed(cells)
+                    if c.strip().lower().startswith(words) and len(c.strip()) < 15), "")
+        if lid and lab:
+            out[lid] = lab
+    return out
 
 
 # ---------------------------------------------------------------- step 2
@@ -230,8 +322,9 @@ def many(weeks, folder, harness=HARNESS):
 def put_back():
     """A briefing run may write in scratch/ only. Codex and Hermes are not fenced the way
     Claude Code is, so after each batch plain code puts back anything else they changed."""
-    changed = [l[3:] for l in git("status", "--porcelain", "-uall", "--", "harness").splitlines()
-               if not l[3:].startswith("harness/scratch/")]
+    paths = [l.split(maxsplit=1)[1].strip('"')
+             for l in git("status", "--porcelain", "-uall", "--", "harness").splitlines()]
+    changed = [p for p in paths if not p.startswith("harness/scratch/")]
     if changed:
         print(f"  a briefing run changed {', '.join(changed)}: put back")
         git("checkout", "--", "harness", check=False)
@@ -253,7 +346,9 @@ def baseline():
     if rows():
         raise SystemExit("There is already a baseline. Delete scores.csv and traces/ to start over.")
     if git("status", "--porcelain"):
-        raise SystemExit("Commit your work first, so the baseline is a commit.")
+        raise SystemExit("Commit your work first, so the baseline is a commit:\n"
+                         "    git add -A && git commit -m \"F1: my first rules\"\n"
+                         "(`git add -A`, not `commit -a`: -a leaves out files you created.)")
     scores = briefs_and_scores(TRACES / "round-0")
     add_row("0", scores, "baseline", "the setup before any round")
     git("add", "scores.csv")
@@ -267,7 +362,7 @@ def report(n, folder):
     """Plain code turns the last scores into a report the optimizer can start from."""
     live, best = current()
     scores = json.loads((TRACES / f"round-{live}" / "scores.json").read_text())
-    worst = min(scores, key=lambda s: s["score"])
+    worst = min((s for s in scores if s["score"] is not None), key=lambda s: s["score"])
     k = worst["per_run"].index(min(worst["per_run"])) + 1
     runs = worst["runs"]
     line = lambda r, w: (f"- week {w} | {r['id']} | {r['source']} | {r['title']} | {r['label']}"
@@ -276,7 +371,7 @@ def report(n, folder):
            f"The live setup scored {best} on weeks 1 to 3, the mean of {runs} runs per week "
            f"(traces: ../traces/round-{live}/, one file per week per run).",
            "Per week: " + ", ".join(f"week {s['week']}: {s['score']} ({s['low']} to {s['high']})"
-                                    for s in scores), "",
+                                    for s in scores if s["score"] is not None), "",
            f"Worst week: {worst['week']}. Its worst run: ../traces/round-{live}/week-{worst['week']}.run-{k}.jsonl",
            "A miss in every run is a habit of the setup. A miss in one run may be chance.",
            "", "## Missed: the reader acted on these, or should have, and the brief left them out"]
@@ -349,7 +444,8 @@ def journal(n, reason, predicted, verdict, before, after):
 
 def one_round():
     if git("status", "--porcelain"):
-        raise SystemExit("Uncommitted changes. Commit or discard them before a round.")
+        raise SystemExit("Uncommitted changes. Commit them (git add -A && git commit -m \"...\") or\n"
+                         "discard them before a round. Keep notes in notes/: git ignores that folder.")
     _, best = current()
     n = len(rows())
     folder = TRACES / f"round-{n}"
@@ -422,14 +518,26 @@ def final():
     after = verifier.score_runs(week, a.result()[week], open_hidden=True)
 
     cell = lambda s: f"{s['score']} ({s['low']} to {s['high']})"
+    found = lambda s: f"{s['hits']}/{s['signal']} found, {s['noise_flagged']} noise cited"
     print("\n                 before                 after")
     print(f"weeks 1 to 3     {start:<22} {best}    (the loop could see these)")
     print(f"week 4           {cell(before):<22} {cell(after)}    (it could not see this)")
+    print(f"  of which       {found(before):<22} {found(after)}")
     seen, unseen = best - start, after["score"] - before["score"]
     if seen < MIN_GAIN:
         verdict = "No change was kept, so there is nothing to test."
     elif unseen >= MIN_GAIN:
-        verdict = "Week four rose too. The harness learned something about how you decide."
+        verdict = "Week four rose too."
+        if after["hits"] <= before["hits"]:
+            verdict += (" But the new setup found no more of what mattered: all of the rise is"
+                        " noise it stopped citing. It learned what to leave out of a brief. Read"
+                        " the kept changes and ask whether that is how you decide, or only tidier"
+                        " writing.")
+        else:
+            verdict += " It found more of what mattered: the harness learned something about how you decide."
+        if after["score"] <= before["high"]:
+            verdict += (f" Note: one run of the old setup already scored {before['high']}, so the"
+                        f" rise is inside its own spread and may be partly luck.")
     elif unseen > -MIN_GAIN:
         verdict = ("Week four did not move. The gain on the weeks it saw did not carry over: "
                    "it fitted your past, not how you decide.")
@@ -470,6 +578,63 @@ def show(trace):
                   + (f" ({e['runner']})" if e.get("runner") else ""))
 
 
+def next_step():
+    """Look at the folder and say where the student is, and the one command to run next."""
+    links = verifier.load_links()
+    sample = any("sample.invalid" in r["url"] for r in links)
+    unlabelled = sum(not r["label"] for r in links)
+    say = lambda where, *lines: print(f"You are at: {where}\n\nNext:\n" + "\n".join(f"    {l}" for l in lines))
+    log = re.sub(r"(?s)<!--.*?-->", "", (ROOT / "failures.md").read_text())  # skip the example
+    failures = re.findall(r"(?m)^## F\d+", log)
+    model_files = sorted((ROOT / "manual").glob("links-model*.csv")) if (ROOT / "manual").exists() else []
+
+    if sample:
+        print("You are on the made-up sample month (already labelled). Every step works on it.\n"
+              "To use your own links: get them (README, Part 1 step 1), then\n"
+              "    python3 loop.py import path/to/your-bookmarks.csv\n")
+    if not (HARNESS / "inbox" / "week-1.csv").exists():
+        return say("Part 1, step 1. Your links are in, not yet split into weeks.",
+                   "python3 loop.py prepare")
+    if unlabelled == len(links):
+        return say(f"Part 1, step 2. None of your {len(links)} links has a label.",
+                   "python3 loop.py label        # in your own terminal; it asks s / h / n for each",
+                   "(or fill the label column of verifier/links.csv in a spreadsheet)")
+    if unlabelled and not model_files:
+        print(f"Note: {unlabelled} of {len(links)} links have no label. That's fine if you could not tell;"
+              f" `python3 loop.py label` picks up where you stopped.\n")
+    if not model_files:
+        own_text = not sample and any(r.get("text") for r in links)
+        return say("Part 1, step 4. Labelled. Now see how a model would label them, blind.",
+                   "python3 loop.py blank" + (" --text   # your titles are tweet first lines;"
+                                              " this gives the model the posts" if own_text else ""),
+                   "then run the command it prints")
+    if not failures:
+        return say("Part 1, steps 5 and 6. A model has labelled your links.",
+                   f"python3 loop.py compare {model_files[-1].relative_to(ROOT)}",
+                   "then write the mistake that repeats in failures.md as F1, and one rule ending",
+                   "in (F1) under 'What matters to this reader' in harness/CLAUDE.md")
+    if not (TRACES / "try").exists():
+        return say(f"Part 1 done ({len(failures)} failures logged). Repeat steps 4 to 6 until the "
+                   f"disagreements stop teaching you anything. Then Part 2: the first agent.",
+                   "python3 loop.py brief 1", "python3 verifier/score.py traces/try")
+    if not rows():
+        if git("status", "--porcelain"):
+            return say("Part 2. Commit your rules, so the baseline is a commit.",
+                       'git add -A && git commit -m "F1: ..."', "python3 loop.py baseline")
+        return say("Part 2. Record where you start.", "python3 loop.py baseline")
+    rounds = len(rows()) - 1
+    if not OPENED.exists() and rounds < 5:
+        return say(f"Part 2. Baseline recorded, {rounds} round{'s' if rounds != 1 else ''} so far."
+                   " Don't edit files while rounds run (notes/ is safe).",
+                   f"python3 loop.py run {5 - rounds}", "python3 loop.py status")
+    if not OPENED.exists():
+        return say(f"Part 2. {rounds} rounds done.",
+                   "git log --oneline     # read the kept changes first",
+                   "python3 loop.py final  # opens week four, once")
+    return say("Done: week four is open. The take-home is at the end of the README.",
+               "python3 loop.py status", "git log --oneline")
+
+
 def status():
     for r in rows():
         print(f"round {r['round']:>2}  {r['mean']:>6}  {r['verdict']:<9} {r['reason']}")
@@ -477,10 +642,21 @@ def status():
 
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
-    if cmd == "prepare":
+    if cmd == "next":
+        next_step()
+    elif cmd == "import":
+        if len(sys.argv) < 3:
+            raise SystemExit("python3 loop.py import FILE [--all | --from YYYY-MM-DD --to YYYY-MM-DD]")
+        args = sys.argv[3:]
+        opt = lambda k: args[args.index(k) + 1] if k in args else None
+        bookmarks.import_file(sys.argv[2], opt("--from"), opt("--to"), "--all" in args)
+        prepare()
+    elif cmd == "label":
+        bookmarks.label(redo="--redo" in sys.argv)
+    elif cmd == "prepare":
         prepare()
     elif cmd == "blank":
-        blank()
+        blank(with_text="--text" in sys.argv)
     elif cmd == "compare":
         compare(sys.argv[2])
     elif cmd == "brief":
@@ -506,3 +682,4 @@ if __name__ == "__main__":
         show(sys.argv[2])
     else:
         print(__doc__)
+        next_step()

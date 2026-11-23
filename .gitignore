@@ -1,8 +1,10 @@
-traces/
-harness/inbox/
-harness/cache/
-harness/scratch/
-manual/
-.runner/
+/traces/
+/harness/inbox/
+/harness/cache/
+/harness/scratch/
+/manual/
+/.runner/
+/notes/
+/verifier/*.backup.csv
 __pycache__/
 .DS_Store
