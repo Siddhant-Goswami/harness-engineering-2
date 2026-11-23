@@ -21,3 +21,8 @@ Written by loop.py after every round. The optimizer reads it; it does not write 
 - Change: Added a memory.md line (R4): a teaser plus "Attached: X article" should be cited when it is the author's own design for how agents are built, run or checked, but not when it comments on another team's result or predicts its business impact (F2).
 - Predicted: Fixes the week-3 miss L061 (3/3 runs) without bringing back the week-3 noise L044 that sank Round 3; it does not touch the 1-of-3 week-1 noise L011.
 - Observed: 0.938 to 0.911 on weeks 1 to 3
+
+## Round 5: kept
+- Change: Added a memory.md line (R5): judge a post by the author's own words, not by what it attaches; hype or market forecasts are noise even with a harness article attached, and the author's own plan for how agents run, decide or check work is signal even as a short teaser.
+- Predicted: Fixes the week-3 miss L061 (3/3 runs) and lowers the week-1 noise L011 (1/3) without adding L044 as noise or losing L039.
+- Observed: 0.938 to 0.986 on weeks 1 to 3
