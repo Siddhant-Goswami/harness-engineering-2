@@ -350,12 +350,34 @@ Part 2, the loop, starting from those three rules:
 The hidden week rose less than the weeks the loop could see: part of what it learned was about
 these three weeks. It cost $6.84 in Claude Code.
 
+#### What is on the branch, and how to read it
+
+`real-month` is `main` plus the commits of that one run, made the way you would make yours:
+
+| On `main` | On `real-month` |
+|---|---|
+| The sample month in `verifier/links.csv`, with its 8 decisions | The real month, imported from `examples/x-bookmarks.csv`; no decisions |
+| Empty `failures.md`, stock `harness/CLAUDE.md` | F1 to F3 in `failures.md`, and their rules in `harness/CLAUDE.md` |
+| Empty `harness/memory.md` | The three rules the optimizer kept: R1, R2 and R5 |
+| No `scores.csv`, empty `optimizer/journal.md` | Every round's scores and the optimizer's journal |
+| No `traces/` | Every brief and trace, `verifier/week4-opened.json`, and the four Part 1 compare outputs in `part1/` |
+
+Read it without switching to it. `git checkout real-month` would put its labels, rules and scores
+in your folder in place of yours. Instead:
+
 ```
-git log origin/real-month --oneline
-git diff origin/real-month~12 origin/real-month -- harness       # what the optimizer kept
+git log origin/real-month --oneline                   # the run, one commit per step
+git show origin/real-month:harness/memory.md          # the three rules the optimizer kept
+git diff 5cca3c2 origin/real-month -- harness         # all it changed after the baseline (5cca3c2)
+git worktree add ../real-month origin/real-month      # the whole run in a folder of its own
 ```
 
-To run it yourself: `python3 loop.py import examples/x-bookmarks.csv --all`, then Part 1 from step 5.
+In that folder, `python3 loop.py status` lists the rounds and
+`python3 loop.py trace traces/round-5/optimizer.jsonl` shows what the optimizer read. Remove the
+folder with `git worktree remove ../real-month`.
+
+To make the run yourself: `python3 loop.py import examples/x-bookmarks.csv --all` in your own clone,
+then Part 1 from step 5.
 
 ## What `import` does with your own month
 
