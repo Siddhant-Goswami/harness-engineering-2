@@ -204,8 +204,9 @@ def blank(with_text=False):
 
     rules = reader_rules()
     PROMPT.write_text(
-        "Below is a CSV of links one reader saved. Fill the label column with signal or noise.\n"
-        "signal: the reader acted on it, or should have. noise: the reader never used it.\n"
+        "Below is a CSV of links one reader saved. For each one, guess whether this reader would\n"
+        "find it worth acting on, and fill the label column with signal (worth acting on) or noise\n"
+        "(not worth their time). You cannot know for sure: give your best guess for every row.\n"
         + ("\nWhat this reader has told you about how they judge links:\n\n"
            + "\n\n".join(rules) + "\n" if rules else "")
         + "\nReply with a CSV of two columns, id and label: the header row `id,label`, then one row"
