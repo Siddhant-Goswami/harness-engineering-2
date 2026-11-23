@@ -491,7 +491,12 @@ def final():
     """Open week four, once. Neither agent has seen its links or its labels."""
     if OPENED.exists():
         raise SystemExit("Week four is already open. A second look is not a hidden week any more.")
-    _, best = current()
+    live, best = current()
+    if live == "0" and "--anyway" not in sys.argv:
+        raise SystemExit("No change has been kept yet, so the final setup is the one you started with:\n"
+                         "week four would compare a setup with itself, and you only get to open it once.\n"
+                         "Run more rounds first (python3 loop.py run 3). To open it anyway: "
+                         "python3 loop.py final --anyway")
     start = float(rows()[0]["mean"])
     folder = TRACES / "final"
     week = verifier.HIDDEN_WEEK
@@ -592,41 +597,49 @@ def next_step():
         print("You are on the made-up sample month (already labelled). Every step works on it.\n"
               "To use your own links: get them (README, Part 1 step 1), then\n"
               "    python3 loop.py import path/to/your-bookmarks.csv\n")
+    if rows():
+        return next_part2(say)
     if not (HARNESS / "inbox" / "week-1.csv").exists():
-        return say("Part 1, step 1. Your links are in, not yet split into weeks.",
+        return say("Part 1, step 2. Your links are in, not yet split into weeks.",
                    "python3 loop.py prepare")
     if unlabelled == len(links):
-        return say(f"Part 1, step 2. None of your {len(links)} links has a label.",
+        return say(f"Part 1, step 3. None of your {len(links)} links has a label.",
                    "python3 loop.py label        # in your own terminal; it asks s / h / n for each",
                    "(or fill the label column of verifier/links.csv in a spreadsheet)")
     if unlabelled and not model_files:
-        print(f"Note: {unlabelled} of {len(links)} links have no label. That's fine if you could not tell;"
+        print(f"Note: {unlabelled} of {len(links)} links {'has' if unlabelled == 1 else 'have'} no label. That's fine if you could not tell;"
               f" `python3 loop.py label` picks up where you stopped.\n")
     if not model_files:
         own_text = not sample and any(r.get("text") for r in links)
-        return say("Part 1, step 4. Labelled. Now see how a model would label them, blind.",
+        return say("Part 1, step 5. Labelled. Now see how a model would label them, blind.",
                    "python3 loop.py blank" + (" --text   # your titles are tweet first lines;"
                                               " this gives the model the posts" if own_text else ""),
                    "then run the command it prints")
     if not failures:
-        return say("Part 1, steps 5 and 6. A model has labelled your links.",
+        return say("Part 1, steps 6 and 7. A model has labelled your links.",
                    f"python3 loop.py compare {model_files[-1].relative_to(ROOT)}",
                    "then write the mistake that repeats in failures.md as F1, and one rule ending",
                    "in (F1) under 'What matters to this reader' in harness/CLAUDE.md")
     if not (TRACES / "try").exists():
-        return say(f"Part 1 done ({len(failures)} failures logged). Repeat steps 4 to 6 until the "
+        return say(f"Part 1 done ({len(failures)} failure{'s' if len(failures) > 1 else ''} logged)."
+                   f" Repeat steps 5 to 7 until the "
                    f"disagreements stop teaching you anything. Then Part 2: the first agent.",
                    "python3 loop.py brief 1", "python3 verifier/score.py traces/try")
-    if not rows():
-        if git("status", "--porcelain"):
-            return say("Part 2. Commit your rules, so the baseline is a commit.",
-                       'git add -A && git commit -m "F1: ..."', "python3 loop.py baseline")
-        return say("Part 2. Record where you start.", "python3 loop.py baseline")
+    if git("status", "--porcelain"):
+        return say("Part 2. Commit your rules, so the baseline is a commit.",
+                   'git add -A && git commit -m "F1: ..."', "python3 loop.py baseline")
+    return say("Part 2. Record where you start.", "python3 loop.py baseline")
+
+
+def next_part2(say):
     rounds = len(rows()) - 1
     if not OPENED.exists() and rounds < 5:
         return say(f"Part 2. Baseline recorded, {rounds} round{'s' if rounds != 1 else ''} so far."
                    " Don't edit files while rounds run (notes/ is safe).",
                    f"python3 loop.py run {5 - rounds}", "python3 loop.py status")
+    if not OPENED.exists() and current()[0] == "0":
+        return say(f"Part 2. {rounds} rounds done, none kept, so week four has nothing to test yet.",
+                   "python3 loop.py run 3", "(or read traces/round-N/report.md and add a rule yourself)")
     if not OPENED.exists():
         return say(f"Part 2. {rounds} rounds done.",
                    "git log --oneline     # read the kept changes first",

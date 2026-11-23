@@ -180,7 +180,8 @@ python3 loop.py final
 ```
 
 It runs week four on the setup you started with and on the final one, and prints both
-scores. It runs once. A second look is not a hidden week any more.
+scores. It runs once. A second look is not a hidden week any more. Until a round has been
+kept it refuses to run: the two setups would be the same, and the one look would be wasted.
 
 Read the `of which` line under the scores before you believe the verdict. If "found" did not
 rise and only "noise cited" fell, the new setup learned what to leave out of a brief, not more
