@@ -88,7 +88,8 @@ def tokens(result):
 def _claude(role, prompt, cwd, trace, model, harness):
     cmd = ["claude", "-p", prompt, "--model", model or "sonnet",
            "--output-format", "stream-json", "--verbose",
-           "--setting-sources", "project",      # this folder's rules only, not your own
+           "--setting-sources", "",             # nothing loaded by itself, trusted folder or not:
+           "--append-system-prompt", setup_text(Path(cwd), Path(harness)),   # the setup, always
            "--settings", str(HARNESS / ".claude" / "settings.json"),
            "--strict-mcp-config",               # no connectors
            "--permission-mode", "dontAsk",      # anything not allowed is refused
@@ -109,9 +110,11 @@ def _claude(role, prompt, cwd, trace, model, harness):
 
 # ---------------------------------------------------------------- Codex and Hermes read the same file
 
-def instructions(cwd, prompt, harness):
-    """Codex and Hermes get the folder's CLAUDE.md in the prompt, with its @imports filled in.
+def setup_text(cwd, harness):
+    """The folder's CLAUDE.md with its @imports filled in, and the skills it holds.
 
+    Every runner gets this text explicitly. Claude Code would load CLAUDE.md by itself only in a
+    folder you have trusted, so a loop started from a fresh clone ran with no instructions at all.
     One file stays the source for all three tools, so the optimizer's changes reach every runner.
     (Using Codex or Hermes by hand instead? Copy CLAUDE.md to AGENTS.md.)
     """
@@ -126,8 +129,12 @@ def instructions(cwd, prompt, harness):
         for s in skills:
             desc = re.search(r"(?m)^description:\s*(.+)$", s.read_text())
             text += f"- `{s.relative_to(harness)}`: {desc.group(1) if desc else ''}\n"
-    return (f"# Your instructions (CLAUDE.md in {cwd.name}/)\n\n{text}\n\n---\n\n"
-            f"Work in {cwd}. Your task:\n\n{prompt}")
+    return f"# Your instructions (CLAUDE.md in {cwd.name}/)\n\n{text}"
+
+
+def instructions(cwd, prompt, harness):
+    """Codex and Hermes get the setup at the top of the prompt."""
+    return f"{setup_text(cwd, harness)}\n\n---\n\nWork in {cwd}. Your task:\n\n{prompt}"
 
 
 def _add(out, kind, **body):
@@ -151,7 +158,7 @@ def _write(trace, out):
 def _codex_home():
     """A Codex home with your login and nothing else, so your own AGENTS.md and config stay out.
 
-    Like `--setting-sources project` for Claude Code."""
+    Like `--setting-sources ""` for Claude Code."""
     home = ROOT / ".runner" / "codex-home"
     home.mkdir(parents=True, exist_ok=True)
     real = Path(os.environ.get("CODEX_HOME", Path.home() / ".codex"))

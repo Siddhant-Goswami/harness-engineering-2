@@ -208,11 +208,12 @@ Set `RUNNER` once with `export RUNNER=codex` and every command after it uses Cod
 | Change them | `BRIEF_MODEL=haiku` | `BRIEF_MODEL=... OPT_MODEL=...` | `HERMES_PROVIDER=anthropic BRIEF_MODEL=claude-sonnet-5-5`, or a local model |
 | Fence while it runs | permissions file: only `python3 tools/*`, edits only in `scratch/` | sandbox: writes only inside its folder | none: it can run any command |
 | Caught afterwards by code | all four walls | all four walls, plus edits a brief made to the setup | the same |
-| Reads your own setup? | no (`--setting-sources project`) | no: its own home in `.runner/`, your login only | no: its own home in `.runner/`, your login and model only |
+| Reads your own setup? | no (`--setting-sources ""`) | no: its own home in `.runner/`, your login only | no: its own home in `.runner/`, your login and model only |
 
-`loop.py` puts the folder's `CLAUDE.md`, with `sources.md` and `memory.md` filled in, at the top
-of the Codex or Hermes prompt. So one file is the setup for all three, and the optimizer's
-changes reach whichever harness you run next. (Using Codex by hand? Copy it to `AGENTS.md`.)
+`loop.py` hands every run the folder's `CLAUDE.md`, with `sources.md` and `memory.md` filled in:
+appended to Claude Code's system prompt, at the top of the Codex or Hermes prompt. Claude Code
+would load it by itself only in a folder you have trusted, so the loop never relies on that. One
+file is the setup for all three, and the optimizer's changes reach whichever harness you run next. (Using Codex by hand? Copy it to `AGENTS.md`.)
 
 Every trace is written in one shape, so `loop.py trace` and the optimizer read any harness's run
 the same way. The tool's own log is kept next to it as `*.raw.jsonl`.
