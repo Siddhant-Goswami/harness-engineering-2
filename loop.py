@@ -448,6 +448,9 @@ def one_round():
         raise SystemExit("Uncommitted changes. Commit them (git add -A && git commit -m \"...\") or\n"
                          "discard them before a round. Keep notes in notes/: git ignores that folder.")
     _, best = current()
+    if best > 1 - MIN_GAIN:
+        raise SystemExit(f"The live score is {best}: no change can beat it by {MIN_GAIN}, so another round "
+                         f"cannot be kept.\nOpen the hidden week: python3 loop.py final")
     n = len(rows())
     folder = TRACES / f"round-{n}"
     print(f"\n=== round {n} · live score {best}")
@@ -638,6 +641,10 @@ def next_part2(say):
         return say(f"Part 2. Baseline recorded, {rounds} round{'s' if rounds != 1 else ''} so far."
                    " Don't edit files while rounds run (notes/ is safe).",
                    f"python3 loop.py run {5 - rounds}", "python3 loop.py status")
+    if not OPENED.exists() and current()[1] > 1 - MIN_GAIN:
+        return say(f"Part 2. The live score is {current()[1]}: no round can beat it, so open the hidden week.",
+                   "git log --oneline     # read the kept changes first",
+                   "python3 loop.py final  # opens week four, once")
     if not OPENED.exists() and current()[0] == "0":
         return say(f"Part 2. {rounds} rounds done, none kept, so week four has nothing to test yet.",
                    "python3 loop.py run 3", "(or read traces/round-N/report.md and add a rule yourself)")
