@@ -1,0 +1,116 @@
+{
+ "visible": [
+  0.752,
+  0.986
+ ],
+ "hidden": [
+  {
+   "week": 4,
+   "runs": 3,
+   "score": 0.796,
+   "low": 0.778,
+   "high": 0.833,
+   "per_run": [
+    0.778,
+    0.833,
+    0.778
+   ],
+   "hits": 8.0,
+   "signal": 9,
+   "noise_flagged": 1.7,
+   "decisions_right": 0.0,
+   "decisions": 0,
+   "missed": [
+    {
+     "id": "L098",
+     "source": "X @theo",
+     "title": "What is a \"harness\"?",
+     "label": "acted",
+     "runs": 1
+    },
+    {
+     "id": "L100",
+     "source": "X @kunchenguid",
+     "title": "totally agree minimizing human attention is the key unlock now and moving forward",
+     "label": "should_have",
+     "runs": 1
+    },
+    {
+     "id": "L106",
+     "source": "X @cherry_mx_reds",
+     "title": "Anthropic is now recommending that companies REMOVE unnecessary subagents from their AI systems.",
+     "label": "acted",
+     "runs": 1
+    }
+   ],
+   "noise": [
+    {
+     "id": "L092",
+     "source": "X @gregpr07",
+     "title": "open sourced: RL environments for anyone, in any domain.",
+     "label": "noise",
+     "runs": 3
+    },
+    {
+     "id": "L104",
+     "source": "X @elayadesigns",
+     "title": "I designed all of these landing pages in the last two months, using",
+     "label": "noise",
+     "runs": 2
+    }
+   ],
+   "wrong_decisions": []
+  },
+  {
+   "week": 4,
+   "runs": 3,
+   "score": 0.852,
+   "low": 0.778,
+   "high": 0.944,
+   "per_run": [
+    0.778,
+    0.833,
+    0.944
+   ],
+   "hits": 8.3,
+   "signal": 9,
+   "noise_flagged": 1.3,
+   "decisions_right": 0.0,
+   "decisions": 0,
+   "missed": [
+    {
+     "id": "L100",
+     "source": "X @kunchenguid",
+     "title": "totally agree minimizing human attention is the key unlock now and moving forward",
+     "label": "should_have",
+     "runs": 1
+    },
+    {
+     "id": "L106",
+     "source": "X @cherry_mx_reds",
+     "title": "Anthropic is now recommending that companies REMOVE unnecessary subagents from their AI systems.",
+     "label": "acted",
+     "runs": 1
+    }
+   ],
+   "noise": [
+    {
+     "id": "L092",
+     "source": "X @gregpr07",
+     "title": "open sourced: RL environments for anyone, in any domain.",
+     "label": "noise",
+     "runs": 3
+    },
+    {
+     "id": "L104",
+     "source": "X @elayadesigns",
+     "title": "I designed all of these landing pages in the last two months, using",
+     "label": "noise",
+     "runs": 1
+    }
+   ],
+   "wrong_decisions": []
+  }
+ ],
+ "verdict": "Week four rose too. It found more of what mattered: the harness learned something about how you decide."
+}
