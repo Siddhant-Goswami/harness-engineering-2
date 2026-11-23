@@ -39,7 +39,7 @@ https://100x-curriculum.vercel.app/harness-engineering-2/tutorial/
 |---|---|---|
 | **Part 1**, by hand | Any chat tool: Claude, ChatGPT, Codex, Hermes | Nothing beyond your chat plan |
 | **Part 2**, the loop, on the sample month | Claude Code, Codex or Hermes (see [Pick your harness](#pick-your-harness)) | About $1.50 with Claude Code |
-| **Part 2** on your own month | the same | About $6.50 with Claude Code (baseline, 5 rounds and the hidden week, on 109 X posts with their text) |
+| **Part 2** on your own month | the same | About $7 with Claude Code (baseline, 5 rounds and the hidden week, on 109 X posts with their text) |
 
 The repo ships with a made-up sample month, already labelled, so every command works before you
 bring your own links. To try the whole thing on the sample first, skip Part 1 steps 1 to 3.
@@ -74,6 +74,10 @@ kept and why. To pick the window yourself: `--from 2026-09-24 --to 2026-10-24`, 
 
 It also replaces the sample month: its decisions, its list of sources and its saved pages go.
 `git checkout -- verifier harness` brings the sample back.
+
+No export of your own yet? A real month ships with the repo: 109 X bookmarks with their text and
+labels, in `examples/x-bookmarks.csv`. `python3 loop.py import examples/x-bookmarks.csv --all`
+loads it, and you can go straight to step 5 (see [A finished run on a real month](#a-finished-run-on-a-real-month)).
 
 Read the table it prints. Lines that start with `!` are worth a second look: a week with
 almost no links you acted on gives a jumpy score, and an old outlier date can push most of
@@ -289,7 +293,7 @@ The briefing agent has one wall: a run whose trace reaches outside `harness/` sc
 | `traces/` | The raw trace of every run | Written by code |
 | `manual/` | Part 1's files: the blank copy, the prompt, the model's labels | Written by code and you |
 | `notes/` | Yours. Ignored by git, so safe to edit while the loop runs | You |
-| `facilitator/`, `deck/`, `explainer/`, `traces-sample-run/` | Session materials. You do not need them | |
+| `examples/x-bookmarks.csv` | A real month: 109 X bookmarks with their text and labels | You |
 
 ## The sample month
 
@@ -309,29 +313,49 @@ Every week has the same five traps, so a rule learned on weeks 1 to 3 can pay of
 
 To change it, edit `verifier/links.csv`. Its `text` column is each made-up page.
 
-### A finished run on the sample
-
-The branch `sample-run` holds a finished run, so you can read one without paying for it.
-
-| | before | after 4 rounds |
-|---|---|---|
-| weeks 1 to 3 | 0.739 | 0.991 |
-| week 4 (hidden) | 0.666 | 0.949 |
-
-Round 1 was reverted ("fetch every link" made it cite everything: 0.739 to 0.504). Rounds 2 to 4
-were kept: the reader's stack, measured findings count as news, cite the changelog not the recap.
-(It was recorded before `harness/CLAUDE.md` told the agent to leave skipped links out, so your
-baseline may start higher.)
-
-```
-git log origin/sample-run --oneline
-git diff sample-baseline origin/sample-run -- harness
-```
-
 ### A finished run on a real month
 
-The branch `student-run-real-bookmarks` holds a run on 109 real X bookmarks, with a journal of
-every step and where it got confusing (`student-journey/JOURNAL.md`).
+`examples/x-bookmarks.csv` is a real month: 109 posts saved on X from 25 September to 24 October
+2026, each with its text, about agents, harnesses, evals, AI video and startups. They are labelled
+for a reader who builds and teaches agent harnesses, against one written rubric: what changes how
+an agent is built, run or checked is signal; demos, launches, market takes and hype are noise.
+13 of the 76 links in weeks 1 to 3 are signal.
+
+The branch `real-month` holds a finished run on it in Claude Code, commit by commit, with every
+trace. Part 1, a model labelling the same links blind, one rule a round:
+
+| Round | The rule added | Signal found | Noise called signal |
+|---|---|---|---|
+| 1 | none yet | 13 of 13 | 15 of 63 |
+| 2 | F1: a demo of what a model can make is noise | 10 of 13 | 4 |
+| 3 | F2: a hype repost of someone else's work is noise | 10 of 13 | 1 |
+| 4 | F3: a tool for your own agent setup is signal, whatever it is shown on | 13 of 13 | 4 |
+
+Part 2, the loop, starting from those three rules:
+
+| Round | The optimizer's change | Weeks 1 to 3 | |
+|---|---|---|---|
+| start | F1 to F3 | 0.752 | |
+| 1 | News about a model itself is noise unless it changes how an agent is built, run or checked | 0.855 | kept |
+| 2 | A product launch that only says "point your agent at our repo" is not a setup tool | 0.938 | kept |
+| 3 | A teaser that attaches an article is signal if the article is the author's own | 0.919 | reverted |
+| 4 | The same, but not for comment on someone else's result | 0.911 | reverted |
+| 5 | Judge a post by the author's own words, not by what it attaches | 0.986 | kept |
+
+| | before | after 5 rounds |
+|---|---|---|
+| weeks 1 to 3 | 0.752 | 0.986 |
+| week 4 (hidden) | 0.796 (8.0 of 9 found, 1.7 noise cited) | 0.852 (8.3 of 9 found, 1.3 noise cited) |
+
+The hidden week rose less than the weeks the loop could see: part of what it learned was about
+these three weeks. It cost $6.84 in Claude Code.
+
+```
+git log origin/real-month --oneline
+git diff origin/real-month~12 origin/real-month -- harness       # what the optimizer kept
+```
+
+To run it yourself: `python3 loop.py import examples/x-bookmarks.csv --all`, then Part 1 from step 5.
 
 ## What `import` does with your own month
 
