@@ -377,6 +377,8 @@ python3 loop.py trace traces/round-0/week-1.run-1.jsonl  # what the briefing age
 | `compare`: `No row ... has an id` | The model replied with something other than a CSV. Open the file; run step 5 again. |
 | A score below zero | The brief cited more noise than signal it found. See [How a brief is scored](#how-a-brief-is-scored). |
 | `Commit your work first` | `git add -A && git commit -m "..."`, then run the command again. |
+| `The live score is 1.0: no change can beat it` | Nothing is left to win on weeks 1 to 3. Read `git log --oneline`, then `python3 loop.py final`. |
+| `final`: `No change has been kept yet` | It waits for a kept round, so your one look is not spent comparing a setup with itself. Run more rounds, or `final --anyway`. |
 | A round says `blocked: it changed notes.md, outside the harness` | You edited a file while the loop ran. Keep notes in `notes/`. |
 | `this sign-in can end at any time` from Claude Code | Run `claude auth login` before a long `run`, so it does not stop halfway. |
 
