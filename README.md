@@ -277,7 +277,7 @@ The briefing agent has one wall: a run whose trace reaches outside `harness/` sc
 
 | Path | What it is | Who may change it |
 |---|---|---|
-| `harness/` | The briefing agent's setup: `CLAUDE.md`, `sources.md`, `memory.md`, `tools/`, skills | You and the optimizer |
+| `harness/` | The briefing agent's setup: `CLAUDE.md`, `sources.md`, `memory.md`, `tools/`, and any skills you add in `.claude/skills/` | You and the optimizer (skills: you only) |
 | `harness/.claude/settings.json` | What the briefing agent is allowed to run | You only |
 | `verifier/` | Your labels, your decisions, the scoring code | You only, before any agent runs |
 | `optimizer/` | The second agent's instructions, its journal, its permission requests | You (the journal is written by code) |

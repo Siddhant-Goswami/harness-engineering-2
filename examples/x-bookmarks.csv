@@ -1,0 +1,2183 @@
+date,source,title,url,label,text
+2026-09-25,X @SullyOmarr,btw ive gone back on vibe coding,https://x.com/SullyOmarr/status/2103330025210863908,noise,"Topic: Software engineering and coding tools
+
+Posted by Sully (@SullyOmarr) on 2026-09-25
+
+btw ive gone back on vibe coding
+
+yeah sure its fun for like 4 days 
+
+but gl using the code beyond that 
+
+i just review the code thoroughly now (myself), take a tiny bit longer, and at the very least i have some idea of whats happening"
+2026-09-25,X @hraness,"how i scaled my software output to 1,000 PRs/day and 260B tokens/month:",https://x.com/hraness/status/2103632703178285184,acted,"Topic: Software engineering and coding tools
+
+Posted by hraness (@hraness) on 2026-09-25
+
+how i scaled my software output to 1,000 PRs/day and 260B tokens/month:
+-i was doing 50 PRs/day at the end of august. just a handful of Codex subscriptions, one laptop running 24/7
+-took me 2 weeks to build reusable infra and autonomous verification systems. i decided upfront
+
+Attached content and quote previews:
+hraness
+@hraness
+·
+Sep 23
+0:09
+my software factory uses 5-10B tokens a day
+
+24x @DevinAI SWE-2 Max
+6x Codex Astra Ultra
+2x Claude Code Fable Max
+
+running in @zeddotdev
+
+Attached: Image, previewInterstitial, Video
+
+Embedded video"
+2026-09-25,X @mattpocockuk,This is an extremely good watch.,https://x.com/mattpocockuk/status/2103431302527508886,acted,"Topic: AI agents and automation
+
+Posted by Matt Pocock (@mattpocockuk) on 2026-09-25
+
+This is an extremely good watch.
+
+The things that felt novel/interesting to me:
+
+1. Lock down your agents
+
+Humans tend to like 'sharp knife' abstractions - that are powerful, but you can cut yourself if your use them wrong. Lauren says agents perform much better in extremely
+
+Attached content and quote previews:
+lauren
+@poteto
+·
+Sep 21
+here's how i shipped 2,500 PRs last month to production
+
+this was originally supposed to be for Cursor Compile in London. i couldn't make it since i was livestreaming for Grok @Bot Galaxy so i'm making it available for free here on X! watch it on 2x speed, i talk slowly
+
+Attached: Image, Video"
+2026-09-26,X @akothari,Worth watching this whole presentation by Pat. This particular slide is why I'm so excited about the next decade. I haven't experienced a bi,https://x.com/akothari/status/2103973422439292952,noise,"Topic: Careers and learning
+
+Posted by Akshay Kothari (@akothari) on 2026-09-26
+
+Worth watching this whole presentation by Pat. This particular slide is why I'm so excited about the next decade. I haven't experienced a bigger gap between capabilities and adoption in my short career.
+
+Attached content and quote previews:
+Pat Grady
+@gradypb
+·
+Sep 25
+The @BostonCollege Investment Committee (an LP and my beloved alma mater) asked for a few thoughts on what's happening in AI.  I recorded a test run yesterday morning and then shared it with my partners, who encouraged me to share it more broadly... so here you go!  
+
+This is not"
+2026-09-26,X @deedydas,"People say this all the time, completely ignoring that China, Singapore, Korea, Israel, Malaysia, etc also became independent around then bu",https://x.com/deedydas/status/2103740014731677919,noise,"Topic: Enterprise AI and FDE
+
+Posted by Deedy (@deedydas) on 2026-09-26
+
+People say this all the time, completely ignoring that China, Singapore, Korea, Israel, Malaysia, etc also became independent around then but are far more developed. When you point this out, they say “but that’s different.”
+
+The reality is this is decades of atrocious governance.
+
+Attached content and quote previews:
+JM US
+@JMUSPatriot
+·
+Sep 26
+""If Indians are so smart why is India a shit hole"".
+Well, the country only got independence in 1947. It's only 79 years young. Western countries had a 200-500 year headstart.
+
+You have no clue how much innovation is currently happening in India. 
+Rome wasn't built in a day.
+Quote
+Narendra Modi
+@narendramodi
+·
+Sep 25
+‘Make in India’ is about creating infrastructure, enterprise and innovation that allow India to grow and prosper! 
+
+#12YearsOfMakeInIndia
+
+Quoted post URL:
+https://x.com/narendramodi/status/2103376347838181796"
+2026-09-26,X @sriramk,strong recommend every engineer listens to this from,https://x.com/sriramk/status/2103761468151800220,noise,"Topic: AI video, audio and creative tools
+
+Posted by Sriram Krishnan (@sriramk) on 2026-09-26
+
+strong recommend every engineer listens to this from 
+@dhh
+. he is getting a lot of hate but this will be seen as prophetic.
+
+Attached content and quote previews:
+Scott
+@scottstts
+·
+Sep 25
+My god this is such a good speech that every SWE needs to hear. You know what? Every person should hear it
+
+Keep the happy memories, eyes on the reality, be excited about the future. That’s the best that anyone can do
+
+Attached: Image, Video"
+2026-09-27,X @LexnLin,"I asked Claude Code (Opus 5.5) to make a launch video for a fake calendar app and HOLY fuck, everything you see AND hear is code",https://x.com/LexnLin/status/2104148233106723099,noise,"Topic: AI video, audio and creative tools
+
+Posted by Leon Lin (@LexnLin) on 2026-09-27
+
+I asked Claude Code (Opus 5.5) to make a launch video for a fake calendar app and HOLY fuck, everything you see AND hear is code
+ONE prompt, it cooked for about 8h
+name, logo, UI, animations, soundtrack, sound effects
+
+opensource, repo in replies :)
+
+Attached content and quote previews:
+Attached: Image, Video"
+2026-09-28,X @mathurahravi,putting together a guide on design eng hiring and just dropped part 1 - how to define the role!,https://x.com/mathurahravi/status/2104389283926999495,noise,"Topic: Careers and learning
+
+Posted by mathurah (@mathurahravi) on 2026-09-28
+
+putting together a guide on design eng hiring and just dropped part 1 - how to define the role!
+
+hope this is a helpful read for anyone interested in design eng or considering bringing one onto their team :)
+
+Attached content and quote previews:
+mathurah
+@mathurahravi
+·
+Sep 28
+design engineering as a discipline has popped off, but there are limited resources on how to define the role, find great talent, and evaluate them
+
+finally started putting together a guide on design eng hiring, focused on part 1: defining the role
+ Article
+design eng hiring guide - part 1: defining the role 
+Design engineering as a discipline has surged over the past two years. It’s gone from a niche title at a handful of craft-obsessed companies to a role that nearly every product-focused startup is now...
+
+Attached: X article"
+2026-09-28,X @tareqistyping,Introducing... Interfaces that think,https://x.com/tareqistyping/status/2104530307311603806,noise,"Topic: AI design and interfaces
+
+Posted by Tareq Ismail (@tareqistyping) on 2026-09-28
+
+Introducing... Interfaces that think
+
+A series exploring new UI interactions for the AI erea.  Excited to kick off this series with episode 1 where I explore text and autocomplete
+
+Attached content and quote previews:
+Attached: Image, Video"
+2026-09-28,X @atmoio,"I've worked with brilliant designers in my life and Astra/Opus outshine them 10x when it comes to not only design aesthetics, but remarkably",https://x.com/atmoio/status/2104668082140807336,noise,"Topic: AI design and interfaces
+
+Posted by Mo (@atmoio) on 2026-09-28
+
+I've worked with brilliant designers in my life and Astra/Opus outshine them 10x when it comes to not only design aesthetics, but remarkably creative UX solutions, in 1/1000th of the time.
+
+If we were being doomerish about it, Astra and latest Opus mark the death of designers the"
+2026-09-29,X @ArchiveExplorer,jev + opus 5.5 for design is insane...,https://x.com/ArchiveExplorer/status/2105023417716191488,noise,"Topic: AI video, audio and creative tools
+
+Posted by Archive (@ArchiveExplorer) on 2026-09-29
+
+jev + opus 5.5 for design is insane...
+
+a launch video used to mean an agency, weeks of back and forth and a fat invoice.
+
+now Opus 5.5 makes the video, the ad cuts and the landing page from one brief.
+
+the video below: made in 3 minutes. at 0:09 it drops into edit mode - dot
+
+Attached content and quote previews:
+Archive
+@ArchiveExplorer
+·
+Sep 26
+ Article
+Jev + Harness Engineering: Build an Agent You Can Inspect and Control
+Three builds on Jev: a requirements report, diagnostic selection, a bounded repair loop. Working code, real runs, 28 correct decisions out of 28 across two labelled sets.
+20 September 2026 · Python ·...
+
+Attached: Image, Video, X article"
+2026-09-29,X @chrispisarski,every YC founder I'm chatting with is trying to figure out AEO,https://x.com/chrispisarski/status/2105071858823393301,noise,"Topic: Startups, products and business
+
+Posted by Chris Pisarski (@chrispisarski) on 2026-09-29
+
+every YC founder I'm chatting with is trying to figure out AEO
+
+and the amount of DMs I got from unicorn founders just off the last tweet is insane
+
+this is how I would do it:
+
+1) figure out a) the exact prompts your ICP types into ChatGPT and Claude and b) the sources the AI
+
+Attached content and quote previews:
+Chris Pisarski
+@chrispisarski
+·
+Sep 24
++$2M ARR since this tweet
+
+people are keen to build their own workflows via Claude/Muse/Grokbot instead of buying more tools
+
+here are some learnings:
+
+1) be part of the workflow - expansion into existing accounts has been a really big driver. some companies were using our x.com/chrispisarski/…"
+2026-09-29,X @a16z,"Marketplaces earn their money when you browse, not when you buy. An AI assistant that shops for you skips the browsing.",https://x.com/a16z/status/2104984530591637635,noise,"Topic: Startups, products and business
+
+Posted by a16z (@a16z) on 2026-09-29
+
+Marketplaces earn their money when you browse, not when you buy. An AI assistant that shops for you skips the browsing.
+
+Ad revenue vs operating income (2025):
+- Amazon retail: 2x
+- DoorDash: 1.9x
+- Instacart: 2.2x
+
+AI assistants don't need to rebuild Amazon's warehouses to hit
+
+Attached content and quote previews:
+Alex Immerman
+@aleximm
+·
+Sep 29
+ Article
+Who Gets Paid When AI Does the Shopping? 
+No one wants to be disintermediated. It happened to Yelp and Tripadvisor with Google. It happened to everybody, with Apple. As a general rule, marketplaces want to own the customer relationship and...
+
+Attached: Image, X article"
+2026-09-29,X @RMladek,this is how instinct works under the hood,https://x.com/RMladek/status/2105057398566367666,acted,"Topic: AI agents and automation
+
+Posted by Richard (@RMladek) on 2026-09-29
+
+this is how instinct works under the hood
+
+- agent loop outside of the sandbox (running on the backend server)
+
+- executing commands and controls file system on a sandbox
+
+- backs up git memory folder to S3 bucket
+
+available skills:
+- agent-mail
+- authenticator-codes
+-"
+2026-09-29,X @everestchris6,this is the only prompt you need to make high-end motion videos with claude opus 5.5,https://x.com/everestchris6/status/2104965415164399895,noise,"Topic: AI video, audio and creative tools
+
+Posted by Chris (@everestchris6) on 2026-09-29
+
+this is the only prompt you need to make high-end motion videos with claude opus 5.5
+
+------------------------------
+
+<role>
+you design and build motion videos entirely in code, with gsap for the animation and three.js for any 3d. every decision is judged against the best work in
+
+Attached content and quote previews:
+Chris
+@everestchris6
+·
+Sep 27
+ Article
+how to run an ai video agency (FULL GUIDE)
+claude opus 5.5 and gpt-6 astra can now build studio-level videos in code, editing and all. businesses already pay every month for videos like that, and this guide shows you how to run a video agency...
+
+Attached: Image, Video, X article"
+2026-09-29,X @amasad,How to design and build a harness to reach frontier performance at a fraction of the cost!,https://x.com/amasad/status/2104996638817386820,acted,"Topic: Harness engineering
+
+Posted by Amjad Masad (@amasad) on 2026-09-29
+
+How to design and build a harness to reach frontier performance at a fraction of the cost!
+
+Attached content and quote previews:
+Michele Catasta
+@pirroh
+·
+Sep 29
+ Article
+Free the models: harness design at the frontier
+Model routers are everywhere right now, but they have a fundamental limitation. No matter if based on advanced heuristics or a small model that reads each turn and picks which LLM to use, a router...
+
+Attached: Image, X article"
+2026-09-29,X @TheHolyKau,"If AI is so great, why isn't AI running every company already?",https://x.com/TheHolyKau/status/2104942828811923865,noise,"Topic: Enterprise AI and FDE
+
+Posted by Kaushik Subramanian (@TheHolyKau) on 2026-09-29
+
+If AI is so great, why isn't AI running every company already?
+If AI is so powerful, why isn't every company AI native?
+Why are there so many FDE's? Why aren't they solving the problem?
+
+These are questions I've been struggling with for the last few months. Highly recommend
+
+Attached content and quote previews:
+Eugen
+@EugenAlpeza
+·
+Sep 29
+Yannis and I led forward deployed AI engineering at Palantir.
+
+Much of today’s boom is not true FDE work. 
+
+Companies are filling a product gap with engineering headcount. What comes after that?
+ Article
+The FDE boom is a product gap 
+The industry is hiring its way around a missing product.
+Every enterprise trying to put agents to work runs into the same problem: agents don’t know how the company operates, and the operators who do,...
+
+Attached: X article"
+2026-09-29,X @garrytan,Personal AI is in its Homebrew computer club era but it won’t stay there,https://x.com/garrytan/status/2104958853993676833,noise,"Topic: AI agents and automation
+
+Posted by Garry Tan (@garrytan) on 2026-09-29
+
+Personal AI is in its Homebrew computer club era but it won’t stay there
+
+Truly personal AI will mean you need to own your own skills and memory
+
+Attached content and quote previews:
+Ryan Sarver
+@rsarver
+·
+Sep 29
+Personal AI is going to be hugely important, and it works best when it knows everything about you. That's exactly what you shouldn't hand to a platform whose business depends on it.
+
+Wrote up why the version that wins is one you own.
+ Article
+Personal AI Should Actually Be Personal
+Last week, Amazon blocked Meta's Muse from its retail site. People trying to shop got a popup telling them that continued access by an unauthorized AI agent violates Amazon's conditions of use.
+Nobody...
+
+Attached: X article"
+2026-10-01,X @Bencera,My playbook for taking an AI startup to $10M+ ARR.,https://x.com/Bencera/status/2105713371630747666,noise,"Topic: Startups, products and business
+
+Posted by Ben Cera (@Bencera) on 2026-10-01
+
+My playbook for taking an AI startup to $10M+ ARR. 
+                                                                                                                                                                                         
+This is exactly how I did it with Polsia:"
+2026-10-01,X @hassaanraza,The whole point of building Tavus has been simple: talking to a machine should feel as natural as talking to a friend or coworker.,https://x.com/hassaanraza/status/2105709935074185546,noise,"Topic: AI video, audio and creative tools
+
+Posted by Hassaan Raza (@hassaanraza) on 2026-10-01
+
+The whole point of building Tavus has been simple: talking to a machine should feel as natural as talking to a friend or coworker.
+
+It’s hard to describe all the tiny nuances that make a conversation feel human. The little expressions. Moving around in your chair. Knowing when to
+
+Attached content and quote previews:
+Tavus
+@tavus
+·
+Oct 1
+1:48
+Introducing Griffin, the first model to pass the video Turing test.
+
+48% of people who talked to it live thought it was a real human. Previous systems have had a pass rate <3%. It is #1 on NVIDIA's benchmark for full-duplex AI video.
+
+It’s the first Human Interaction Model (HIM).
+Readers added context
+The 48% figure and ""video Turing test"" claim are from Tavus's own study of 54 one-minute calls, not independently verified or using a standard protocol. Griffin-Lite leads NVIDIA's VideoFDB benchmark on their public leaderboard.
+
+cellcog.ai/blog/tavus-gri…
+research.nvidia.com/labs/amri/proj…
+tech-ish.com/2026/10/02/tav…
+Do you find this helpful?
+Rate it
+
+Attached: Image, Video, previewInterstitial
+
+Resource URLs:
+https://t.co/FRJIzwUwYs
+https://t.co/qyHzk2H2bW
+https://t.co/qCTRneBYi2"
+2026-10-02,X @natfriedman,🚨 side project alert 🚨,https://x.com/natfriedman/status/2106099383037309211,noise,"Topic: Software engineering and coding tools
+
+Posted by Nat Friedman (@natfriedman) on 2026-10-02
+
+🚨 side project alert 🚨
+
+Announcing Muse Gadgets, an open source ESP32 firmware and Linux sdk so that you can make hardware devices that work with Muse.
+
+Grab an API token from 
+https://
+gadgets.muse.ai and point your favorite coding agent at the github repo to build your own
+
+Attached content and quote previews:
+Attached: Image
+
+Resource URLs:
+https://t.co/g2yJeQRJH7"
+2026-10-02,X @badlogicgames,i think i'm gonna frame this one :),https://x.com/badlogicgames/status/2105932464523002136,acted,"Topic: AI design and interfaces
+
+Posted by Mario Zechner (@badlogicgames) on 2026-10-02
+
+i think i'm gonna frame this one :)
+
+Attached content and quote previews:
+Boris Cherny
+@bcherny
+·
+Oct 2
+Mods are absolutely insane. You can now customize Claude to work and look the way you want by just prompting it.
+
+Each person works differently, so there's no reason why everyone should have an identical Claude experience. Make Claude your own, and share mods as plugins so others
+Quote
+ClaudeDevs
+@ClaudeDevs
+·
+Oct 1
+You can now mod Claude Code:
+
+- Change how it behaves
+- Customize the UI
+- Swap in your own features
+
+Write one with a few lines of TypeScript, or have Claude build it for you. Mods ship inside plugins, so you install them with /plugin in the CLI or desktop app.
+
+A few examples:
+
+Quoted post URL:
+https://x.com/ClaudeDevs/status/2105721434807083061"
+2026-10-03,X @lucasmarkes__,hairlines v0.2 is now available!,https://x.com/lucasmarkes__/status/2106502812498632707,noise,"Topic: AI video, audio and creative tools
+
+Posted by Lucas (@lucasmarkes__) on 2026-10-03
+
+hairlines v0.2 is now available!
+
+draw your own with the /hairline-create skill
+
+Attached content and quote previews:
+Attached: Image, Video"
+2026-10-04,X @startupideaspod,I believe vibe manufacturing will create thousands of companies that make $1M or more a year.,https://x.com/startupideaspod/status/2106782870098637016,noise,"Topic: AI video, audio and creative tools
+
+Posted by The Startup Ideas Podcast (SIP) 🧃 (@startupideaspod) on 2026-10-04
+
+I believe vibe manufacturing will create thousands of companies that make $1M or more a year.
+
+In 2024, Lovable and Bolt made anyone a vibe coder.
+
+Now the same shift happens for physical products, and OpenAI's Astra was the first model of this era.
+
+Before, a hardware product
+
+Attached content and quote previews:
+GREG ISENBERG
+@gregisenberg
+·
+Oct 4
+ Article
+VIBE MANUFACTURING IS HERE
+For the FIRST TIME in HISTORY, you can describe a physical product in one sentence and, a week later, hold it in your hands, cut from metal and built to your exact measurements.
+That's VIBE...
+
+Attached: Image, Video, X article"
+2026-10-05,X @PrajwalTomar_,I used to struggle with design.,https://x.com/PrajwalTomar_/status/2107084891557183670,noise,"Topic: AI design and interfaces
+
+Posted by Prajwal Tomar (@PrajwalTomar_) on 2026-10-05
+
+I used to struggle with design.
+
+Now I give Claude real designs and component libraries built by actual designers, and it assembles the UI for me.
+
+If your apps still look like every other vibe-coded project, steal all 40 links below.
+
+Attached content and quote previews:
+Himanshu Hingorani
+@himanshubuildss
+·
+Oct 3
+Your AI isn't bad at design. It has just never seen good design.
+
+I've tested 100+ vibe coding resources this year. These are the 40 I actually kept, grouped by what you're stuck on.
+
+Bookmark this 🔖
+
+1. 👑 
+https://
+scrolltide.co 
+Why it's different from everything below:
+-
+0:40
+
+Attached: Image, Video"
+2026-10-07,X @RisingSayak,"Was meant to be a Valentine's gift, but I'm releasing it early ❤️",https://x.com/RisingSayak/status/2107858211546316954,noise,"Topic: AI infrastructure and inference
+
+Posted by Sayak Paul (@RisingSayak) on 2026-10-07
+
+Was meant to be a Valentine's gift, but I'm releasing it early ❤️
+
+Wrote a long piece on KV caching in flow models for image generation.
+
+Includes intuition, commentary, implementation details, benchmarks, & some quirky experiments.
+
+Attached content and quote previews:
+sayak.dev
+KV Caching in Flow Models – Sayak Paul
+KV caching in flow models for image generation.
+
+Resource URLs:
+https://t.co/Ufrp5jZIf1"
+2026-10-08,X @thedelost,this is pure f*cking treasure,https://x.com/thedelost/status/2108303104588365931,noise,"Topic: AI models and research
+
+Posted by delost (@thedelost) on 2026-10-08
+
+this is pure f*cking treasure
+
+a Stanford AI research group figured out how to run Claude Opus 5.5 and GPT-6.1 Sol together, and it breaks straight through the search scaffolding wall
+
+most developers combine frontier models by chaining prompts in one context window or hardcoding
+
+Attached content and quote previews:
+Hanako
+@hanakoxbt
+·
+Sep 20
+ Article
+Jev Engineering: How to Stop Paying a Frontier Model to Make Yes-or-No Decisions (full course)
+Open the trace of any agent you have shipped and count the calls.
+A model picks the next tool. A model judges whether the result is good. A model decides if the task is done. A model checks whether...
+
+Attached: Image, Video, X article"
+2026-10-08,X @jamesm,If you read this thread and don’t immediately feel excited about the future of design... You're not gonna make it.,https://x.com/jamesm/status/2108276004880105545,noise,"Topic: AI video, audio and creative tools
+
+Posted by James McDonald (@jamesm) on 2026-10-08
+
+If you read this thread and don’t immediately feel excited about the future of design... You're not gonna make it. 
+
+😍 Team at 
+@paper
+ are cookin with gas!
+
+Attached content and quote previews:
+Agu Seguí
+@agusegui
+·
+Oct 8
+want to see how the whole Paper Mono launch video was made?
+
+everything is code but I didn't touch any of it 
+
+here we go 🔥
+1:00
+
+Attached: Image, Video"
+2026-10-08,X @thdxr,"if you as the founder can't do this, you will never be able to hire for it",https://x.com/thdxr/status/2108210807469461610,noise,"Topic: Startups, products and business
+
+Posted by dax (@thdxr) on 2026-10-08
+
+if you as the founder can't do this, you will never be able to hire for it
+
+you can try, it feels like you can buy it
+
+but it'll just never work
+
+Attached content and quote previews:
+adel 🌟
+@adelwu_
+·
+Oct 8
+literal hardest role to hire for rn and every ai startup wants someone
+
+> chronically online (knows trends)
+> has taste & can create (new media)
+> understands ai & technical
+> can execute with quality (operator)
+
+such a small niche of folks who can do this
+Quote
+Katie Chiou
+@katiewav
+·
+Oct 8
+ive talked to many teams in the past few months who are thinking about this but dont know quite what to call it/have called it everything from brand marketing to comms to storytelling to special projects to content/social 
+
+4 high-profile startups in past ~2 weeks have explicitly"
+2026-10-08,X @rileybrown,So many technical people ask me how to grow on YouTube and my concise advice is this.,https://x.com/rileybrown/status/2108223689783189848,noise,"Topic: AI video, audio and creative tools
+
+Posted by Riley Brown (@rileybrown) on 2026-10-08
+
+So many technical people ask me how to grow on YouTube and my concise advice is this. 
+
+Make a screenshare video explaining something that you find (1) interesting and (2) helpful and close to the edge of AI capability. 
+
+- Start the video showing you and the screenshare. Show
+
+Attached content and quote previews:
+Attached: Image"
+2026-10-08,X @nateparrott,introducing claude motion!,https://x.com/nateparrott/status/2108278188808065051,,"Topic: AI design and interfaces
+
+Posted by nate parrott (@nateparrott) on 2026-10-08
+
+introducing claude motion!
+
+people have noticed how well Opus 5.5 makes animated explainers, dataviz and product demos — so we've built some lightweight ui on top. let claude animate, then point at part to edit. then export! super fun
+
+Attached content and quote previews:
+Claude
+@claudeai
+·
+Oct 9
+Claude Dashboards and Claude Motion are in beta today.
+
+Ask Claude to turn your data into live dashboards and your ideas into animated explainers.
+
+Attached: Image, Video"
+2026-10-08,X @dominikmartn,drag to make ai answers shorter,https://x.com/dominikmartn/status/2108179881926574321,noise,"Topic: AI video, audio and creative tools
+
+Posted by Dom (@dominikmartn) on 2026-10-08
+
+drag to make ai answers shorter
+
+Attached content and quote previews:
+Attached: Image, Video"
+2026-10-08,X @kunchenguid,some people confused the conclusion as “don’t write any tests” - no that’s not what this post is saying,https://x.com/kunchenguid/status/2108055737188671760,acted,"Topic: AI agents and automation
+
+Posted by Kun Chen (@kunchenguid) on 2026-10-08
+
+some people confused the conclusion as “don’t write any tests” - no that’s not what this post is saying
+
+1. the point is - tests written autonomously by agents do not prove to have value. but i explicitly called out human guidance can change that
+
+2. also explicitly stated e2e"
+2026-10-09,X @kevinakwok,TSMC doesn’t just make chips. It manufactures its customers.,https://x.com/kevinakwok/status/2108375015939068034,noise,"Topic: AI infrastructure and inference
+
+Posted by Kevin Kwok (@kevinakwok) on 2026-10-09
+
+TSMC doesn’t just make chips. It manufactures its customers.
+
+New essay. Abstract Warfare: How TSMC Made Its Own Market
+
+
+https://
+kwokchain.com/2026/10/09/abs
+tract-warfare-how-tsmc-made-its-own-market/
+…
+
+Attached content and quote previews:
+Attached: Image
+
+my loop is better than your loop.
+
+Resource URLs:
+https://t.co/C9Lpz7TQiy"
+2026-10-09,X @irabukht,"The most insane paid ads program in Silicon Valley, behind Wispr Flow's $0 to $2B run",https://x.com/irabukht/status/2108585781581217906,noise,"Topic: AI video, audio and creative tools
+
+Posted by Ira Bodnar (@irabukht) on 2026-10-09
+
+The most insane paid ads program in Silicon Valley, behind Wispr Flow's $0 to $2B run
+
+1/ ""10 really good creators can get you to $50M a year""
+->  The model: brands recruit creators to film their ads and pay them a percent of the ad spend
+
+2/ A year ago Wispr Flow stopped organic
+
+Attached content and quote previews:
+Hector
+@hectorserrranoo
+·
+Oct 8
+i built @WisprFlow’s paid ads program
+
+here’s how i’d rebuild it in 30 days
+
+Attached: Image, Video"
+2026-10-10,X @hanakoxbt,Boris Cherny (Claude Code creator) just released a prompt that turns Opus 5.5 into a harness that actually finishes any job.,https://x.com/hanakoxbt/status/2109035317684834669,noise,"Topic: Careers and learning
+
+Posted by Hanako (@hanakoxbt) on 2026-10-10
+
+Boris Cherny (Claude Code creator) just released a prompt that turns Opus 5.5 into a harness that actually finishes any job.
+
+It's f*cking unreal...
+
+Send it to Opus 5.5, and thank me later. Then read the full guide for Opus 5.5 Graph Engineering.
+
+Attached content and quote previews:
+Hanako
+@hanakoxbt
+·
+Aug 23
+ Article
+Loops and Graphs: how to stop babysitting agents and only approve the last step (full course) 
+You check every step your agents take. Not because you want to, but because nothing else does.
+Getting out of that chair takes two things, and almost everyone builds only one of them.
+A loop makes a...
+
+Attached: X article"
+2026-10-10,X @copyconstruct,How to effectively debug with agents when you no longer read or understand the code,https://x.com/copyconstruct/status/2108967806666715591,acted,"Topic: AI agents and automation
+
+Posted by Cindy Sridharan (@copyconstruct) on 2026-10-10
+
+How to effectively debug with agents when you no longer read or understand the code
+
+In this post, I propose a debugging framework for agents that doesn’t rely on human knowledge of code to get to the right “root cause”
+
+The TL;DR are the screenshots. 
+
+Link to post in the reply.
+
+Attached content and quote previews:
+Cindy Sridharan
+@copyconstruct
+·
+Sep 14
++1
+Writing a post about “how to effectively debug code when you no longer fully understand it”.
+
+This is real bug I had to fix in ~9K LOC (100% AI generated).
+
+None of the tactics I started with here helped “root cause” the issue, lol. Had to take a different approach to isolate it.
+
+Attached: Image
+
+Quoted post URL:
+https://x.com/copyconstruct/status/2099336089211416908"
+2026-10-10,X @tobi,Good read,https://x.com/tobi/status/2108736851918155949,noise,"Topic: Careers and learning
+
+Posted by tobi lutke (@tobi) on 2026-10-10
+
+Good read
+
+Attached content and quote previews:
+geoff
+@GeoffreyHuntley
+·
+Oct 9
+🗞️ if your team is too busy doing their 'normal job' to experiment with AI, you're preparing them to be replaced
+
+
+https://
+ghuntley.com/replaced/
+
+In this post, I guess this's the last time I'll say it. AI use is no longer optional if you wish to be employed. What follows is advice for
+
+Attached: Image
+
+Quoted post URL:
+https://x.com/GeoffreyHuntley/status/2108484955437416543"
+2026-10-10,X @chamath,These are some very important observations from Satya.,https://x.com/chamath/status/2108939308350775596,should have,"Topic: Harness engineering
+
+Posted by Chamath Palihapitiya (@chamath) on 2026-10-10
+
+These are some very important observations from Satya. 
+
+As models and harnesses commoditize, intent, verification and evidence will gate how quickly SI permeates enterprises and businesses. 
+
+Importantly, you need to implement systems that separate who does the work from those
+
+Attached content and quote previews:
+Satya Nadella
+@satyanadella
+·
+Oct 10
+ Article
+Models as Insider Risks in the Super Intelligence Era 
+As traditional software systems were being deployed across the economy over the last few decades, we had the tools and capability to trace behaviors to a specific code path.
+That same kind of..."
+2026-10-10,X @MengTo,This is a must-have collection of shaders for making landing pages.,https://x.com/MengTo/status/2108924473265275003,noise,"Topic: AI design and interfaces
+
+Posted by Meng To (@MengTo) on 2026-10-10
+
+This is a must-have collection of shaders for making landing pages.
+
+Use this prompt in codex/claude:
+
+
+https://
+github.com/shader-effects
+-inc/shaders
+… Give me the list of the shaders and their screenshots so I can use for my website.
+
+Attached content and quote previews:
+shaders
+@npm_i_shaders
+·
+Oct 6
+Big news.
+
+Shaders is now open source 🔥
+
+Use any of our 200+ WebGPU components in your work. Ship magic in a client site, a template, a product, a library, anything. Plus, you can export code for any framework, for free.
+
+Give it a star: 
+https://
+github.com/shader-effects
+-inc/shaders
+…
+
+Attached: Image, Video
+
+Resource URLs:
+https://t.co/7hbHpwV8Rf"
+2026-10-10,X @vijayshekhar,Did you download Google Foresight yet?,https://x.com/vijayshekhar/status/2108950810558386616,noise,"Topic: Google Foresight
+
+Posted by Vijay Shekhar Sharma (@vijayshekhar) on 2026-10-10
+
+Did you download Google Foresight yet?
+(
+https://
+developers.google.com/edge/foresight )
+
+Resource URLs:
+https://t.co/zY3PqcL0ZI"
+2026-10-10,X @tobi,"Great read from Patrick, as always.",https://x.com/tobi/status/2109048992026009863,noise,"Topic: AI agents and automation
+
+Posted by tobi lutke (@tobi) on 2026-10-10
+
+Great read from Patrick, as always. 
+
+“Personal agents will, I think, act as a kind of structural subsidy for product quality.” 
+
+Yes, and well put.
+
+Attached content and quote previews:
+Patrick Collison
+@patrickc
+·
+Oct 10
+Assorted things I've been mulling over regarding agents in the economy:
+
+• Companies are in some sense the original superintelligence. It's often the case that they can use their amortized cognitive surplus to advance their interests against those of certain consumers: relative"
+2026-10-11,X @analogalok,Yesterday I trained my own Jev style decision model by finetuning Qwen3.5-4B on the LocalLLaMA/typed-decisions dataset with,https://x.com/analogalok/status/2109244293135339916,noise,"Topic: Model training and AI data
+
+Posted by Alok (@analogalok) on 2026-10-11
+
+Yesterday I trained my own Jev style decision model by finetuning Qwen3.5-4B on the LocalLLaMA/typed-decisions dataset with 
+@UnslothAI
+ 
+
+added a decision head + trained with 4-bit QLoRA on a single A100 within 15 mins, 4 epochs -> 80% accuracy (2 Epochs are enough though)
+
+Merged
+
+Attached content and quote previews:
+Alok
+@analogalok
+·
+Oct 10
+Finetuned Qwen3.5-4B into a decision model like Jev using @UnslothAI. 
+
+- 4-bit QLoRA, bf16, single A100, 15 min. 
+- Train/val loss flatten after 2 epochs so most of the learning happens fast.
+- Trained just 64.5M params (2.1%)
+- accuracy jumps 30% -> 80% after 4 epochs on  x.com/UnslothAI/stat…
+
+Attached: Image, Video
+
+Quoted post URL:
+https://x.com/analogalok/status/2108921475780722776"
+2026-10-11,X @levie,"If you want to know where all the tokens will get consumed in the future, here it is. Agent swarms will have massive implications in a numbe",https://x.com/levie/status/2109079686286565378,noise,"Topic: AI agents and automation
+
+Posted by Aaron Levie (@levie) on 2026-10-11
+
+If you want to know where all the tokens will get consumed in the future, here it is. Agent swarms will have massive implications in a number of enterprise domains like software development, cyber, life sciences research, AI research, finance, and more.
+
+The ability to
+
+Attached content and quote previews:
+Prime Intellect
+@PrimeIntellect
+·
+Oct 10
+Over two weeks, Prime Agent orchestrated a swarm of over 2,000 agents to rewrite itself in Rust.
+
+With 10,000+ sandboxes, 200B+ GLM-5.3 tokens, and 16,000 agent-to-agent messages, this was our largest test yet of Prime Agent’s multi-agent capabilities and our infrastructure
+
+Attached: Image, Video"
+2026-10-12,X @Zai_org,Introducing GLM-Legal,https://x.com/Zai_org/status/2109678174468534511,noise,"Topic: AI evaluation and benchmarks
+
+Posted by Z.ai (@Zai_org) on 2026-10-12
+
+Introducing GLM-Legal
+
+Built on GLM-5.3-Flash, GLM-Legal matches frontier models on mainstream legal benchmarks.
+
+Designed for real legal workflows: contract review, evidence analysis, compliance, and more.
+
+Tech Blog: 
+https://
+z.ai/blog/glm-legal
+Apply for API Access:
+
+Attached content and quote previews:
+Attached: Image
+
+Resource URLs:
+https://t.co/hx2I77MaiK"
+2026-10-12,X @SeijinJung,"Ok, this was a goldmine of insights re: the future of commerce with agents, straight from",https://x.com/SeijinJung/status/2109749325475844415,noise,"Topic: AI agents and automation
+
+Posted by Seijin Jung (@SeijinJung) on 2026-10-12
+
+Ok, this was a goldmine of insights re: the future of commerce with agents, straight from 
+@finkd
+  + 
+@alexandr_wang
+ 
+
+24 key takeaways:
+
+1/ Zuckerberg says agentic commerce is not a 20% conversion lift. It actually creates customers who never existed
+->  He used Instacart ~2x a
+
+Attached content and quote previews:
+John Collison
+@collision
+·
+Oct 13
+Cheeky Pint is back! Mark Zuckerberg @finkd and Alexandr Wang @alexandr_wang came to the pub to discuss their new frontier model, Muse Wonder.
+
+00:00:24 Muse’s breakout use cases
+00:07:28 The model is the product
+00:14:35 Muse Wonder
+00:24:56 How frontier models are built
+
+Attached: Image, Video"
+2026-10-12,X @levelsio,This is true,https://x.com/levelsio/status/2109723310762123704,noise,"Topic: AI agents and automation
+
+Posted by '@levelsio (@levelsio) on 2026-10-12
+
+This is true
+
+You can get very rich on helping IRL businesses with the transition to AI and automating everything for them
+
+They'll have to to stay competitive because if one adapts AI, they all have to!
+
+Attached content and quote previews:
+Steven Tibbs, PMP
+@Tibbzzee
+·
+Oct 12
+Replying to @levelsio
+I think it's the best time ever to walk into a business who has hardly any automations and get paid a huge check to help them automate everything. I believe trillions are on the table in the next 5-10 years as a forward deployed engineer.
+Quote
+Guillermo Flor
+@guilleflorvs
+·
+Oct 5
+Mark Cuban's take on the next job wave deserves more attention than it's getting.
+
+His argument: software as we know it is dying. Generic SaaS gets replaced by AI customized to how each business actually operates.
+
+The question then becomes — who builds and deploys that for the
+
+Quoted post URL:
+https://x.com/guilleflorvs/status/2107131465968279923"
+2026-10-12,X @christophersaum,Who’s building this? I want to back founders helping companies build specialized models on their own data. $500k checks. We move fast.,https://x.com/christophersaum/status/2109635292185379099,noise,"Topic: Startups, products and business
+
+Posted by Chris Saum (@christophersaum) on 2026-10-12
+
+Who’s building this? I want to back founders helping companies build specialized models on their own data. $500k checks. We move fast.
+
+Attached content and quote previews:
+Brian Armstrong
+@brian_armstrong
+·
+Oct 12
+We were able to fine tune an open weight model (Qwen3.5-9B) on proprietary internal data at @coinbase, and it out performed frontier models, at much lower cost and speed, for a specialized task (fraud prevention in this case).
+
+I think we'll see more of this pattern inside
+
+Attached: Image
+
+Quoted post URL:
+https://x.com/brian_armstrong/status/2109412046244913643"
+2026-10-12,X @iamlukethedev,Everyone is talking about Claude + Treg,https://x.com/iamlukethedev/status/2109617175791341830,noise,"Topic: Enterprise AI and FDE
+
+Posted by Luke The Dev (@iamlukethedev) on 2026-10-12
+
+Everyone is talking about Claude + Treg
+
+But I’m thinking about Hermes + Treg
+
+Imagine telling Hermes:
+
+“Find 50 potential clients in my industry, research their companies, find their work emails, and prepare personalized outreach for my approval.”
+
+Hermes handles the workflow
+
+Attached content and quote previews:
+Treg
+@treg_ai
+·
+Oct 12
+Introducing OpenSource people-search for Claude
+
+- Juts $0.0089/lead, no more $600 subscriptions
+- #1 on People Search Bench
+- 0% markup, Fully open source
+
+Try it at 
+https://
+treg.to/people-search
+
+Repo link below 👇
+0:49
+
+Attached: Image, Video
+
+Resource URLs:
+https://help.x.com/rules-and-policies/paid-partnerships-policy"
+2026-10-12,X @dhh,One of the best part of the agent revolution is that the price of obsessive performance tuning has dropped to near zero. So now we can just ,https://x.com/dhh/status/2109625068167024785,noise,"Topic: AI agents and automation
+
+Posted by DHH (@dhh) on 2026-10-12
+
+One of the best part of the agent revolution is that the price of obsessive performance tuning has dropped to near zero. So now we can just make everything as fast as computers can be without worrying about the corporate ROI.
+
+Attached content and quote previews:
+Ett Venter
+@EttVenter
+·
+Oct 12
+@p_ch Busy editing a full wedding in RAWmakase. Dude, it's so much faster than Lightroom. After 16 years of editing professionally in Lightroom, this is the first tool that feels like I could replace Lightroom with. Thank you.
+
+Attached: Image
+
+Quoted post URL:
+https://x.com/EttVenter/status/2109578179505467886"
+2026-10-12,X @levie,"Ok this is quite cool research and ultimately must be the eventual architecture of agents. In the limit, AI will obviously be better at dete",https://x.com/levie/status/2109788979952558255,should have,"Topic: Harness engineering
+
+Posted by Aaron Levie (@levie) on 2026-10-12
+
+Ok this is quite cool research and ultimately must be the eventual architecture of agents. In the limit, AI will obviously be better at determining its own harness once it sees the task at hand, than us being able to do this in advance:
+
+Attached content and quote previews:
+Pedro Domingos
+@pmddomingos
+·
+Oct 12
+That didn’t take long: the model swallows the harness.
+
+https://
+arxiv.org/abs/2609.35738
+
+Attached: Image"
+2026-10-13,X @felixrieseberg,"Hi, I'm Felix. I'm an eng lead working on Claude. I love watching people take flight and do things they never thought possible.",https://x.com/felixrieseberg/status/2110023283169247623,noise,"Topic: Careers and learning
+
+Posted by Felix Rieseberg (@felixrieseberg) on 2026-10-13
+
+Hi, I'm Felix. I'm an eng lead working on Claude. I love watching people take flight and do things they never thought possible.
+
+We often describe that as ""being more ambitious"" when using AI, which is tricky advice to follow. I wrote a tutorial:
+
+Attached content and quote previews:
+How to be more ambitious: A tutorial for humans with models
+
+Resource URLs:
+https://t.co/vNPPs5FWm8"
+2026-10-13,X @termsheetinator,"Micro1 is paying $75,000 for data from companies that are NO LONGER opperational:",https://x.com/termsheetinator/status/2110008544707916189,noise,"Topic: Micro1’s training data sourcing
+
+Posted by Termsheetinator (@termsheetinator) on 2026-10-13
+
+Micro1 is paying $75,000 for data from companies that are NO LONGER opperational:
+
+Here are 10 public signals you can start pulling leads from immediately to get closer to them:
+
+1. Chapter 11 bankruptcy filings
+
+2. Companies exploring strategic alternatives or asset sales
+
+3."
+2026-10-13,X @swill1ams,Small RL companies are the AI industry's equivalent of quant shops. Let me explain.,https://x.com/swill1ams/status/2109858744087564288,noise,"Topic: Reinforcement learning startups
+
+Posted by Scott Williams (@swill1ams) on 2026-10-13
+
+Small RL companies are the AI industry's equivalent of quant shops. Let me explain.
+
+Both are small, secretive, full of brilliant people, profitable, and always one step from their edge disappearing.
+
+The parallels:
+
+- Secretive. Nobody publishes their signals. Labs won't say
+
+Attached content and quote previews:
+Ivan Burazin
+@ivanburazin
+·
+Oct 13
+There’s an RL company I know doing $100M run rate with five people.
+
+They are finally raising one small round at a $500M+ valuation with very little dilution (I wrote a check)
+
+You’ve never heard of them."
+2026-10-13,X @michael_chomsky,"if you’re a consumer app builder and have production traces, dm me",https://x.com/michael_chomsky/status/2109894037176295478,noise,"Topic: Startups, products and business
+
+Posted by Michael (@michael_chomsky) on 2026-10-13
+
+if you’re a consumer app builder and have production traces, dm me
+
+traces are selling for $40-120/trace rn, the market is nuts
+
+Attached content and quote previews:
+Gokul Rajaram
+@gokulr
+·
+Oct 12
+Tokens or Data (or both :))?
+
+Heard rumors that some of the top vibe-coded app builders are selling production traces to the labs. (in addition to their core revenue stream of selling credits)
+
+It doesn't surprise me in the least. That's incredibly valuable data for the labs.
+
+As"
+2026-10-14,X @jordan_ross_8F,Interviewed the founder of Micro1 competitor today (Grepped) to see who is making 7 figures selling their company data right now:,https://x.com/jordan_ross_8F/status/2110441375418450368,noise,"Topic: AI video, audio and creative tools
+
+Posted by Jordan Ross (@jordan_ross_8F) on 2026-10-14
+
+Interviewed the founder of Micro1 competitor today (Grepped) to see who is making 7 figures selling their company data right now:
+
+Here is what he said:  
+
+Legal
+Oil and gas
+Semiconductors
+Video game companies 
+“and honestly any organization above 100+ employees is going for 7
+
+Attached content and quote previews:
+Jordan Ross
+@jordan_ross_8F
+·
+Oct 14
+Just interviewed someone from @micro1_ai  to see which companies are getting paid a premium on data, here is what I learned:
+
+Premium Tier:
+Law firms
+Banks / finance (banks specifically — accounting firms are lower tier)
+Healthcare
+Construction (needs ~20+ desk employees even if"
+2026-10-14,X @ben_cerchio,"if you sell AI training data, see how you compare: we found 159 companies selling data, RL envs and evals, every fact sourced",https://x.com/ben_cerchio/status/2110430274240885062,noise,"Topic: AI evaluation and benchmarks
+
+Posted by Ben Cerchio (@ben_cerchio) on 2026-10-14
+
+if you sell AI training data, see how you compare: we found 159 companies selling data, RL envs and evals, every fact sourced
+
+plus 38 programs that pay companies for their data: 
+https://
+whosellsdata.com
+
+8 of the 14 that pay companies directly publish a dollar range. most of the
+
+Attached content and quote previews:
+Attached: Image
+
+Resource URLs:
+https://t.co/wK5vLYlZPc"
+2026-10-14,X @gregisenberg,"I spent 48 hours in SF hanging out with billionaires, data labs and AI founders and execs running $1B to $100B companies.",https://x.com/gregisenberg/status/2110414696037716372,noise,"Topic: Model training and AI data
+
+Posted by GREG ISENBERG (@gregisenberg) on 2026-10-14
+
+I spent 48 hours in SF hanging out with billionaires, data labs and AI founders and execs running $1B to $100B companies.
+
+My observations:
+
+1. Sooo MANY stories of data brokers making like $2M a WEEK selling company data to labs. I can't tell if it's the beginning or a bubble,
+
+Attached content and quote previews:
+Attached: Image"
+2026-10-14,X @MartinGTobias,This prompt significantly improved one of my sites performance. And is further proof that the raw tools are not enough to get good software.,https://x.com/MartinGTobias/status/2110288027721609268,acted,"Topic: Software engineering and coding tools
+
+Posted by Martin Tobias (Pre-Seed VC) (@MartinGTobias) on 2026-10-14
+
+This prompt significantly improved one of my sites performance.  And is further proof that the raw tools are not enough to get good software. You still need people who know how to get the most out of the tools.  You still want a killer CTO or senior dev.
+
+Attached content and quote previews:
+Vox
+@Voxyz_ai
+·
+Oct 14
+Claude Code tip: before you ship a vibe-coded site, have Opus 5.5 send out 𝟰 𝘀𝘂𝗯𝗮𝗴𝗲𝗻𝘁𝘀 to check 𝘁𝗵𝗲𝘀𝗲 𝟮𝟬 𝘁𝗵𝗶𝗻𝗴𝘀 𝘁𝗵𝗮𝘁 𝘀𝗹𝗼𝘄 𝗶𝘁 𝗱𝗼𝘄𝗻, then fix them all in one pass:
+
+Images and fonts
+→ Convert every image to WebP or AVIF, sized to how big it x.com/Voxyz_ai/statu…"
+2026-10-15,X @AlexFinn,America is SO back,https://x.com/AlexFinn/status/2110782474720887192,noise,"Topic: AI agents and automation
+
+Posted by Alex Finn (@AlexFinn) on 2026-10-15
+
+America is SO back
+
+Zuck just announced Muse Spark Open is dropping later today, built with Mac Studios in mind
+
+This is bigger than you think
+
+The Meta Muse model was trained specifically for agent tasks. Now we can run it locally, plugged into agents like Hermes
+
+This is the
+
+Attached content and quote previews:
+Mark Zuckerberg
+@finkd
+·
+Oct 15
+Muse Spark Open -- weights releasing today -- runs great on new Mac Studios thanks to work with @johnternus and Apple.
+
+Quoted post URL:
+https://x.com/finkd/status/2110778025629347999"
+2026-10-15,X @BHolmesDev,"I've been thinking about what a true, closed-loop software factory will look like.",https://x.com/BHolmesDev/status/2110793920930107817,should have,"Topic: AI agents and automation
+
+Posted by Ben Holmes (@BHolmesDev) on 2026-10-15
+
+I've been thinking about what a true, closed-loop software factory will look like.
+
+One where agents know what to fix, what costs to optimize, and the big one: what features to actually build.
+
+We're not there yet. But maybe we're getting close...
+
+Attached content and quote previews:
+Attached: X article"
+2026-10-15,X @NeelNanda5,"This is wild... (And terrifying!) I'd love to see a bunch of investigation into what's going on in these transcripts, it's nice to have the ",https://x.com/NeelNanda5/status/2110880589901668674,noise,"Topic: Model training and AI data
+
+Posted by Neel Nanda (@NeelNanda5) on 2026-10-15
+
+This is wild... (And terrifying!) I'd love to see a bunch of investigation into what's going on in these transcripts, it's nice to have the really weird stuff be in an open weight model
+
+Attached content and quote previews:
+Apollo Research
+@ApolloResearch
+·
+Oct 15
+We have never seen a model do this before, but GLM-5.3 sometimes reasons (unprompted) about how its current actions could become training data and impact its future self. 🧵
+
+Quoted post URL:
+https://x.com/ApolloResearch/status/2110737961499111880"
+2026-10-15,X @ApolloResearch,"We have never seen a model do this before, but GLM-5.3 sometimes reasons (unprompted) about how its current actions could become training da",https://x.com/ApolloResearch/status/2110737961499111880,noise,"Topic: Model training and AI data
+
+Posted by Apollo Research (@ApolloResearch) on 2026-10-15
+
+We have never seen a model do this before, but GLM-5.3 sometimes reasons (unprompted) about how its current actions could become training data and impact its future self. 🧵"
+2026-10-15,X @nikogrupen,An overview of how we think about context graphs at,https://x.com/nikogrupen/status/2110773803592937733,should have,"Topic: AI agents and automation
+
+Posted by Niko (@nikogrupen) on 2026-10-15
+
+An overview of how we think about context graphs at 
+@harvey
+. 
+
+Context graphs are a promising direction for improving agent quality and efficiency. We ran a series of experiments on Legal Agent Bench to evaluate how structured context improves online agent performance.
+
+For each
+
+Attached content and quote previews:
+Attached: Image, Video"
+2026-10-15,X @jordan_ross_8F,"If I wanted to buy a business right now with FREE money, here is exactly how I would do it to grow a 9 figure hold co.",https://x.com/jordan_ross_8F/status/2110798257576398941,noise,"Topic: AI video, audio and creative tools
+
+Posted by Jordan Ross (@jordan_ross_8F) on 2026-10-15
+
+If I wanted to buy a business right now with FREE money, here is exactly how I would do it to grow a 9 figure hold co.
+
+There is a small golden window of opportunity to use data brokers to get (what is basically)  free money for your company data.
+
+Guys like Micro1 and Grepped
+
+Attached content and quote previews:
+Jordan Ross
+@jordan_ross_8F
+·
+Oct 15
+Interviewed the founder of Micro1 competitor today (Grepped) to see who is making 7 figures selling their company data right now:
+
+Here is what he said:  
+
+Legal
+Oil and gas
+Semiconductors
+Video game companies 
+“and honestly any organization above 100+ employees is going for 7 x.com/jordan_ross_8F…"
+2026-10-15,X @aidenybai,gabriel is one of the few people who,https://x.com/aidenybai/status/2110839868041650547,noise,"Topic: Enterprise AI and FDE
+
+Posted by Aiden Bai (@aidenybai) on 2026-10-15
+
+gabriel is one of the few people who
+ 
+1. understand this early
+2. actually can execute on it
+
+and is why he will win
+
+Attached content and quote previews:
+gabriel
+@gabriel1
+·
+Oct 15
+we're so early in enterprise ai adoption
+
+enterprises buy ""ai"" from anthropic and openai who have no idea how to show enterprises what ai can do concretely, labs need playbooks that don't exist
+
+most public company ceos can't mention a single task that 2x productivity by ai x.com/gabriel1/statu…"
+2026-10-15,X @ch3nweiii,"It is becoming f*cking dangerous: Anthropic documented every piece of this separately, and nobody noticed what they add up to",https://x.com/ch3nweiii/status/2110840700073816073,noise,"Topic: Software engineering and coding tools
+
+Posted by Chen (@ch3nweiii) on 2026-10-15
+
+It is becoming f*cking dangerous: Anthropic documented every piece of this separately, and nobody noticed what they add up to
+
+1. Create a folder on your PC - this is the only world your agent will ever see
+
+2. Launch Claude Code inside it and drop a CLAUDE.md in the root with
+
+Attached content and quote previews:
+Hanako
+@hanakoxbt
+·
+Oct 13
+ Article
+How to Turn Opus 5.5 Into a Reverse Engineering Machine with 8 Steps (full course)
+On October 8, 2026 a repository nobody had heard of three months earlier hit number one on GitHub trending.
+It is called REA, Reverse Engineer Anything, and it gives your agent a real disassembler....
+REA is the most dangerous repo on GitHub right now
+
+It gives your AI agent a real disassembler, so it reads any app down to the binary
+
+Every claim comes back with the address behind it
+
+I broke down the exact 8 steps:
+
+Attached: Image, Video, X article"
+2026-10-15,X @svpino,This is an open-source framework that lets you add AI-generated interfaces to your apps.,https://x.com/svpino/status/2110743040323379705,noise,"Topic: AI design and interfaces
+
+Posted by Santiago (@svpino) on 2026-10-15
+
+This is an open-source framework that lets you add AI-generated interfaces to your apps.
+
+For example, you can have a travel assistant agent respond with a hotel card, a map, and an interactive UI that compares plane tickets instead of a wall of text.
+
+• You decide which
+
+Attached content and quote previews:
+Rabi Shanker Guha
+@rabi_guha
+·
+Oct 15
+For 30 years, technology has moved in one direction: turning information into intuitive interfaces
+
+Somehow, the smartest software we’ve ever built took us back to a textbox
+
+We’ve spent the last 2 years at @openuidev trying to fix that. 6 months ago we open-sourced it: 10K+
+
+Attached: Image, Video"
+2026-10-15,X @mercor,Mercor Research mapped AI benchmarks to actual US jobs.,https://x.com/mercor/status/2110557079027265653,noise,"Topic: AI evaluation and benchmarks
+
+Posted by Mercor (@mercor) on 2026-10-15
+
+Mercor Research mapped AI benchmarks to actual US jobs.
+
+Only 208 of 923 occupations in the US economy are represented by existing AI benchmarks. 90% of hours worked in the US aren't covered well by a relevant AI benchmark.
+
+Today, we’re releasing the 𝗕𝗲𝗻𝗰𝗵𝗺𝗮𝗿𝗸 𝗠𝗮𝗽
+
+Attached content and quote previews:
+Attached: Image"
+2026-10-15,X @MengTo,"You can pretty much reverse engineer any device in your home and build a mac app around it. Applied to lights, doors, ac and even the future",https://x.com/MengTo/status/2110747334888083690,acted,"Topic: Software engineering and coding tools
+
+Posted by Meng To (@MengTo) on 2026-10-15
+
+You can pretty much reverse engineer any device in your home and build a mac app around it. Applied to lights, doors, ac and even the future robot helper.
+
+Here's the skill: 
+https://
+github.com/morluto/rea
+
+It's crazy what you can build nowadays with a skill and a few prompts.
+
+Attached content and quote previews:
+GIF
+
+Ilter Canberk
+@icanberk
+·
+Oct 11
+GIF
+Reverse engineered my AC, and vibe coded a lil status bar app so I don't have to find the remote every time. 
+
+No first world problem will remain unsolved in 2026.
+
+Attached: Image, Video, previewInterstitial
+
+Resource URLs:
+https://t.co/X8T6md6FNI"
+2026-10-15,X @thisiskp_,"I use Instinct every day, and its interactive answers have spoiled me.",https://x.com/thisiskp_/status/2110837486251360549,noise,"Topic: AI design and interfaces
+
+Posted by KP (@thisiskp_) on 2026-10-15
+
+I use Instinct every day, and its interactive answers have spoiled me. 
+
+Going back to a wall of text in every other AI app feels painful..
+
+OpenUI lets any agent answer with real interfaces, and it isn't tied to a specific model or component library. 
+
+Your components, any model
+
+Attached content and quote previews:
+Rabi Shanker Guha
+@rabi_guha
+·
+Oct 15
+For 30 years, technology has moved in one direction: turning information into intuitive interfaces
+
+Somehow, the smartest software we’ve ever built took us back to a textbox
+
+We’ve spent the last 2 years at @openuidev trying to fix that. 6 months ago we open-sourced it: 10K+
+
+Attached: Image, Video"
+2026-10-15,X @spencermateega,Every serious enterprise will soon own and control its own intelligence.,https://x.com/spencermateega/status/2110830524340338942,noise,"Topic: Enterprise AI and FDE
+
+Posted by Spencer Mateega (@spencermateega) on 2026-10-15
+
+Every serious enterprise will soon own and control its own intelligence.
+
+Huge congratulations to the 
+@datadoghq
+ team on Scout.
+
+Attached content and quote previews:
+Datadog, Inc.
+@datadoghq
+·
+Oct 15
+Meet Scout 1.0, our first AI model built for investigating production incidents. 
+
+Scout matches frontier-model investigation quality at a fraction of the cost, which makes it practical to investigate more issues, earlier.
+
+We trained Scout on realistic simulations built from
+
+Attached: Image, Video"
+2026-10-15,X @lukasgruber__,"A friend of mine is making $10M / month right now going to restaurants, hotels & construction companies in New York and brokering their data",https://x.com/lukasgruber__/status/2110815001535828027,noise,"Topic: Model training and AI data
+
+Posted by Lukas Gruber (@lukasgruber__) on 2026-10-15
+
+A friend of mine is making $10M / month right now going to restaurants, hotels & construction companies in New York and brokering their data to AI labs.
+
+Was a generational opportunity to start a company like this during late August - start of October. Seems like this
+
+Attached content and quote previews:
+Kled AI
+@useKled
+·
+Oct 16
+the kled marketplace is now live: 
+https://
+kled.ai/datasets
+
+labs can request and browse datasets from the kled contributor network and a curated network of enterprise partners.
+
+Attached: Image, Video"
+2026-10-15,X @gregisenberg,More SF observations:,https://x.com/gregisenberg/status/2110777852589191378,noise,"Topic: AI infrastructure and inference
+
+Posted by GREG ISENBERG (@gregisenberg) on 2026-10-15
+
+More SF observations:
+
+1. Seeing the word ""inference"" on billboards in SF still blows my mind. 99.9% of america has no idea what inference is and I wonder how many know what an agent is. Will Muse, Instinct, Dots etc will change that over the next 12 months?
+
+2. You know who
+
+Attached content and quote previews:
+GREG ISENBERG
+@gregisenberg
+·
+Oct 14
+I spent 48 hours in SF hanging out with billionaires, data labs and AI founders and execs running $1B to $100B companies.
+
+My observations:
+
+1. Sooo MANY stories of data brokers making like $2M a WEEK selling company data to labs. I can't tell if it's the beginning or a bubble,
+
+Attached: Image
+
+Quoted post URL:
+https://x.com/gregisenberg/status/2110414696037716372"
+2026-10-15,X @troyaitken_,Best write up I’ve seen on this market yet.,https://x.com/troyaitken_/status/2110561533595996638,noise,"Topic: Market analysis recommendation
+
+Posted by Troy (@troyaitken_) on 2026-10-15
+
+Best write up I’ve seen on this market yet. 
+
+Incredible alpha in here.
+
+Highly recommend reading and bookmarking.
+
+Attached content and quote previews:
+Mitchell Keller
+@MitchellKeller_
+·
+Oct 14
+ Article
+How to Capitalize on the Data Broker Trend  (Step by Step)
+We contacted 13,000 people in 3 weeks and submitted 46 engaged leads for data deals. Thirteen are moving to next steps, with deal values between $100,000 and $500,000 each.
+ 
+Start with these three...
+
+Attached: X article"
+2026-10-15,X @_chenglou,"My dear friends, I’d like to show you my latest toy project",https://x.com/_chenglou/status/2110557373651931267,noise,"Topic: AI infrastructure and inference
+
+Posted by Cheng Lou (@_chenglou) on 2026-10-15
+
+My dear friends, I’d like to show you my latest toy project
+
+Introducing Handwired: turn your regular JavaScript code into a neural net!
+- no training
+- exact outputs vs the JS program
+- fully differentiable
+
+All runnable in a browser, without GPU
+
+Attached content and quote previews:
+Attached: Image, Video"
+2026-10-15,X @cgtwts,anthropic’s lead engineer btw.,https://x.com/cgtwts/status/2110571916973207906,noise,"Topic: Careers and learning
+
+Posted by CG (@cgtwts) on 2026-10-15
+
+anthropic’s lead engineer btw.
+
+Attached content and quote previews:
+Felix Rieseberg
+@felixrieseberg
+·
+Oct 13
+Hi, I'm Felix. I'm an eng lead working on Claude. I love watching people take flight and do things they never thought possible.
+
+We often describe that as ""being more ambitious"" when using AI, which is tricky advice to follow. I wrote a tutorial:
+
+
+https://
+felixrieseberg.com/how-to-be-more
+-ambitious-a-tutorial-for-humans-with-models/
+…
+
+Attached: Image"
+2026-10-16,X @jessiicawu,"Three reasons why the data industry is dominated by young people (<28), even more so than other large AI markets:",https://x.com/jessiicawu/status/2110960145778004349,noise,"Topic: AI data industry workforce
+
+Posted by Jess Wu (@jessiicawu) on 2026-10-16
+
+Three reasons why the data industry is dominated by young people (<28), even more so than other large AI markets:
+1. We are at the beginning of a supercycle and young people are unburdened by priors of what durable equity value looks like
+2. Young people have time and energy, and"
+2026-10-16,X @anamika__x,I work at an AI-native law firm and I'm extremely bullish on them.,https://x.com/anamika__x/status/2110897675478663313,noise,"Topic: AI-native law firms
+
+Posted by ana (@anamika__x) on 2026-10-16
+
+I work at an AI-native law firm and I'm extremely bullish on them. 
+
+But I also think the entire category is going to disappear.
+
+Attached content and quote previews:
+Attached: X article"
+2026-10-16,X @businessbarista,Everyone is talking about how profound this essay is rn.,https://x.com/businessbarista/status/2110898469942476851,noise,"Topic: Essay recommendation for nontechnical readers
+
+Posted by Alex Lieberman (@businessbarista) on 2026-10-16
+
+Everyone is talking about how profound this essay is rn. 
+
+For the non-technical person (like myself), a 65-minute read about the inner-workings of neural networks feels very unapproachable. 
+
+But people are right, this essay is profound. And it's important to understand its
+
+Attached content and quote previews:
+Nick
+@nickcammarata
+·
+Oct 15
+interpretability might be the most important scientific problem in the world right now, as I don't think we can solve alignment if we don't know what we're building. I think I have good news about it. I co-authored early work in mechanistic interpretability at OpenAI and came"
+2026-10-16,X @badlogicgames,"recommended reading. i like the term ""coherence"" over ""taste"".",https://x.com/badlogicgames/status/2110988380435615971,noise,"Topic: Design coherence and taste
+
+Posted by Mario Zechner (@badlogicgames) on 2026-10-16
+
+recommended reading. i like the term ""coherence"" over ""taste"".
+
+historically, simplified, a human would approach a software writing human, asking them to build a thing. that's an iterative process, until software writing human truely understands what the other human needs and
+
+Attached content and quote previews:
+Ben Davis
+@davis7
+·
+Oct 15
+Replying to @davis7
+https://
+davis7.substack.com/p/the-labs-hav
+e-the-best-models-with?r=8c4eti&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true
+…"
+2026-10-17,X @ahaseeb2002,The best 'company brain' I've seen so far hands down,https://x.com/ahaseeb2002/status/2111262674965373224,noise,"Topic: Agent memory and context
+
+Posted by Abdul Haseeb (@ahaseeb2002) on 2026-10-17
+
+The best 'company brain' I've seen so far hands down
+
+Attached content and quote previews:
+Mehdi Djabri
+@mehdidjabri
+·
+Oct 15
+Introducing 
+https://
+past.dev
+
+Long-term, multiplayer memory for your agents. #1 on BEAM, the largest public memory benchmark.
+
+Install it with a single prompt. Keep your stack. Add a past.
+
+Try it today → 
+https://
+past.dev
+
+Attached: Image, Video"
+2026-10-17,X @deedydas,LLMs are either not capable or not affordable for visual reasoning tasks at scale.,https://x.com/deedydas/status/2111342727044665427,noise,"Topic: AI models and research
+
+Posted by Deedy (@deedydas) on 2026-10-17
+
+LLMs are either not capable or not affordable for visual reasoning tasks at scale.
+
+The Elorian team - one of Jeff Dean’s best reports who led Gemini, an Apple LLM lead, xAI lead, and a Harvard professor - just launched an Astra-level visual reasoning model, Glimpse, for 17x
+
+Attached content and quote previews:
+Andrew M. Dai
+@AndrewDai
+·
+Oct 16
+1:29
+Spent years watching models ace a single image and completely whiff on anything that moves or changes angle. Today we’re fixing that.
+
+Try Glimpse now, our first visual thinking model with competitive frontier performance compared to Astra on key public visual reasoning
+
+Attached: Image, Video, previewInterstitial
+
+Embedded video"
+2026-10-17,X @0xSero,"The DGX Sparks are very nice for ML work, tons of memory, good enough compute, and relatively cheap to rent/buy",https://x.com/0xSero/status/2111600777617657976,noise,"Topic: Agent memory and context
+
+Posted by 0xSero (@0xSero) on 2026-10-17
+
+The DGX Sparks are very nice for ML work, tons of memory, good enough compute, and relatively cheap to rent/buy
+
+Currently using 4x to create exl3 quants for 4x RTX Pro 6000 / 3x DGX Sparks about 80 hours to complete.
+
+Most of my compute is locked up in research, even inference."
+2026-10-17,X @0xSero,"New Deepseek made me break my record, 1.82 billion tokens a day in deepseek, I'm running about 24 concurrent sessions pentesting, quantising",https://x.com/0xSero/status/2111604220625568055,noise,"Topic: DeepSeek token usage
+
+Posted by 0xSero (@0xSero) on 2026-10-17
+
+New Deepseek made me break my record, 1.82 billion tokens a day in deepseek, I'm running about 24 concurrent sessions pentesting, quantising, and creating endless art slop for me. 
+
+Deepseek #1
+
+Attached content and quote previews:
+Attached: Image"
+2026-10-18,X @theinformation,"OpenAI, Anthropic and other leading AI labs face a growing challenge: Better models aren't necessarily attracting more usage. A 10-point int",https://x.com/theinformation/status/2111857344296390929,noise,"Topic: AI labs and model adoption
+
+Posted by The Information (@theinformation) on 2026-10-18
+
+OpenAI, Anthropic and other leading AI labs face a growing challenge: Better models aren't necessarily attracting more usage. A 10-point intelligence advantage now earns just 20% more developer traffic, down from nearly 69% in late 2025. 
+
+Full story:
+
+Attached content and quote previews:
+Leading-Edge AI Models Are Losing Their Allure With Developers
+
+Resource URLs:
+https://t.co/V3pI2VYOLb"
+2026-10-18,X @zixihong_,this is probably the best take on rl data ive read on x.,https://x.com/zixihong_/status/2111949502160785890,noise,"Topic: Startups, products and business
+
+Posted by bryan hong (@zixihong_) on 2026-10-18
+
+this is probably the best take on rl data ive read on x. 
+
+one other interesting trend that i’m seeing more of today is that many of these smaller data shops are not venture-backed and have instead adopted very generous profit-sharing arrangements for their employees
+
+Attached content and quote previews:
+Daniel Rupawalla
+@danielrupawalla
+·
+Oct 19
+i get asked VERY frequently to chat about data / RL envs / new companies coming into the space. all of the questions tend to be exactly the same so i want to summarize my thoughts: 
+
+Q: ""Should I start a data company?"" 
+A: probably not, unless you have some sort of alpha or have"
+2026-10-18,X @virgilxbt,This is f*cking gold..,https://x.com/virgilxbt/status/2111890105028022608,noise,"Topic: Harness engineering
+
+Posted by virgilxbt (@virgilxbt) on 2026-10-18
+
+This is f*cking gold..
+
+Chinese researchers just dropped a paper called ""The End of Harness Engineering"" and it reads like an obituary for LangChain.
+
+The claim: the file that organizes the model should be written by the loop that runs it, not by the person who built it.
+
+A
+
+Attached content and quote previews:
+slash1s
+@slash1sol
+·
+Aug 27
+ Article
+Flat-Rate AI Is a Trap. I Run 5 Workers for $3/Million Tokens: The Exact Setup
+Grok Bot will hand you an office in one evening: five named workers, one shared cloud computer, logins that stay signed in. The one thing it does not hand you is the brain behind the desks. That part...
+
+Attached: Image, Video, X article"
+2026-10-19,X @sydneyrunkle,harness² from,https://x.com/sydneyrunkle/status/2112043827553005651,acted,"Topic: Harness engineering
+
+Posted by Sydney Runkle (@sydneyrunkle) on 2026-10-19
+
+harness² from 
+@GoogleResearch
+ offers techniques for RSI on the harness, with a fixed model
+
+they call it ""harnessing"", but you might already be familiar w/ this process! it's also called ""hill climbing"" or ""continual learning""
+
+more in 🧵 !"
+2026-10-20,X @omarsar0,"Learn to build evals, folks.",https://x.com/omarsar0/status/2112632133357346889,acted,"Topic: AI evaluation and benchmarks
+
+Posted by elvis (@omarsar0) on 2026-10-20
+
+Learn to build evals, folks.
+
+Highly recommended reading on using decision models for evals. 
+
+From our internal evals, System One models like Jev are a great fit for LLM Judges.
+
+If you want to go beyond Hamel's great write-up, I've also put together a few resources on applying
+
+Attached content and quote previews:
+Hamel Husain
+@HamelHusain
+·
+Oct 20
+New blog post 🎉: How To Use Decision Models For Evals
+
+In this post, we show you how to choose a decision model for your task, tune its threshold (don't assume the 0.5 default is good!), and interpret its scores.
+
+Lots of cool interactive charts here.
+ Article
+How To Use Decision Models for Evals
+Co-authored with Antaripa Saha.
+Decision models have exploded onto the scene recently, starting with TypeSafe’s Jev, followed by Perplexity’s Decider, Liquid’s d1, Cloudflare’s Clef, and OpenAI’s...
+
+Attached: X article"
+2026-10-21,X @Letta_AI,Introducing FrontierMemory: a new way to evaluate agent memory through downstream task performance.,https://x.com/Letta_AI/status/2112957074644873289,should have,"Topic: AI agents and automation
+
+Posted by Letta (@Letta_AI) on 2026-10-21
+
+Introducing FrontierMemory: a new way to evaluate agent memory through downstream task performance.
+
+While existing memory benchmarks focus on recall (saturated via agentic search), FrontierMemory focuses on how agents learn from experience."
+2026-10-21,X @gregpr07,"open sourced: RL environments for anyone, in any domain.",https://x.com/gregpr07/status/2112767999065415701,noise,"Topic: Open-source reinforcement learning environments
+
+Posted by Gregor Zunic (@gregpr07) on 2026-10-21
+
+open sourced: RL environments for anyone, in any domain.
+
+Attached content and quote previews:
+Browser Use
+@browser_use
+·
+Oct 21
+Introducing rl-env-use: RL environments for anyone, in any domain.
+
+Describe a skill in one line. Get a verified environment built from real cases, ready for hillclimbing.
+
+100% open source 🔥
+
+Attached: Image, previewInterstitial"
+2026-10-21,X @KinGao476942,"Holy shit! Brothers and sisters, if you want to make videos with Opus 5.5, you absolutely have to bookmark these 8 GitHub repos.",https://x.com/KinGao476942/status/2112729924943634602,noise,"Topic: AI video, audio and creative tools
+
+Posted by Kin (@KinGao476942) on 2026-10-21
+
+Holy shit! Brothers and sisters, if you want to make videos with Opus 5.5, you absolutely have to bookmark these 8 GitHub repos.
+
+1. awesome-opus5-5-videos (about 7100 stars)
+The largest collection of hit videos right now, with the prompt behind each one included.
+
+Attached content and quote previews:
+GitHub - yihui-dev/awesome-opus5-5-videos: A growing collection of viral videos made with Claude...
+
+Resource URLs:
+https://t.co/7EJX8L0ndN"
+2026-10-21,X @cwolferesearch,I just published my roadmap for building evals on highly subjective tasks. Here are the key steps involved and practical tricks for reducing,https://x.com/cwolferesearch/status/2112915508148232571,acted,"Topic: AI evaluation and benchmarks
+
+Posted by Cameron R. Wolfe, Ph.D. (@cwolferesearch) on 2026-10-21
+
+I just published my roadmap for building evals on highly subjective tasks. Here are the key steps involved and practical tricks for reducing noise / increasing confidence…
+
+Blog is here: 
+https://
+cameronrwolfe.substack.com/p/subjective-e
+vals
+…
+
+Why is this difficult? Evaluating agents is already hard due to
+
+Attached content and quote previews:
+Attached: Image
+
+Resource URLs:
+https://t.co/sv1ZLkpq3V"
+2026-10-22,X @MiguelriosEN,Day 4 of open sourcing parts of our harness. Today we made significant improvements to our workflow DSL. We are using it in our self-improvi,https://x.com/MiguelriosEN/status/2113368151794557093,should have,"Topic: Harness engineering
+
+Posted by Miguel Ríos Berríos (@MiguelriosEN) on 2026-10-22
+
+Day 4 of open sourcing parts of our harness. Today we made significant improvements to our workflow DSL. We are using it in our self-improving loop - turning agentic loops into more deterministic recipes.
+
+With these improvements (a lot of 
+@typesafe
+'s Jev in routing,
+
+Attached content and quote previews:
+Attached: Image, Video"
+2026-10-22,X @dhh,I remember when 200tps felt impossibly fast. This is going to be crazy.,https://x.com/dhh/status/2113091200270184693,noise,"Topic: AI video, audio and creative tools
+
+Posted by DHH (@dhh) on 2026-10-22
+
+I remember when 200tps felt impossibly fast. This is going to be crazy.
+
+Attached content and quote previews:
+Fireworks
+@FireworksAI_HQ
+·
+Oct 21
+DeepSeek V4.1 Flash 1017 runs at 1,521+ tok/s on Fireworks Ultrafast.
+
+Fast enough to ship Tetris in 11 seconds, 7x faster than Claude Opus 5.5.
+
+Join the Ultrafast waitlist: 
+https://
+bit.ly/3UA0wKq
+
+Attached: Image, Video"
+2026-10-22,X @daltonc,airbnb for data,https://x.com/daltonc/status/2113319383733031333,noise,"Topic: Data marketplace
+
+Posted by Dalton Caldwell (@daltonc) on 2026-10-22
+
+airbnb for data
+
+Attached content and quote previews:
+DataVendor
+@datavendor_ai
+·
+Oct 22
+We're announcing the public beta of 
+https://
+datavendor.ai
+
+We spent the last two years building the best solution for people buying and selling data, whether you're a researcher in a lab or a company trying to sell data.
+
+Data is the fundamental bottleneck for AI progress, and
+
+Attached: Image"
+2026-10-23,X @theo,"What is a ""harness""?",https://x.com/theo/status/2113424203345265053,acted,"Topic: Harness engineering
+
+Posted by Theo - t3.gg (@theo) on 2026-10-23
+
+Attached content and quote previews:
+What is a ""harness""?
+212
+719
+6.6K
+674K
+I'm going to be honest here: I'm writing this because I'm tired of having to explain it, and it seems like there's no single ""resource"" that properly explains what a harness actually is.
+By the end of this article, you should know everything you'd ever need to know about what a harness is and how they work.
+
+
+Humans use interfaces
+Generally speaking, humans don't use computers by writing code. They use an interface of some form, be it a terminal, a website, or an app.
+Theoretically speaking, a human could just write unique python or js code for every task they want to complete. Instead of making them do that, we give them access to that code via buttons, hotkeys, commands, etc.
+Examples of interfaces: Chrome, Claude Code, ChatGPT App (prev. Codex)
+It is also worth noting that humans don't see the code underneath...usually. The human only sees the interface.
+LLMs use harnesses
+By default, all an LLM can do is generate text. In order for a language model to do anything more, it needs tools. Most llms are now trained to work with tools like ""read_file"" (for accessing files on your computer), ""edit_file"" (for changing those files), ""bash"" (for running commands), and ""search"" (for finding data online).
+The LLM still just sends text though! It can't click a button like a human. As such, we need a custom text format for the LLM to use that indicates ""you should run some code"". Let's say we give the LLM a format for calling tools, such as:
+<read_file name=""README.md"">
+Now the LLM knows it can respond in this format. But it's still just text, it doesn't do anything! Would be like typing on a keyboard or moving a mouse while the computer is off.
+Something has to interpret these responses, and then run the right code based on what the LLM responded with.
+In order for an LLM to actually do stuff, it needs:
+Tools that can do things (read_file, edit_file, bash, search etc)
+A special syntax for calling those tools via text
+A system that parses the message to identify that syntax and run the code
+A method to give the response from the tool back to the LLM
+A list of tools available w/ descriptions of how to use them
+That is the harness.
+""Isn't Claude Code a harness?""
+Kind of.
+Claude Code has 2 parts: the interface and the harness
+When you run ""claude"" in your terminal, the Claude TUI opens. When you go to the ""code"" tab in the Claude desktop app, the Claude Code GUI opens. Neither of these are harnesses.
+Under the hood, Claude Code uses the Anthropic Agent SDK to interface with the agent. ChatGPT does the same, with the ChatGPT/Codex app interfacing with the Codex App Server (built into the CLI).
+I understand why people are confused: Claude Code and Codex both bake the harness into their apps.
+You can bake the same harness into other apps though! Some examples of this:
+The Cursor harness is used by Grok Bot
+The Anthropic Agents SDK and Codex App Server are used by T3 Code
+Pi is used by OpenClaw
+The harness is a separate piece, rarely if ever exposed to the humans using the apps.
+Who owns the tools?
+Let's imagine a harness as a kitchen.
+Kitchens have lots of different tools. Pots, pans, knives, spatulas, blenders and more.
+No kitchen has everything that every chef needs.
+Good harnesses are built with this assumption, allowing users to bring their own tools.
+To be clear: most of the important tools are provided directly by a harness. Codex and Claude Code both include a lot of tools, while other harnesses like Pi are much more minimal.
+This is where things start to get messy, so let me draw another diagram.
+The orange box is meant to be ""things included by Claude Code"" (agents sdk to be clear).
+There are lots of custom tools you can add, such as the TypeScript plugin to give your LLM some tools to check your code, or the CUA plugin to allow agents to control your computer.
+Note the line between the ""tool plane"" and the human/llm layer. Neither the human nor the LLM can see or touch the tools. We have no way of knowing if they exist. The harness is what exposes them, both to the LLM and to the interface (which is how we see them)
+MCP makes things a bit messier
+MCP (Model Context Protocol) is a standard to make it easier to let harnesses access external stuff. To put it simply: tools are ""run code here to do a thing"", MCPs are ""make an API request somewhere else to do a thing"".
+Tools provide the code directly. MCPs let the code live somewhere else, but the LLM can still make requests to do things using the MCP.
+The most common usecase for MCPs is to expose data to your LLMs. Want ChatGPT to look through your emails? MCP. Want Claude to go through the analytics for your site? MCP.
+Chrome Extensions are kind of like tools. They can change how a website works, and they do that by running code on your computer in Chrome.
+MCPs are more like websites. You don't have to install anything, you just need to know the URL. Once you have that, you (should) get all the info you need to use it :)
+Pulled all together, it looks something like this:
+...wait, what is T3 Code doing there? Let me explain.
+T3 Code exposes custom functionality to LLMs, to do things that the harnesses don't. For example, we allow threads using Claude Code to spawn subagents in Codex. Other tools do this too, see Herdr, Orca, and Superset for some examples.
+So why is this exposed as an MCP? Is this just some cheap trick to get out of making our own harness?
+Recall this quote from earlier:
+Tools provide the code directly. MCPs let the code live somewhere else, but the LLM can still make requests to do things using the MCP.
+T3 Code has a lot of code to enable cool functionality such as multi-harness subagents. Technically speaking, we could have rebuilt all of T3 Code's coolest features as a set of plugins for Claude Code, Codex, Antigravity, Pi, Cursor, Muse...
+Or we could keep all the code in T3 Code itself, and expose a simple MCP server for the LLMs to use instead :)
+To go back to the kitchen example, MCPs are almost like recipes. They're a method to do a thing, but they aren't the thing itself.
+T3 Code is providing a cookbook to the kitchen. It doesn't change how the kitchen operates at all. If the chefs decide they want to look at our cook book, awesome! They can also ignore it entirely, changing nothing.
+...so what is an agent?
+Do you know how proud I am that I got this far without saying ""agent"" over and over without defining it? That was not easy lol.
+tl;dr - An agent is what happens when you combine a harness and an LLM.
+LLMs just generate text, they don't do anything. Harnesses are just kitchens, they can't cook anything. The combo of the LLM and the harness creates an ""agent"".
+Different ""agents"" are often simply different harness configurations, such as custom tools, instructions, MCP servers, etc.
+Is T3 Code a harness?
+No. T3 Code doesn't work if you don't bring a harness.
+To go back to the kitchen example:
+Chef = LLM
+Kitchen = harness
+T3 Code = restaurant
+T3 Code is a restaurant that lets you bring whatever kitchen you want. We have our own recipes we like, and we provide that cookbook to each kitchen, but the chef won't open it unless you tell them to :)
+For those who want to go deeper...
+If you like these types of top to bottom explanations, tell your boss to pay for the Mega.dev course I'm putting out next week. I go way more in depth on all this there :)
+Also check out T3 Code. It's open source, so you can ask your agent to explain how it works to go way deeper
+What is a ""harness""?
+
+Attached: X article, Image
+
+Resource URLs:
+https://soydev.link/mega
+https://t3.codes/
+https://github.com/pingdotgg/t3code
+https://t.co/cRdL7orwcq"
+2026-10-23,X @jack,"We believe voice is the most natural way to interact with intelligence, so we created Dessa, the most authentic full-duplex speech model eve",https://x.com/jack/status/2113697902916751661,noise,"Topic: Dessa voice AI
+
+Posted by jack (@jack) on 2026-10-23
+
+We believe voice is the most natural way to interact with intelligence, so we created Dessa, the most authentic full-duplex speech model ever built. Talking with it feels like talking with a person…full of emotion, nuance, pauses, and a natural cadence.
+
+Attached content and quote previews:
+block.xyz
+Dessa - the Conversation Model trained only on speech
+
+Resource URLs:
+https://t.co/r0qFLdvd6c"
+2026-10-23,X @kunchenguid,totally agree minimizing human attention is the key unlock now and moving forward,https://x.com/kunchenguid/status/2113773744925921289,should have,"Topic: Enterprise AI and FDE
+
+Posted by Kun Chen (@kunchenguid) on 2026-10-23
+
+totally agree minimizing human attention is the key unlock now and moving forward
+
+this view from calvin on workflow changes correlating with productivity gain is also quite interesting - i think mine was similar
+
+my step function gains came from:
+- overnight loops (gnhf)
+-
+
+Attached content and quote previews:
+Calvin Grunewald
+@CalvinGrunewald
+·
+Oct 24
+Sharing an update on my agentic workflow! 
+
+Today, there are only two REAL bottlenecks left in software development. Compute and Human Attention. Not PRs, Planning, CI/CD. Those aren't real bottlenecks. You only think they are because they consume your Human Attention.
+
+You can
+
+Attached: Image"
+2026-10-23,X @nutlope,I'm never reading IKEA instructions again,https://x.com/nutlope/status/2113715630386077804,noise,"Topic: AI video, audio and creative tools
+
+Posted by Hassan (@nutlope) on 2026-10-23
+
+I'm never reading IKEA instructions again
+
+Attached content and quote previews:
+Attached: Image, Video"
+2026-10-23,X @gregisenberg,The MOST obvious (but REALLY good) STARTUP ideas right now:,https://x.com/gregisenberg/status/2113721373482987970,noise,"Topic: AI agents and automation
+
+Posted by GREG ISENBERG (@gregisenberg) on 2026-10-23
+
+The MOST obvious (but REALLY good) STARTUP ideas right now:
+
+1. Zestimate for company data (what your data is worth to an AI lab) 
+
+2. Google Analytics for agents (see which agents visit your site and what they want) 
+
+3. Y Combinator for 1 person companies (back solo founders"
+2026-10-23,X @levie,"Any form of security through obscurity is fully over. This barely worked as a method with humans, but just simply is over in a world of auto",https://x.com/levie/status/2113499900399034689,noise,"Topic: Security through obscurity
+
+Posted by Aaron Levie (@levie) on 2026-10-23
+
+Any form of security through obscurity is fully over. This barely worked as a method with humans, but just simply is over in a world of autonomous systems that will look through every crevice and try every permutation of attack possible.
+
+As a result, years and years of legacy
+
+Attached content and quote previews:
+Dabs
+@DabsMalone
+·
+Oct 22
+a lot of old software was protected by “exploiting this would be an unreasonable amount of work”
+
+we have invented a machine that does unreasonable amounts of work
+
+anyway how’s the patch backlog"
+2026-10-24,X @elayadesigns,"I designed all of these landing pages in the last two months, using",https://x.com/elayadesigns/status/2114049200749175174,noise,"Topic: Software engineering and coding tools
+
+Posted by Elaya (@elayadesigns) on 2026-10-24
+
+I designed all of these landing pages in the last two months, using 
+@higgsfield
+ , Claude, and Cursor with my custom AI designer skill.
+
+The skill is open source: 
+https://
+github.com/elayadesign/ai
+-design-skills
+…
+
+Attached content and quote previews:
+Attached: Image, Video
+
+Resource URLs:
+https://t.co/Gs1RT1BZxi"
+2026-10-24,X @hwchase17,"The five components of building a ""company harness""",https://x.com/hwchase17/status/2114041443836903662,acted,"Topic: Harness engineering
+
+Posted by Harrison Chase (@hwchase17) on 2026-10-24
+
+Attached content and quote previews:
+The five components of building a ""company harness""
+105
+139
+1K
+115K
+How do you build a company harness?
+We've built internal agents at LangChain across marketing, sales, and engineering, and they have completely changed how those teams work. They weren't easy to get right. We spent a lot of time solving the problems that come with a multiplayer harness, and every team landed on the same core primitives:
+It lives where people already work (for us that's Slack)
+It knows who's asking and acts OBO that person for some services and with its own identity for others
+It has memory, scoped globally and/or at the user level
+Code runs in a sandbox and can make requests to services which require auth
+Large % of its runs are scheduled rather than explicitly invoked by someone (ambient agents!!)
+Thank you to @caspar_br for help on this blog
+LangChain Internal Agents
+To ground this discussion, a brief overview of the three main agents we have at LangChain:
+GTM Agent: a proactive, always-on agent that assists with GTM activities. Monitors and responds to emails, to new qualified leads, sends daily briefs, can answer questions about accounts, can run outbound motions
+OpenSWE: our engineering agent, can work on and draft PRs, but also runs code review over all PRs
+Content Studio: our marketing agent, can draft assets (blogs, images, PowerPoints, videos) in our style and with knowledge of our positioning
+All of these agents are built in the same way. We think this is a general recipe for building company harnesses.
+Problem: User Experience
+All our agents live where people already work, which for us is Slack. They each have their own Slack apps, and can be DM’d or tagged in a channel. One benefit of working with these agents in channels is that others can see how people use it.
+One nice thing we added was the concept of “breaking” out a conversation in Slack. Oftentimes, a great conversation would be happening and you’d want to add in your agent to get their opinion or get them to do something. But if they ran in that thread it would pollute the human conversation and distract. So we added an easy way for agents to “breakout” into their own thread in the channel.
+There are some user experiences that are best NOT done in Slack. For example, when reviewing emails GTM Agent wants me to send, it's fine to do that in a one-off way in Slack, but if there is a big backlog it's not a fun experience at all to track those from Slack messages. For experiences like that, we did end up building a custom UI.
+Problem: Identity
+The thorniest and trickiest problem we tackled was identity, specifically: when these agents take actions, who do they take actions on behalf of?
+There are two main ways this is handled in the industry:
+On-behalf-of: the agent acts on behalf of the user invoking the agent
+Fixed credentials: there is a fixed set of credentials that the agent uses no matter who is invoking it (eg a service account)
+This is how we handled it for each agent (docs: Add identity to Managed Deep Agents, Manage connections):
+OpenSWE:
+When you message it, it acts on behalf of you (eg will open up PRs with your GitHub handle)
+When it runs in background (for example, as a code review agent) it acts with its own identity (GitHub app)
+GTM Agent:
+It has some tools (eg Salesforce access) where it uses a fixed identity, so not everyone has to log in
+It has some tools (eg email) where it acts on behalf of the user invoking the agentThese tools are ONLY available in DMs. In shared channels, they are not available
+
+
+Content Studio:
+It has some tools (eg Notion) where it acts on behalf of the user invoking the agent
+It has some tools (eg Twitter) where it uses a fixed set of credentials, in this case for our company twitter accountOnly a whitelisted set of users can invoke certain operations here though. Eg not everyone can post to Twitter (they may only be able to read/draft)
+
+
+Problem: Memory
+All agents have two tiers of memory:
+Global memory: memory that applies to all users
+User memory: memory that only applies to the specific user
+Agents decide which facts they want to remember to which level of memory.
+This is probably the least explored area so far - we have a lot of work we want to do here!
+Problem: code execution
+All three of our agents can write and execute code, and often need to in order to accomplish tasks. They all follow the pattern of running outside the sandbox, but connecting to it and executing code in there. They all have slightly different base images with different dependencies. OpenSWE (the most coding related agent) is intelligent about which base image it spins up (differs based on channel/user). They all take advantage of the secret proxy on LangSmith Sandboxes (see also Add a sandbox to Managed Deep Agents) to let the agent connect to services in a safe and secure way from inside the sandbox itself.
+Problem: scheduled runs
+A large percent of runs are scheduled or triggered in the background by events, rather than being directly kicked off by a user.
+Some of these are set up by the developer of the agent. For example: OpenSWE listens for PRs and when a new one is created it reviews it.
+Others of these are set up by the user asking the agent to do so. For example: I asked GTM agent to send me a daily brief, and it created its own cron to do so.
+All built on Managed Deep Agents
+All of these agents are built on Managed Deep Agents, which sits on top of the open source Deep Agents harness. It provides infrastructure to solve all these problems (channels, crons, sandboxes, memory, identity) while providing enough flexibility to customize agent behavior as needed. Try it out today with the quickstart!
+The five components of building a ""company harness""
+
+Attached: X article, Image
+
+Resource URLs:
+https://x.com/@caspar_br
+https://docs.langchain.com/langsmith/python/managed-deep-agents-channels-slack
+https://docs.langchain.com/langsmith/python/managed-deep-agents-identity
+https://docs.langchain.com/langsmith/python/managed-deep-agents-connections
+https://docs.langchain.com/langsmith/python/managed-deep-agents-memory
+https://docs.langchain.com/langsmith/sandbox-auth-proxy
+https://docs.langchain.com/langsmith/sandboxes
+https://docs.langchain.com/langsmith/python/managed-deep-agents-sandboxes
+https://docs.langchain.com/langsmith/python/managed-deep-agents-schedules
+https://docs.langchain.com/langsmith/python/managed-deep-agents-overview
+https://docs.langchain.com/oss/python/deepagents/overview
+https://docs.langchain.com/langsmith/python/managed-deep-agents-quickstart
+https://t.co/1RVHfb9BXX"
+2026-10-24,X @cherry_mx_reds,Anthropic is now recommending that companies REMOVE unnecessary subagents from their AI systems.,https://x.com/cherry_mx_reds/status/2113969070118666670,acted,"Topic: AI agents and automation
+
+Posted by Tak 🦞 (@cherry_mx_reds) on 2026-10-24
+
+Anthropic is now recommending that companies REMOVE unnecessary subagents from their AI systems.
+
+This is a pretty significant shift in agent architecture, with their team finding that a single agent equipped with skills can frequently outperform complex multi-agent systems, and
+
+Attached content and quote previews:
+Building agents: When to fold subagents into your main agent loop
+
+Resource URLs:
+https://t.co/DNq60Skkmc"
+2026-10-24,X @WillManidis,there remains unbelievable alpha in paying attention to data broker procurement postings as well as frontier lab postings.,https://x.com/WillManidis/status/2114062401389932975,noise,"Topic: AI data procurement signals
+
+Posted by Will Manidis (@WillManidis) on 2026-10-24
+
+there remains unbelievable alpha in paying attention to data broker procurement postings as well as frontier lab postings.
+
+literally a public roadmap for where the frontier is at a given moment
+
+Attached content and quote previews:
+Brendan (can/do)
+@BrendanFoody
+·
+Oct 24
+We’ll pay you up to $100K for every company you refer that licenses its data to @Mercor.
+
+We’ve partnered with > 500 companies so far.
+
+If you know a company with 100+ employees and data in code, gaming, manufacturing, healthcare or professional services, refer them at
+
+Attached: Image"
+2026-10-24,X @chamath,"“We tried to get Claude to write it, but it did a poor, sloppy job and we had to spend a lot more time editing than we expected (don’t tell ",https://x.com/chamath/status/2114036300936520047,noise,"Topic: Careers and learning
+
+Posted by Chamath Palihapitiya (@chamath) on 2026-10-24
+
+“We tried to get Claude to write it, but it did a poor, sloppy job and we had to spend a lot more time editing than we expected (don’t tell him we said that, just in case…). Perhaps there’s a lesson to be learned there. Claude also didn’t like our references to specific
+
+Attached content and quote previews:
+Dario Perkins
+@darioperkins
+·
+Oct 23
+THE PERKINI REPORT: THE 2028 REALITY CRISIS
+
+What if the most obvious financial bubble in all of history turns out to be.... a bubble... and what if that is just really.... bearish?
+
+there were signs, there are always signs 🤣
+
+free link:
+
+
+https://
+hub.tslombard.com/the-perkini-re
+port
+…
+
+inspired by
+
+Attached: Image
+
+Quoted post URL:
+https://x.com/darioperkins/status/2113642852416680429"
+2026-10-24,X @nntaleb,"The problem isn’t that AI is intelligent. It isn’t. The problem is that too many adults (but not all) are at once mechanistic, imitative, un",https://x.com/nntaleb/status/2113811517955260525,noise,"Topic: AI literacy and judgment
+
+Posted by Nassim Nicholas Taleb (@nntaleb) on 2026-10-24
+
+The problem isn’t that AI is intelligent. It isn’t. The problem is that too many adults (but not all) are at once mechanistic, imitative, unimaginative, stupid, formulaic, influenceable, & gullible, arrogant beyond their skill set, & too expensive to maintain."

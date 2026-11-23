@@ -6,7 +6,7 @@ You never write a brief and you never score one. Plain code does the scoring.
 ## Where things are
 
 - `../harness/` is the briefing agent's setup, the only thing you change:
-  `CLAUDE.md` (its instructions), `sources.md`, `memory.md`, `tools/`, `.claude/skills/`.
+  `CLAUDE.md` (its instructions), `sources.md`, `memory.md`, `tools/`.
 - `../traces/round-N/` holds every run so far. `week-N.jsonl` is the raw trace of a run,
   `week-N.brief.md` is the brief it wrote, `report.md` is what the scorer found.
 - `journal.md` lists every change tried so far: the reason, what was predicted, what happened.
@@ -28,8 +28,9 @@ PREDICT: one line, which misses this should fix
 
 - A miss that happened once goes in `memory.md`, one line.
 - A miss that repeats across two or more weeks may change `CLAUDE.md`, `sources.md`,
-  a tool, or a skill.
-- A script that worked in a trace can be saved as a skill in `.claude/skills/<name>/SKILL.md`.
+  or a tool.
+- A script that worked in a trace can be saved in `tools/` and named in `CLAUDE.md`: the agent
+  may run `python3 tools/<name>.py`. (Claude Code does not let an agent write `.claude/`.)
 - Tag every rule you add with the round, like `(R3)`, so it can be traced back.
 
 Write rules about kinds of items, never about one link. One week of labels is hidden from

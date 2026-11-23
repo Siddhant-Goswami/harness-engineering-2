@@ -2,6 +2,7 @@
 """Read saved links by id.
 
     python3 tools/fetch.py L001 L002      # prints the text of each link
+    python3 tools/fetch.py --week 2       # every link of week 2
 
 From a script:
 
@@ -73,6 +74,7 @@ def get(link_id):
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         raise SystemExit(__doc__)
-    for link_id in sys.argv[1:]:
+    wanted = ids(sys.argv[2]) if sys.argv[1] == "--week" and len(sys.argv) > 2 else sys.argv[1:]
+    for link_id in wanted:
         print(get(link_id))
         print()
