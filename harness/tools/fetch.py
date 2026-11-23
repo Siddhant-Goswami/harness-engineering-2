@@ -26,6 +26,7 @@ HARNESS = Path(__file__).resolve().parent.parent
 INBOX = HARNESS / "inbox"
 CACHE = HARNESS / "cache"
 MAX_CHARS = 4000
+WEEK_CHARS = 24000   # --week stays under this, so the shell shows it instead of saving it to a file
 
 
 def _rows():
@@ -54,7 +55,7 @@ def _download(url):
     return re.sub(r"\s+", " ", text).strip()
 
 
-def get(link_id):
+def get(link_id, limit=MAX_CHARS):
     """The text of one link: title, source, date, then the page."""
     row = next((r for r in _rows() if r["id"] == link_id), None)
     if row is None:
@@ -68,13 +69,22 @@ def get(link_id):
             body = f"(could not fetch the page: {e})"
         path.write_text(body)
     head = f"{row['id']} | {row['date']} | {row['source']} | {row['title']}\n{row['url']}\n"
-    return head + path.read_text()[:MAX_CHARS]
+    page = path.read_text()
+    return head + page[:limit] + (" [...]" if len(page) > limit else "")
 
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         raise SystemExit(__doc__)
-    wanted = ids(sys.argv[2]) if sys.argv[1] == "--week" and len(sys.argv) > 2 else sys.argv[1:]
+    week = sys.argv[1] == "--week" and len(sys.argv) > 2
+    wanted = ids(sys.argv[2]) if week else sys.argv[1:]
+    limit = min(MAX_CHARS, WEEK_CHARS // max(len(wanted), 1) - 150) if week else MAX_CHARS
+    cut = False
     for link_id in wanted:
-        print(get(link_id))
+        text = get(link_id, limit)
+        cut = cut or text.endswith(" [...]")
+        print(text)
         print()
+    if week and cut:
+        print(f"(Pages marked [...] are cut to {limit} characters so the whole week fits on one "
+              f"screen. For a whole page: python3 tools/fetch.py L001)")
