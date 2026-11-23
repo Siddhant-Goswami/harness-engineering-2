@@ -51,7 +51,7 @@ HARNESS, TRACES, OPTIMIZER = ROOT / "harness", ROOT / "traces", ROOT / "optimize
 sys.path.insert(0, str(ROOT / "verifier"))
 import score as verifier  # noqa: E402
 
-from agents import BRIEF_MODEL, OPT_MODEL, RUNNER, events, tokens, tool_inputs  # noqa: E402
+from agents import BRIEF_MODEL, OPT_MODEL, RUNNER, NoModel, events, tokens, tool_inputs  # noqa: E402
 from agents import run as run_agent  # noqa: E402
 import bookmarks  # noqa: E402
 RUNS = int(os.environ.get("RUNS", "3"))  # briefs per week; the score is their mean
@@ -476,7 +476,13 @@ def one_round():
     git("add", "harness", "optimizer/proposals.md")
     git("commit", "-m", f"round {n}: {reason}")
 
-    scores = briefs_and_scores(folder)                            # 7 MODEL (step 2 again) + 3
+    try:
+        scores = briefs_and_scores(folder)                        # 7 MODEL (step 2 again) + 3
+    except NoModel:
+        git("reset", "--hard", "HEAD~1")        # the change was never scored: take it back
+        git("clean", "-fdq", "harness", "optimizer")
+        print(f"round {n} undone: its change was never scored")
+        raise
     new = verifier.mean(scores)
 
     keep = new >= best + MIN_GAIN                                 # 8
@@ -521,11 +527,16 @@ def final():
         shutil.copytree(HARNESS / d, old / "harness" / d)
 
     print(f"  writing {2 * RUNS} briefs for week four ({RUNS} on each setup)...")
-    with ThreadPoolExecutor(2) as pool:
-        b = pool.submit(many, [week], folder / "before-run", old / "harness")
-        a = pool.submit(many, [week], folder / "after-run", HARNESS)
-    before = verifier.score_runs(week, b.result()[week], open_hidden=True)
-    after = verifier.score_runs(week, a.result()[week], open_hidden=True)
+    try:
+        with ThreadPoolExecutor(2) as pool:
+            b = pool.submit(many, [week], folder / "before-run", old / "harness")
+            a = pool.submit(many, [week], folder / "after-run", HARNESS)
+            b_texts, a_texts = b.result()[week], a.result()[week]
+    except NoModel:                             # nothing scored: week four is still closed
+        (HARNESS / "inbox" / f"week-{week}.csv").unlink(missing_ok=True)
+        raise
+    before = verifier.score_runs(week, b_texts, open_hidden=True)
+    after = verifier.score_runs(week, a_texts, open_hidden=True)
 
     cell = lambda s: f"{s['score']} ({s['low']} to {s['high']})"
     found = lambda s: f"{s['hits']}/{s['signal']} found, {s['noise_flagged']} noise cited"
@@ -638,14 +649,19 @@ def next_step():
 
 def next_part2(say):
     rounds = len(rows()) - 1
+    live, best = current()
+    if not OPENED.exists() and best > 1 - MIN_GAIN:     # before the round count: a round would refuse
+        if live == "0":
+            return say(f"Part 2. The baseline is already {best}: no round can beat it by {MIN_GAIN},"
+                       " so the loop has nothing to learn on weeks 1 to 3.",
+                       "python3 loop.py final --anyway  # opens week four once, on the setup you wrote")
+        return say(f"Part 2. The live score is {best}: no round can beat it, so open the hidden week.",
+                   "git log --oneline     # read the kept changes first",
+                   "python3 loop.py final  # opens week four, once")
     if not OPENED.exists() and rounds < 5:
         return say(f"Part 2. Baseline recorded, {rounds} round{'s' if rounds != 1 else ''} so far."
                    " Don't edit files while rounds run (notes/ is safe).",
                    f"python3 loop.py run {5 - rounds}", "python3 loop.py status")
-    if not OPENED.exists() and current()[1] > 1 - MIN_GAIN:
-        return say(f"Part 2. The live score is {current()[1]}: no round can beat it, so open the hidden week.",
-                   "git log --oneline     # read the kept changes first",
-                   "python3 loop.py final  # opens week four, once")
     if not OPENED.exists() and current()[0] == "0":
         return say(f"Part 2. {rounds} rounds done, none kept, so week four has nothing to test yet.",
                    "python3 loop.py run 3", "(or read traces/round-N/report.md and add a rule yourself)")

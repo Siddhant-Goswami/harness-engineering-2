@@ -56,7 +56,42 @@ def run(role, prompt, cwd, trace, model=None, harness=HARNESS):
     for e in events(trace):
         if e.get("type") == "result":
             result = e
+    why = unreached(result, trace)
+    if why:
+        raise NoModel(f"The {RUNNER} run could not reach its model: {why}\n"
+                      f"Nothing was scored. Usually the network is blocked (an agent running loop.py\n"
+                      f"for you inside its sandbox, as Codex's does) or a login has ended.\n"
+                      f"Run the same command in your own terminal. Trace: {_rel(trace)}")
     return result
+
+
+def _rel(path):
+    try:
+        return Path(path).resolve().relative_to(ROOT.resolve())
+    except ValueError:
+        return path
+
+
+class NoModel(SystemExit):
+    """A run that never reached its model. Scoring it would record a 0 that is not the setup's.
+    A SystemExit, so any command stops with the message alone, from a worker thread too."""
+
+
+def unreached(result, trace):
+    """Why a run never reached its model, or '' if it did. Such a run made no tool call and used
+    no tokens, and either says it failed (Claude Code: "Not logged in") or wrote nothing (Codex:
+    "workspace routing discovery failed" in its own log). A timeout is a real run: it scores 0."""
+    if result.get("error") or tokens(result) or any(True for _ in tool_inputs(trace)):
+        return ""
+    text = (result.get("result") or "").strip()
+    if not result.get("is_error") and text:
+        return ""
+    raw = Path(trace).with_suffix(".raw.jsonl")
+    said = [e.get("message") or (e.get("error") or {}).get("message")
+            for e in (events(raw) if raw.exists() else [])
+            if e.get("type") in ("error", "turn.failed")]
+    said = [s for s in said if s]
+    return text or (said[-1] if said else "it wrote nothing and used no tokens")
 
 
 # ---------------------------------------------------------------- reading a trace

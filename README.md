@@ -64,13 +64,18 @@ READ IT BEFORE YOU RUN IT
 HOW TO RUN THE COMMANDS
 - Claude Code: run loop.py as written. Codex: put RUNNER=codex in front of
   every loop.py command. Hermes: put RUNNER=hermes in front.
+- Codex: your sandbox has no network and cannot write to .git, so every
+  model step (the command `blank` prints, brief, baseline, round, final) and
+  every commit fails inside it. Ask me to approve running it outside the
+  sandbox. If you cannot ask, hand it to me without trying it first.
 - baseline, round and final call a model many times and take minutes. Give
   each one a timeout of 10 minutes, or run it in the background and wait for
   it to finish. When `next` says `run N`, run `python3 loop.py round` N times
   instead, and tell me each result.
-- If a command fails because of your sandbox, a permission or a timeout, do
-  not work around it. Give me the exact command to run in my own terminal,
-  wait, then read what it wrote.
+- If a command fails because of your sandbox, a permission or a timeout, or
+  loop.py says a run "could not reach its model", do not work around it.
+  Give me the exact command to run in my own terminal, wait, then read what
+  it wrote.
 - If anything else fails, read "When something goes wrong" in the README, then
   run `python3 loop.py next`.
 
@@ -515,6 +520,7 @@ python3 loop.py trace traces/round-0/week-1.run-1.jsonl  # what the briefing age
 | `The live score is 1.0: no change can beat it` | Nothing is left to win on weeks 1 to 3. Read `git log --oneline`, then `python3 loop.py final`. |
 | `final`: `No change has been kept yet` | It waits for a kept round, so your one look is not spent comparing a setup with itself. Run more rounds, or `final --anyway`. |
 | A round says `blocked: it changed notes.md, outside the harness` | You edited a file while the loop ran. Keep notes in `notes/`. |
+| `The ... run could not reach its model` | Nothing was scored and nothing was kept. The harness had no network or no login: usually an agent ran `loop.py` for you inside its sandbox (Codex's has no network). Run the same command in your own terminal. |
 | `this sign-in can end at any time` from Claude Code | Run `claude auth login` before a long `run`, so it does not stop halfway. |
 
 ## Take-home
