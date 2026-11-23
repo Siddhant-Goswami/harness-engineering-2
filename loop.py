@@ -271,7 +271,7 @@ def read_model_labels(path):
     words = ("signal", "noise", "acted", "should")
     out = {}
     for cells in csv.reader(lines):
-        lid = next((c.strip() for c in cells if re.fullmatch(r"L\d{3}", c.strip())), None)
+        lid = next((f"L{int(c.strip()[1:]):03d}" for c in cells if re.fullmatch(r"L\d{1,3}", c.strip())), None)
         lab = next((verifier._label(c) for c in reversed(cells)
                     if c.strip().lower().startswith(words) and len(c.strip()) < 15), "")
         if lid and lab:
@@ -282,7 +282,8 @@ def read_model_labels(path):
 # ---------------------------------------------------------------- step 2
 
 def brief_prompt(week):
-    p = f"Write the brief for week {week}. Its links are in inbox/week-{week}.csv."
+    p = (f"Write the brief for week {week}. Start with `python3 tools/fetch.py --week {week}`: it prints "
+         f"every link of the week. (The list alone is in inbox/week-{week}.csv.)")
     decisions = [d for d in verifier.load_decisions() if d["week"] == week]
     if decisions:
         p += "\n\nThe reader has to decide this week. Answer each with adopt, wait or ignore:\n"

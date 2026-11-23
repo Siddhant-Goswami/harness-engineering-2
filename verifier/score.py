@@ -90,7 +90,8 @@ def score_week(week, brief, open_hidden=False):
     links = [r for r in load_links() if r["week"] == week]
     decisions = [d for d in load_decisions() if d["week"] == week]
 
-    cited = set(re.findall(r"\bL\d{3}\b", scored_part(brief)))
+    # [L78] and [L078] are the same link: a model sometimes drops the zero
+    cited = {f"L{int(n):03d}" for n in re.findall(r"\bL(\d{1,3})\b", scored_part(brief))}
     signal = [r for r in links if r["label"] in SIGNAL]
     hits = [r for r in signal if r["id"] in cited]
     missed = [r for r in signal if r["id"] not in cited]
