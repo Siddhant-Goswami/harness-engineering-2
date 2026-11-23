@@ -114,14 +114,12 @@ def prepare():
     if not OPENED.exists():
         (inbox / "week-4.csv").unlink(missing_ok=True)
 
-    # The sample pages are fictional, so their text ships with the sample.
+    # A link with a `text` column (the made-up sample) needs no fetch: its page is that text.
     sys.path.insert(0, str(HARNESS / "tools"))
     from fetch import cache_path
-    sample = ROOT / "verifier" / "sample" / "links.csv"
-    if sample.exists():
-        with open(sample, newline="") as f:
-            for r in csv.DictReader(f):
-                cache_path(r["url"]).write_text(r["text"])
+    for r in links:
+        if r.get("text"):
+            cache_path(r["url"]).write_text(r["text"])
 
     sources = HARNESS / "sources.md"
     if not sources.exists():
@@ -352,7 +350,7 @@ def journal(n, reason, predicted, verdict, before, after):
 def one_round():
     if git("status", "--porcelain"):
         raise SystemExit("Uncommitted changes. Commit or discard them before a round.")
-    live, best = current()
+    _, best = current()
     n = len(rows())
     folder = TRACES / f"round-{n}"
     print(f"\n=== round {n} · live score {best}")
@@ -397,7 +395,7 @@ def final():
     """Open week four, once. Neither agent has seen its links or its labels."""
     if OPENED.exists():
         raise SystemExit("Week four is already open. A second look is not a hidden week any more.")
-    live, best = current()
+    _, best = current()
     start = float(rows()[0]["mean"])
     folder = TRACES / "final"
     week = verifier.HIDDEN_WEEK
@@ -424,7 +422,7 @@ def final():
     after = verifier.score_runs(week, a.result()[week], open_hidden=True)
 
     cell = lambda s: f"{s['score']} ({s['low']} to {s['high']})"
-    print(f"\n                 before                 after")
+    print("\n                 before                 after")
     print(f"weeks 1 to 3     {start:<22} {best}    (the loop could see these)")
     print(f"week 4           {cell(before):<22} {cell(after)}    (it could not see this)")
     seen, unseen = best - start, after["score"] - before["score"]

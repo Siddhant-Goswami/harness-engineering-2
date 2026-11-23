@@ -2,11 +2,7 @@ traces/
 harness/inbox/
 harness/cache/
 harness/scratch/
+manual/
+.runner/
 __pycache__/
 .DS_Store
-traces-sample-run/
-manual/
-facilitator/
-explainer/
-deck/
-.runner/

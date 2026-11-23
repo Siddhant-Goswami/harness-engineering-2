@@ -152,12 +152,12 @@ Set `RUNNER` once with `export RUNNER=codex` and every command after it uses Cod
 | Caught afterwards by code | all four walls | all four walls, plus edits a brief made to the setup | the same |
 | Reads your own setup? | no (`--setting-sources project`) | no: its own home in `.runner/`, your login only | no: its own home in `.runner/`, your login and model only |
 
-`loop.py` never asks Codex or Hermes to find `CLAUDE.md` themselves. It puts the folder's
-`CLAUDE.md`, with `sources.md` and `memory.md` filled in, at the top of the prompt. So one file
-is the setup for all three, and the optimizer's changes reach whichever harness you run next.
+`loop.py` puts the folder's `CLAUDE.md`, with `sources.md` and `memory.md` filled in, at the top
+of the Codex or Hermes prompt. So one file is the setup for all three, and the optimizer's
+changes reach whichever harness you run next. (Using Codex by hand? Copy it to `AGENTS.md`.)
 
-Every run's trace is written in one shape, so `loop.py trace` and the optimizer read a Codex or
-Hermes run the same way. The tool's own log is kept next to it as `*.raw.jsonl`.
+Every trace is written in one shape, so `loop.py trace` and the optimizer read any harness's run
+the same way. The tool's own log is kept next to it as `*.raw.jsonl`.
 
 Hermes runs with no fence, so run it on this repo and nothing else you care about. Its
 optimizer gets file tools only, no shell. Hermes normally asks a person before anyone edits a
@@ -168,17 +168,8 @@ home up and takes a few minutes.
 A small local model may not keep to the brief's format. The scorer will show you: every link
 it leaves out costs a point.
 
-One round on the sample, 22 November (three briefs per week, so treat these as rough):
-
-| | Baseline | After round 1 | Verdict |
-|---|---|---|---|
-| Codex (its default model) | 0.688 | 0.864 | kept |
-| Hermes (Claude Sonnet through Anthropic) | 0.671 | 0.893 | kept |
-
-Both optimizers found the same habit: the briefing agent picked what to read from titles.
-
-Do not compare scores across harnesses after one run. Each harness starts from its own
-baseline; compare its before and after.
+Do not compare scores across harnesses. Each starts from its own baseline; compare its before
+and after.
 
 ## The loop
 
@@ -193,18 +184,6 @@ baseline; compare its before and after.
 | 7 | Run steps 2 and 3 again | (same as 2 and 3) |
 | 8 | Keep the change if the score rose, else revert | code |
 | 9 | After the last round, open week four once | code |
-
-## Words from the session
-
-| Said in the session | In this repo |
-|---|---|
-| Verifier | `verifier/`: your labels, your decisions, `score.py` |
-| Signal / noise | The `label` column in `verifier/links.csv` |
-| The brief | What `python3 loop.py brief 1` prints |
-| The learning after each run | `failures.md`, written by you |
-| Traces | `traces/`: the raw log of every run (each tool call and what came back) |
-| The optimizer | `optimizer/CLAUDE.md`, the second agent |
-| `CLAUDE.md` | The instructions. `loop.py` hands the same file to Codex and Hermes. By hand, copy it to `AGENTS.md` |
 
 ## How a brief is scored
 
@@ -244,7 +223,6 @@ The briefing agent has one wall: a run whose trace reaches outside `harness/` sc
 | `failures.md` | Failures you saw yourself, tagged F1, F2... | You |
 | `loop.py` | The outer loop. Nine steps, two of them a model | You |
 | `agents.py` | Runs one agent in Claude Code, Codex or Hermes | You |
-| `codemode.py` | The same job run two ways: one tool call per item, or one script | You |
 | `traces/` | The raw trace of every run | Written by code |
 
 ## The sample month
@@ -263,7 +241,7 @@ Every week has the same five traps, so a rule learned on weeks 1 to 3 can pay of
 | A thread with real measurements | "I timed every hook in 40 Kiln projects" | should have |
 | A big-name post unrelated to the reader | "Our new image model draws hands correctly" | noise |
 
-To change it, edit `verifier/sample/make_sample.py` and run it.
+To change it, edit `verifier/links.csv`. Its `text` column is each made-up page.
 
 ### A finished run on the sample
 
@@ -284,9 +262,9 @@ git diff sample-baseline origin/sample-run -- harness
 
 ## Bring your own month
 
-1. Replace `verifier/links.csv` with your labelled links (keep the header row).
+1. Replace `verifier/links.csv` with your labelled links. It needs no `text` column.
 2. Replace `verifier/decisions.csv` with your decisions, or leave only its header row.
-3. Delete `verifier/sample/`, `harness/sources.md` and `harness/cache/`.
+3. Delete `harness/sources.md` and `harness/cache/`.
 4. `python3 loop.py prepare`
 
 Days 22 onward become week four. Pages are fetched the first time the agent reads them and
@@ -311,7 +289,6 @@ python3 loop.py trace traces/round-0/week-1.run-1.jsonl  # what the briefing age
   habit of the setup; a miss in one run may be chance.
 - Kept rounds are the lucky ones, so the live score drifts a little high and later rounds
   find it harder to beat. The hidden week is where that luck gets checked.
-- `BRIEF_MODEL=haiku python3 loop.py ...` and `OPT_MODEL=sonnet ...` change the two models (see [Pick your harness](#pick-your-harness)).
 
 ## Take-home
 

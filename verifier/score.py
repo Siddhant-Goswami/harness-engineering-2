@@ -148,11 +148,11 @@ def mean(scores):
 
 
 def table(scores):
-    n = scores[0].get("runs", 1)
-    lines = [f"week  score  low to high   found      noise called important   decisions right"
+    n = scores[0]["runs"]
+    lines = ["week  score  low to high   found      noise called important   decisions right"
              + (f"   (mean of {n} runs)" if n > 1 else "")]
     for s in scores:
-        spread = f"{s.get('low', s['score'])} to {s.get('high', s['score'])}"
+        spread = f"{s['low']} to {s['high']}"
         lines.append(f"  {s['week']}   {s['score']:>5}  {spread:<13} {s['hits']:>4}/{s['signal']:<5} "
                      f"{s['noise_flagged']:<24} {s['decisions_right']}/{s['decisions']}")
     lines.append(f"mean  {mean(scores):>5}")
