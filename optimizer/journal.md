@@ -16,3 +16,8 @@ Written by loop.py after every round. The optimizer reads it; it does not write 
 - Change: Added a memory.md line (R3): a post whose fetch is only a teaser plus "Attached: X article" should not be dropped for being thin; if it is the author's own piece about how agents are built, run or checked, cite it as signal (F2 still applies).
 - Predicted: Fixes the week-3 miss L061 (3/3 runs) without adding hype reposts like L036; it does not touch the 1-of-3 week-1 noise L011.
 - Observed: 0.938 to 0.919 on weeks 1 to 3
+
+## Round 4: reverted
+- Change: Added a memory.md line (R4): a teaser plus "Attached: X article" should be cited when it is the author's own design for how agents are built, run or checked, but not when it comments on another team's result or predicts its business impact (F2).
+- Predicted: Fixes the week-3 miss L061 (3/3 runs) without bringing back the week-3 noise L044 that sank Round 3; it does not touch the 1-of-3 week-1 noise L011.
+- Observed: 0.938 to 0.911 on weeks 1 to 3
